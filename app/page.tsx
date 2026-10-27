@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 export default function WelcomeLandingPage() {
-  redirect("/auth/login");
   return (
     <div className="px-5 py-6 flex-1 flex flex-col justify-between min-h-screen">
       <div>
