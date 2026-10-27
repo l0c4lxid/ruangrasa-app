@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curhat Anonim - RuangRasa</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:ital,opsz,wght@0,8..144,300..800;1,8..144,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#88d6af",
+            "outline-variant": "#bec9c1",
+            "background": "#edfef0",
+            "primary-container": "#2e7d5b",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f7a72",
+            "on-surface": "#111e17",
+            "on-background": "#111e17",
+            "on-primary-fixed": "#002113",
+            "surface-tint": "#176b4b",
+            "primary-fixed": "#a4f3ca",
+            "surface-container-low": "#e7f8eb",
+            "on-secondary-fixed": "#002115",
+            "surface-container-high": "#dcecdf",
+            "on-tertiary-container": "#fff2ed",
+            "secondary-fixed-dim": "#a6d0bb",
+            "primary-fixed-dim": "#88d6af",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#005236",
+            "surface": "#edfef0",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#25342b",
+            "on-secondary-fixed-variant": "#284e3e",
+            "primary": "#096444",
+            "on-tertiary-fixed": "#351000",
+            "error-container": "#ffdad6",
+            "surface-variant": "#d6e7da",
+            "tertiary": "#844728",
+            "secondary-container": "#bfe9d3",
+            "inverse-on-surface": "#e4f5e8",
+            "on-error": "#ffffff",
+            "tertiary-container": "#a25e3e",
+            "on-tertiary-fixed-variant": "#70371a",
+            "surface-dim": "#cdded2",
+            "tertiary-fixed-dim": "#ffb694",
+            "secondary": "#406655",
+            "on-primary-container": "#d0ffe3",
+            "on-surface-variant": "#3f4943",
+            "surface-container-highest": "#d6e7da",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#446a59",
+            "secondary-fixed": "#c2ecd6",
+            "surface-container": "#e1f2e5",
+            "surface-bright": "#edfef0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-sm": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Roboto Flex"],
+            "label-sm": ["Roboto Flex"],
+            "label-md": ["Roboto Flex"],
+            "headline-lg-mobile": ["Roboto Flex"],
+            "headline-md": ["Roboto Flex"],
+            "display-md": ["Roboto Flex"],
+            "body-sm": ["Roboto Flex"],
+            "label-lg": ["Roboto Flex"],
+            "display-lg": ["Roboto Flex"],
+            "headline-sm": ["Roboto Flex"],
+            "body-md": ["Roboto Flex"],
+            "headline-lg": ["Roboto Flex"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile Simulator Wrapper (390px typical width constraint) -->
+<div class="w-full max-w-[390px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md px-5 py-3.5 flex justify-between items-center shadow-sm">
+<div class="flex items-center space-x-2">
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-semibold text-primary tracking-tight">Curhat Anonim</h1>
+</div>
+<div class="flex items-center space-x-1 text-on-surface-variant">
+<button aria-label="Cari curhat" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]" data-icon="search">search</span>
+</button>
+<button aria-label="Notifikasi" class="relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary-container ring-2 ring-surface"></span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col">
+<!-- Privacy Guarantee Banner -->
+<section class="px-5 pt-3 pb-2">
+<div class="bg-surface-container-low rounded-2xl p-3.5 flex items-start space-x-3 border border-outline-variant/40 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<div class="flex-1">
+<p class="text-label-md font-label-md text-primary font-semibold">Ruang Aman &amp; Terjaga</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+              Semua cerita dibagikan tanpa nama asli atau identitas publik. Kamu didengar, tanpa penghakiman.
+            </p>
+</div>
+</div>
+</section>
+<!-- Category Filter Chips (Horizontal Scroll) -->
+<section class="py-2.5">
+<div class="flex overflow-x-auto no-scrollbar space-x-2 px-5 py-1">
+<!-- Active Chip -->
+<button class="shrink-0 h-9 px-4 rounded-full bg-secondary-container border border-primary text-primary flex items-center space-x-1.5 active:scale-95 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-label-md font-label-md font-semibold">Semua</span>
+</button>
+<!-- Inactive Chips -->
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container flex items-center active:scale-95 transition-all">
+<span class="text-label-md font-label-md">Akademik &amp; Skripsi</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container flex items-center active:scale-95 transition-all">
+<span class="text-label-md font-label-md">Keluarga &amp; Relasi</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container flex items-center active:scale-95 transition-all">
+<span class="text-label-md font-label-md">Kecemasan Karir</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container flex items-center active:scale-95 transition-all">
+<span class="text-label-md font-label-md">Kesepian</span>
+</button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container flex items-center active:scale-95 transition-all">
+<span class="text-label-md font-label-md">Adaptasi Kampus</span>
+</button>
+</div>
+</section>
+<!-- Curhat Feed Posts -->
+<section class="px-5 py-2 space-y-4">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/60 shadow-sm relative transition-all duration-200 hover:shadow-md">
+<!-- Header -->
+<div class="flex justify-between items-start mb-3.5">
+<div class="flex items-center space-x-3">
+<!-- Anonymous Botanical Avatar -->
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary ring-2 ring-primary-fixed">
+<span class="material-symbols-outlined text-[22px]" data-icon="psychology">psychology</span>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<h2 class="text-label-lg font-label-lg text-on-surface font-semibold">Kawan Anonim #412</h2>
+</div>
+<div class="flex items-center space-x-2 mt-0.5 text-on-surface-variant">
+<span class="text-body-sm font-body-sm text-outline">15 menit yang lalu</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">Akademik &amp; Skripsi</span>
+</div>
+</div>
+</div>
+<!-- Menu 3-dots with subtle Laporkan -->
+<div class="relative group">
+<button aria-label="Opsi tambahan" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+<div class="hidden group-hover:block absolute right-0 top-8 z-10 w-32 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-lg py-1">
+<button class="w-full text-left px-3 py-1.5 text-body-sm font-body-sm text-tertiary flex items-center space-x-1.5 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="flag">flag</span>
+<span>Laporkan</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Story snippet -->
+<p class="text-body-md font-body-md text-on-surface leading-relaxed text-justify">
+            Udah semester 9 tapi proposal skripsi selalu revisi berkali-kali sama dosen pembimbing. Kadang merasa gak cukup pintar dan takut ngecewain orang tua di kampung...
+          </p>
+<!-- Interaction Bar -->
+<div class="mt-4 pt-3.5 border-t border-surface-container flex items-center justify-between text-on-surface-variant">
+<!-- Peluk Virtual Action -->
+<button class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-secondary-container/50 hover:bg-secondary-container text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite_border">favorite_border</span>
+<span class="text-label-md font-label-md font-medium">Beri Dukungan</span>
+<span class="text-label-sm font-label-sm font-bold bg-surface-container-lowest/80 px-1.5 py-0.2 rounded-full ml-1">42</span>
+</button>
+<div class="flex items-center space-x-2">
+<button aria-label="Tanggapan komentar" class="flex items-center space-x-1 px-2.5 py-1.5 rounded-full hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-label-md font-label-md">12</span>
+</button>
+<button aria-label="Simpan curhat" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/60 shadow-sm relative transition-all duration-200 hover:shadow-md">
+<!-- Header -->
+<div class="flex justify-between items-start mb-3.5">
+<div class="flex items-center space-x-3">
+<!-- Anonymous Botanical Avatar -->
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-tertiary-container ring-2 ring-tertiary-fixed">
+<span class="material-symbols-outlined text-[22px]" data-icon="spa">spa</span>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<h2 class="text-label-lg font-label-lg text-on-surface font-semibold">Kawan Anonim #889</h2>
+</div>
+<div class="flex items-center space-x-2 mt-0.5 text-on-surface-variant">
+<span class="text-body-sm font-body-sm text-outline">1 jam yang lalu</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-tertiary font-label-sm text-label-sm">Kecemasan Karir</span>
+</div>
+</div>
+</div>
+<!-- Menu 3-dots with subtle Laporkan -->
+<div class="relative group">
+<button aria-label="Opsi tambahan" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+<div class="hidden group-hover:block absolute right-0 top-8 z-10 w-32 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-lg py-1">
+<button class="w-full text-left px-3 py-1.5 text-body-sm font-body-sm text-tertiary flex items-center space-x-1.5 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="flag">flag</span>
+<span>Laporkan</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Story snippet -->
+<p class="text-body-md font-body-md text-on-surface leading-relaxed text-justify">
+            Melihat teman-teman di LinkedIn sudah pada dapet management trainee atau kerja di startup besar, rasanya dada sesak setiap buka sosmed...
+          </p>
+<!-- Interaction Bar -->
+<div class="mt-4 pt-3.5 border-t border-surface-container flex items-center justify-between text-on-surface-variant">
+<!-- Peluk Virtual Action -->
+<button class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-secondary-container/50 hover:bg-secondary-container text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite_border">favorite_border</span>
+<span class="text-label-md font-label-md font-medium">Beri Dukungan</span>
+<span class="text-label-sm font-label-sm font-bold bg-surface-container-lowest/80 px-1.5 py-0.2 rounded-full ml-1">68</span>
+</button>
+<div class="flex items-center space-x-2">
+<button aria-label="Tanggapan komentar" class="flex items-center space-x-1 px-2.5 py-1.5 rounded-full hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-label-md font-label-md">19</span>
+</button>
+<button aria-label="Simpan curhat" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Calming Ambient Prompt Box -->
+<div class="rounded-2xl p-4 bg-gradient-to-br from-surface-container-high/60 to-surface-container-low border border-outline-variant/40 flex items-center space-x-3.5">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="self_improvement">self_improvement</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-primary font-semibold">Tarik napas sejenak</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Beban pikiranmu valid. Istirahatlah barang 5 menit tanpa memikirkan tuntutan apapun.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) "+ Tulis Curhat" -->
+<div class="fixed bottom-20 right-5 z-40 max-w-[390px] mx-auto pointer-events-none">
+<button class="pointer-events-auto shadow-lg hover:shadow-xl bg-primary text-on-primary rounded-full px-5 py-3.5 flex items-center space-x-2 active:scale-95 transition-transform duration-150 border border-primary-fixed/20 group">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-90 duration-200" data-icon="add">add</span>
+<span class="text-label-lg font-label-lg font-semibold tracking-wide">+ Tulis Curhat</span>
+</button>
+</div>
+<!-- BottomNavBar (Shared Component from JSON, Curhat Active) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface shadow-md">
+<!-- Beranda -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-md font-label-md mt-0.5">Beranda</span>
+</a>
+<!-- Curhat (ACTIVE - style_active_navigation applied) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-label-md font-label-md font-semibold mt-0.5">Curhat</span>
+</a>
+<!-- Komunitas -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="groups">groups</span>
+<span class="text-label-md font-label-md mt-0.5">Komunitas</span>
+</a>
+<!-- Konsultasi -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="psychology">psychology</span>
+<span class="text-label-md font-label-md mt-0.5">Konsultasi</span>
+</a>
+<!-- Profil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="text-label-md font-label-md mt-0.5">Profil</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RuangRasa - Masuk &amp; Registrasi</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Roboto Flex for Design System Tokens -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#edfef0",
+            "tertiary-fixed-dim": "#ffb694",
+            "on-primary": "#ffffff",
+            "background": "#edfef0",
+            "on-surface-variant": "#3f4943",
+            "on-tertiary-fixed-variant": "#70371a",
+            "inverse-on-surface": "#e4f5e8",
+            "tertiary": "#844728",
+            "secondary-container": "#bfe9d3",
+            "inverse-surface": "#25342b",
+            "surface-bright": "#edfef0",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#a25e3e",
+            "on-secondary-container": "#446a59",
+            "surface-container-highest": "#d6e7da",
+            "tertiary-fixed": "#ffdbcc",
+            "on-primary-fixed": "#002113",
+            "on-secondary-fixed": "#002115",
+            "on-tertiary-fixed": "#351000",
+            "on-error": "#ffffff",
+            "surface-tint": "#176b4b",
+            "on-secondary-fixed-variant": "#284e3e",
+            "secondary": "#406655",
+            "inverse-primary": "#88d6af",
+            "on-primary-fixed-variant": "#005236",
+            "surface-variant": "#d6e7da",
+            "error": "#ba1a1a",
+            "on-surface": "#111e17",
+            "primary": "#096444",
+            "surface-container": "#e1f2e5",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#d0ffe3",
+            "on-tertiary-container": "#fff2ed",
+            "outline-variant": "#bec9c1",
+            "secondary-fixed": "#c2ecd6",
+            "surface-dim": "#cdded2",
+            "primary-fixed": "#a4f3ca",
+            "surface-container-low": "#e7f8eb",
+            "on-background": "#111e17",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#88d6af",
+            "outline": "#6f7a72",
+            "primary-container": "#2e7d5b",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#a6d0bb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dcecdf"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Roboto Flex"],
+            "display-md": ["Roboto Flex"],
+            "body-md": ["Roboto Flex"],
+            "body-sm": ["Roboto Flex"],
+            "headline-lg": ["Roboto Flex"],
+            "headline-lg-mobile": ["Roboto Flex"],
+            "body-lg": ["Roboto Flex"],
+            "label-sm": ["Roboto Flex"],
+            "label-lg": ["Roboto Flex"],
+            "label-md": ["Roboto Flex"],
+            "display-lg": ["Roboto Flex"],
+            "headline-md": ["Roboto Flex"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "display-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col justify-between items-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Ambient Botanical Visual Accent Top -->
+<div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-48 bg-gradient-to-b from-secondary-container/40 via-surface/60 to-transparent pointer-events-none -z-10 blur-2xl"></div>
+<!-- Main Viewport Container (Standard 390px Mobile Canvas Focus) -->
+<main class="w-full max-w-md mx-auto px-5 pt-8 pb-10 flex flex-col justify-between min-h-screen">
+<!-- Top Brand & Header Section -->
+<section class="flex flex-col items-center text-center">
+<!-- Botanical Identity Badge -->
+<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center mb-4 shadow-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="spa" data-weight="fill" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<!-- App Title & Empathic Tagline -->
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold tracking-tight text-primary">RuangRasa</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 max-w-[280px]">
+        Langkah tenang untuk kembali mendengarkan dan merawat dirimu.
+      </p>
+</section>
+<!-- Interactive Authentication Card (Bento Surface Level 1) -->
+<div class="mt-6 bg-surface-container-lowest rounded-3xl p-5 border border-outline-variant/60 shadow-sm">
+<!-- Segmented Control Tabs (Masuk vs Daftar) -->
+<div class="bg-surface-container p-1 rounded-2xl flex items-center mb-6">
+<button class="flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-semibold bg-surface-container-lowest text-primary shadow-xs transition-all duration-200" id="tab-masuk" type="button">
+          Masuk
+        </button>
+<button class="flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-medium text-on-surface-variant hover:text-primary transition-all duration-200" id="tab-daftar" type="button">
+          Daftar
+        </button>
+</div>
+<!-- Auth Form -->
+<form class="space-y-4" id="auth-form" onsubmit="event.preventDefault();">
+<!-- Email Input Field -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5 ml-1" for="email-input">
+            Email Kampus atau Pribadi
+          </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-xl pointer-events-none" data-icon="mail">mail</span>
+<input class="w-full h-[52px] pl-11 pr-4 bg-surface-container-low border border-outline-variant rounded-2xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" id="email-input" placeholder="nama@mahasiswa.ac.id" required="" type="email"/>
+</div>
+<span class="block text-label-sm font-label-sm text-outline mt-1.5 ml-1">
+            Gunakan email kampus untuk verifikasi instan peer-counseling.
+          </span>
+</div>
+<!-- Password Input Field with Toggle -->
+<div>
+<div class="flex items-center justify-between mb-1.5 ml-1 mr-1">
+<label class="text-label-md font-label-md text-on-surface-variant" for="password-input">Kata Sandi</label>
+<a class="text-label-sm font-label-sm text-primary font-semibold hover:underline" href="#">Lupa kata sandi?</a>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-xl pointer-events-none" data-icon="lock">lock</span>
+<input class="w-full h-[52px] pl-11 pr-12 bg-surface-container-low border border-outline-variant rounded-2xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" id="password-input" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Tampilkan atau sembunyikan kata sandi" class="absolute right-3 p-1.5 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center rounded-lg" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility" id="visibility-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Action Button: Masuk ke Ruang Tenang -->
+<button class="w-full h-[52px] mt-2 bg-primary-container hover:bg-primary active:scale-[0.99] text-on-primary font-label-lg text-label-lg font-semibold rounded-2xl shadow-sm transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+<span>Masuk ke Ruang Tenang</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Botanical Divider -->
+<div class="relative my-6 flex items-center justify-center">
+<div class="w-full border-t border-outline-variant/50"></div>
+<span class="absolute bg-surface-container-lowest px-3 text-label-sm font-label-sm text-on-surface-variant">atau lanjutkan dengan</span>
+</div>
+<!-- Federated SSO & Google Integration Options -->
+<div class="space-y-3">
+<!-- SSO Kampus (Indonesian Universities) -->
+<button class="w-full h-[48px] px-4 bg-surface-container-low hover:bg-surface-container border border-outline-variant/70 rounded-2xl flex items-center justify-between text-left transition-colors duration-150 active:scale-[0.99]" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="school" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md font-semibold text-on-surface">SSO Mahasiswa Terverifikasi</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant leading-none">UI, ITB, UGM, Unair, &amp; 40+ kampus lainnya</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Google SSO -->
+<button class="w-full h-[48px] px-4 bg-surface-container-low hover:bg-surface-container border border-outline-variant/70 rounded-2xl flex items-center justify-center gap-3 transition-colors duration-150 active:scale-[0.99]" type="button">
+<!-- Stylized Google G Logo -->
+<svg class="w-4 h-4 shrink-0" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span class="text-label-md font-label-md font-semibold text-on-surface">Masuk dengan Google</span>
+</button>
+</div>
+</div>
+<!-- Privacy, Anonymity & Safeguarding Disclaimer Section -->
+<footer class="mt-6 pt-2 pb-2">
+<div class="bg-surface-container/60 rounded-2xl p-3.5 flex items-start gap-3 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5 shrink-0" data-icon="shield_lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+<div class="text-left">
+<p class="text-label-md font-label-md font-semibold text-primary">Privasi &amp; Pseudonimitas Terlindungi</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5 leading-snug">
+            Identitas kampus Anda sepenuhnya dienkripsi. Di dalam Ruang Curhat dan Komunitas, Anda dapat berinteraksi secara aman dengan identitas samaran (anonim).
+          </p>
+</div>
+</div>
+<!-- Empathetic Micro-Quote -->
+<p class="text-center text-label-sm font-label-sm text-outline mt-4">
+        Kamu berharga, dan ceritamu selalu didengar di sini.
+      </p>
+</footer>
+</main>
+<!-- Interactive Logic for Password Toggle & Segmented Control -->
+<script>
+    // Password visibility toggle interaction
+    const toggleBtn = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password-input');
+    const visibilityIcon = document.getElementById('visibility-icon');
+
+    if (toggleBtn && passwordInput && visibilityIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        visibilityIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        visibilityIcon.setAttribute('data-icon', isPassword ? 'visibility_off' : 'visibility');
+      });
+    }
+
+    // Segmented tab toggle logic
+    const tabMasuk = document.getElementById('tab-masuk');
+    const tabDaftar = document.getElementById('tab-daftar');
+
+    if (tabMasuk && tabDaftar) {
+      tabDaftar.addEventListener('click', () => {
+        tabDaftar.className = "flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-semibold bg-surface-container-lowest text-primary shadow-xs transition-all duration-200";
+        tabMasuk.className = "flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-medium text-on-surface-variant hover:text-primary transition-all duration-200";
+      });
+
+      tabMasuk.addEventListener('click', () => {
+        tabMasuk.className = "flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-semibold bg-surface-container-lowest text-primary shadow-xs transition-all duration-200";
+        tabDaftar.className = "flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-medium text-on-surface-variant hover:text-primary transition-all duration-200";
+      });
+    }
+  </script>
+</body></html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Jadwal Praktik - RuangRasa</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght,opsz@300..700,8..144&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "outline": "#6f7a72",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#88d6af",
+            "surface": "#edfef0",
+            "secondary": "#406655",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "inverse-surface": "#25342b",
+            "surface-tint": "#176b4b",
+            "surface-container-low": "#e7f8eb",
+            "surface-dim": "#cdded2",
+            "surface-container-highest": "#d6e7da",
+            "on-tertiary-fixed": "#351000",
+            "secondary-container": "#bfe9d3",
+            "on-primary-container": "#d0ffe3",
+            "secondary-fixed-dim": "#a6d0bb",
+            "surface-container-high": "#dcecdf",
+            "on-primary": "#ffffff",
+            "background": "#edfef0",
+            "on-tertiary-fixed-variant": "#70371a",
+            "surface-bright": "#edfef0",
+            "primary": "#096444",
+            "on-surface-variant": "#3f4943",
+            "surface-variant": "#d6e7da",
+            "surface-container": "#e1f2e5",
+            "on-primary-fixed-variant": "#005236",
+            "tertiary-fixed": "#ffdbcc",
+            "on-secondary-fixed": "#002115",
+            "on-secondary-container": "#446a59",
+            "secondary-fixed": "#c2ecd6",
+            "on-primary-fixed": "#002113",
+            "primary-fixed": "#a4f3ca",
+            "on-background": "#111e17",
+            "on-tertiary-container": "#fff2ed",
+            "inverse-on-surface": "#e4f5e8",
+            "tertiary-container": "#a25e3e",
+            "tertiary": "#844728",
+            "outline-variant": "#bec9c1",
+            "primary-fixed-dim": "#88d6af",
+            "on-secondary-fixed-variant": "#284e3e",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#111e17",
+            "primary-container": "#2e7d5b",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb694"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "gutter-sm": "0.75rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-sm": "1rem",
+            "space-xl": "2rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Roboto Flex"],
+            "headline-md": ["Roboto Flex"],
+            "display-md": ["Roboto Flex"],
+            "headline-sm": ["Roboto Flex"],
+            "body-md": ["Roboto Flex"],
+            "body-lg": ["Roboto Flex"],
+            "headline-lg": ["Roboto Flex"],
+            "display-lg": ["Roboto Flex"],
+            "label-md": ["Roboto Flex"],
+            "label-lg": ["Roboto Flex"],
+            "body-sm": ["Roboto Flex"],
+            "headline-lg-mobile": ["Roboto Flex"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Sticky Navigation App Bar -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="max-w-md mx-auto px-5 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button aria-label="Kembali" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary font-semibold tracking-tight">Kelola Jadwal Praktik</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ketersediaan &amp; Beban Praktik</p>
+</div>
+</div>
+<button aria-label="Simpan Draf" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all duration-150" title="Simpan Cepat" type="button">
+<span class="material-symbols-outlined text-[22px]">bookmark_border</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas Content -->
+<main class="flex-1 w-full max-w-md mx-auto px-5 py-4 space-y-5 pb-32">
+<!-- Welcoming Informational Botanical Banner -->
+<section class="bg-surface-container-low border border-outline-variant/60 rounded-2xl p-4 flex items-start gap-3.5 shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+<div class="space-y-1">
+<h2 class="font-label-lg text-label-lg font-semibold text-primary">Ruang Teduh Konsultasi</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Atur hari dan jam ketersediaan untuk menerima sesi konsultasi video/chat mahasiswa dengan tenang dan terencana.
+        </p>
+</div>
+</section>
+<!-- Master Switch: Penerimaan Klien Baru -->
+<section class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-4 shadow-sm">
+<div class="flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Buka Penerimaan Klien Baru</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Minggu ini (24 - 30 Okt) profil Anda tampil aktif di direktori.
+          </p>
+</div>
+<!-- Active Switch Toggle -->
+<label class="relative inline-flex items-center cursor-pointer select-none">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-13 h-7 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5.5 after:w-5.5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</section>
+<!-- Weekly Date Selector Strip -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Pilih Hari Praktek</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Oktober 2024</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5 bg-surface-container-lowest p-2 rounded-2xl border border-outline-variant/70 shadow-sm">
+<!-- Senin (Aktif) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl hover:bg-surface-container transition text-center group" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sen</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface mt-1">24</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-1.5"></span>
+</button>
+<!-- Selasa (Selected / Aktif) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl bg-primary-container text-on-primary shadow-sm text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-primary-container">Sel</span>
+<span class="font-label-md text-label-md font-bold text-on-primary mt-1">25</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-container mt-1.5"></span>
+</button>
+<!-- Rabu (Libur) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl text-outline opacity-60 text-center" type="button">
+<span class="font-label-sm text-label-sm">Rab</span>
+<span class="font-label-md text-label-md mt-1">26</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Kamis (Aktif) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl hover:bg-surface-container transition text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kam</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface mt-1">27</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-1.5"></span>
+</button>
+<!-- Jumat (Aktif) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl hover:bg-surface-container transition text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Jum</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface mt-1">28</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-1.5"></span>
+</button>
+<!-- Sabtu (Libur) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl text-outline opacity-60 text-center" type="button">
+<span class="font-label-sm text-label-sm">Sab</span>
+<span class="font-label-md text-label-md mt-1">29</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Minggu (Libur) -->
+<button class="flex flex-col items-center py-2.5 px-1 rounded-xl text-outline opacity-60 text-center" type="button">
+<span class="font-label-sm text-label-sm">Min</span>
+<span class="font-label-md text-label-md mt-1">30</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+</div>
+</section>
+<!-- Slot Waktu Hari Selasa (Focus Area) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-label-lg text-label-lg font-semibold text-on-surface">Slot Waktu: Selasa, 25 Okt</h2>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">Hari Aktif</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 dari 4 slot terisi/buka</span>
+</div>
+<!-- Bento-style Card Slots Container -->
+<div class="space-y-2.5">
+<!-- Slot 1: Pagi (Terjadwal) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">wb_twilight</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">10:00 - 11:00 WIB</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Slot Pagi</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 Klien terjadwal</span>
+</div>
+</div>
+</div>
+<span class="bg-secondary-container/70 text-on-secondary-container px-2.5 py-1 rounded-full font-label-sm text-label-sm font-medium">
+            Terjadwal
+          </span>
+</div>
+<!-- Slot 2: Siang (Terjadwal Detail Klien) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 flex items-center justify-between shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-center gap-3 pl-1">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">light_mode</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">14:00 - 15:00 WIB</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Slot Siang</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Klien #RR-4819 (Konseling Daring)</span>
+</div>
+</div>
+</div>
+<button aria-label="Lihat Detail Sesi" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Slot 3: Sore (Tersedia / Dibuka) -->
+<div class="bg-surface-container-lowest border-2 border-primary-container/40 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-secondary-container/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">nest_clock_farsight_analog</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">16:30 - 17:30 WIB</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Slot Sore</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Tersedia / Dibuka untuk Mahasiswa</p>
+</div>
+</div>
+<button class="text-tertiary hover:bg-tertiary-fixed/30 p-1.5 rounded-lg transition" title="Tutup Slot" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+</div>
+<!-- Slot 4: Malam (Terkunci) -->
+<div class="bg-surface-container/60 border border-outline-variant/60 rounded-2xl p-4 flex items-center justify-between opacity-80">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-dim flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-medium text-on-surface-variant">19:00 - 20:00 WIB</span>
+<span class="font-label-sm text-label-sm text-outline">Slot Malam</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Terkunci (Waktu Istirahat Mandiri)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">lock</span>
+</div>
+</div>
+<!-- Button Tambah Slot Baru -->
+<button class="w-full py-3 px-4 rounded-xl border border-dashed border-primary-container text-primary font-label-lg text-label-lg font-medium flex items-center justify-center gap-2 bg-surface-container-low/50 hover:bg-secondary-container/40 active:scale-[0.99] transition duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+        + Tambah Slot Waktu Baru
+      </button>
+</section>
+<!-- Batasan & Regulasi Kesejahteraan Konselor -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 space-y-4 shadow-sm">
+<div class="flex items-center gap-2 border-b border-surface-container pb-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">spa</span>
+<h3 class="font-label-lg text-label-lg font-semibold text-on-surface">Regulasi Kesejahteraan Konselor</h3>
+</div>
+<!-- Slider / Counter Kuota Maksimal Sesi -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Kuota Maksimal Sesi Per Hari</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mencegah kelelahan profesional (*burnout*)</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-xl border border-outline-variant/40">
+<button aria-label="Kurangi kuota" class="w-6 h-6 flex items-center justify-center text-primary hover:bg-surface-container-highest rounded-full transition active:scale-90" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-bold text-primary px-1">3</span>
+<button aria-label="Tambah kuota" class="w-6 h-6 flex items-center justify-center text-primary hover:bg-surface-container-highest rounded-full transition active:scale-90" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary italic">Maks. 3 sesi/hari sesuai rekomendasi psikolog pembina RuangRasa.</p>
+</div>
+<!-- Divider -->
+<div class="h-[1px] bg-surface-variant"></div>
+<!-- Jeda Istirahat Antar Sesi -->
+<div class="space-y-2.5">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Jeda Istirahat Antar-Sesi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Waktu refleksi &amp; penyusunan catatan klinis</p>
+</div>
+<span class="bg-secondary-container text-primary font-label-md text-label-md font-semibold px-2.5 py-1 rounded-lg">
+            15 Menit
+          </span>
+</div>
+<!-- Radio/Pill Options for Break Buffer -->
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 px-1 text-center rounded-xl border border-outline-variant font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container" type="button">
+            10 Menit
+          </button>
+<button class="py-2 px-1 text-center rounded-xl bg-secondary-container border border-primary-container font-label-sm text-label-sm text-primary font-semibold flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">check</span> 15 Menit
+          </button>
+<button class="py-2 px-1 text-center rounded-xl border border-outline-variant font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container" type="button">
+            20 Menit
+          </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Confirmation CTA -->
+<footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-lg border-t border-outline-variant/40">
+<div class="max-w-md mx-auto px-5 py-3.5">
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary rounded-[14px] font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-md active:scale-98 transition duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+        Simpan Perubahan Jadwal
+      </button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-2">
+        Perubahan jadwal langsung disinkronisasi ke kalender konsultasi mahasiswa.
+      </p>
+</div>
+</footer>
+</body></html>

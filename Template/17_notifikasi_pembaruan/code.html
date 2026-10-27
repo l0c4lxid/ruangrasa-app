@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifikasi - RuangRasa</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts Roboto Flex -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght,opsz@100..1000,8..144&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#edfef0",
+            "tertiary-fixed-dim": "#ffb694",
+            "on-primary": "#ffffff",
+            "background": "#edfef0",
+            "on-surface-variant": "#3f4943",
+            "on-tertiary-fixed-variant": "#70371a",
+            "inverse-on-surface": "#e4f5e8",
+            "tertiary": "#844728",
+            "secondary-container": "#bfe9d3",
+            "inverse-surface": "#25342b",
+            "surface-bright": "#edfef0",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#a25e3e",
+            "on-secondary-container": "#446a59",
+            "surface-container-highest": "#d6e7da",
+            "tertiary-fixed": "#ffdbcc",
+            "on-primary-fixed": "#002113",
+            "on-secondary-fixed": "#002115",
+            "on-tertiary-fixed": "#351000",
+            "on-error": "#ffffff",
+            "surface-tint": "#176b4b",
+            "on-secondary-fixed-variant": "#284e3e",
+            "secondary": "#406655",
+            "inverse-primary": "#88d6af",
+            "on-primary-fixed-variant": "#005236",
+            "surface-variant": "#d6e7da",
+            "error": "#ba1a1a",
+            "on-surface": "#111e17",
+            "primary": "#096444",
+            "surface-container": "#e1f2e5",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#d0ffe3",
+            "on-tertiary-container": "#fff2ed",
+            "outline-variant": "#bec9c1",
+            "secondary-fixed": "#c2ecd6",
+            "surface-dim": "#cdded2",
+            "primary-fixed": "#a4f3ca",
+            "surface-container-low": "#e7f8eb",
+            "on-background": "#111e17",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#88d6af",
+            "outline": "#6f7a72",
+            "primary-container": "#2e7d5b",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#a6d0bb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dcecdf"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "gutter-sm": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Roboto Flex"],
+            "display-md": ["Roboto Flex"],
+            "body-md": ["Roboto Flex"],
+            "body-sm": ["Roboto Flex"],
+            "headline-lg": ["Roboto Flex"],
+            "headline-lg-mobile": ["Roboto Flex"],
+            "body-lg": ["Roboto Flex"],
+            "label-sm": ["Roboto Flex"],
+            "label-lg": ["Roboto Flex"],
+            "label-md": ["Roboto Flex"],
+            "display-lg": ["Roboto Flex"],
+            "headline-md": ["Roboto Flex"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "display-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile Viewport Container (Max 440px on mobile, responsive centered canvas) -->
+<div class="w-full max-w-md bg-surface min-h-screen flex flex-col relative pb-28">
+<!-- Top App Bar (Shared Component Pattern) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Foto profil seorang mahasiswa muda Indonesia dengan ekspresi tenang dan senyum hangat, diterangi cahaya alami lembut di dalam ruangan bernuansa hijau botani teduh dengan latar minimalis bersahaja." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP6xURs_dFv5J9ptOcc91RoYW1lQZ7n2xpnU8ixea_Ygazd03KSROLprXI6p_4Ha0-3HwFugQY2f1R0WxH-iv3AzImNPDdIVIbKNDOQ45yeblV6QFSqS-1jWdnHY0V7zm_sA9sy5peQfk4ZTdoVjJcXOn9O9yrAx9W9LS7OcA9EPBqJ8LiVmaNy9UiQnfZb8QVVm1tiZq1WTfeMKPljHokgEGEQGJMpYE0O95VFHSz5EmEeq-Wpa-W"/>
+</div>
+<div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-semibold text-primary tracking-tight">RuangRasa</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Kabar &amp; Pembaruan Teduh</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<!-- Tombol Tandai Sudah Dibaca -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-surface-container active:scale-95 transition-all text-primary" id="markReadBtn" title="Tandai semua sudah dibaca">
+<span class="material-symbols-outlined text-[20px]" data-icon="done_all">done_all</span>
+<span class="text-label-md font-label-md hidden sm:inline">Tandai Dibaca</span>
+</button>
+<!-- Trailing Setting Icon from Shared Components -->
+<button class="p-2 rounded-full hover:bg-surface-container active:scale-95 text-on-surface-variant transition-colors" title="Pengaturan Notifikasi">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 px-5 pt-3 space-y-4">
+<!-- Privacy Shield Gentle Banner (Prinsip Privasi) -->
+<section class="bg-surface-container-low border border-outline-variant/60 rounded-xl p-3.5 flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h2 class="text-label-lg font-label-lg font-semibold text-primary">Ruang Aman &amp; Terjaga</h2>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container">Privasi Aktif</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+            Sesuai komitmen etika kami, cuplikan pesan curhat pribadi tidak ditampilkan di notifikasi layar ini demi menjaga kenyamanan emosionalmu.
+          </p>
+</div>
+</section>
+<!-- Filter Chips Navigation -->
+<section class="overflow-x-auto pb-1 -mx-5 px-5 flex gap-2 no-scrollbar" role="tablist">
+<button class="filter-chip active flex items-center gap-1.5 h-9 px-4 rounded-full bg-secondary-container border border-primary text-primary text-label-md font-label-md whitespace-nowrap transition-all shadow-sm" id="filter-semua">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+          Semua
+        </button>
+<button class="filter-chip flex items-center gap-1.5 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant text-label-md font-label-md whitespace-nowrap hover:bg-surface-container transition-all" id="filter-konsultasi">
+<span class="material-symbols-outlined text-[16px]" data-icon="psychology">psychology</span>
+          Konsultasi
+        </button>
+<button class="filter-chip flex items-center gap-1.5 h-9 px-4 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant text-label-md font-label-md whitespace-nowrap hover:bg-surface-container transition-all" id="filter-komunitas">
+<span class="material-symbols-outlined text-[16px]" data-icon="groups">groups</span>
+          Aktivitas Komunitas
+        </button>
+</section>
+<!-- Notification List Stream -->
+<section class="space-y-3" id="notificationsContainer">
+<!-- Card 1: Pengingat Jadwal Konsultasi Besok (Category: Konsultasi) -->
+<article class="notification-card bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 hover:shadow-sm" data-category="konsultasi">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-secondary-container/80 flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="calendar_clock">calendar_clock</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-label-sm font-label-sm font-semibold text-primary px-2 py-0.5 rounded-full bg-secondary-container">Konsultasi Terjadwal</span>
+<span class="text-label-sm font-label-sm text-outline">Besok, 14:00</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm font-medium text-on-surface mt-1.5">Pengingat Jadwal Konsultasi</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Sesi tatap maya bersama <span class="font-medium text-on-surface">Psikolog Rarasati Dewi, M.Psi.</span> dijadwalkan besok siang. Silakan siapkan ruang tenang 10 menit sebelum mulai.
+              </p>
+<!-- Subtle Action Footer -->
+<div class="mt-3.5 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Tautan ruang aman tersedia</span>
+</div>
+<button class="h-9 px-3.5 rounded-xl bg-primary text-on-primary text-label-md font-label-md hover:bg-surface-tint active:scale-95 transition-all flex items-center gap-1">
+<span>Lihat Detail Sesi</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Status Permintaan Disetujui Terapis (Category: Konsultasi) -->
+<article class="notification-card bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 hover:shadow-sm" data-category="konsultasi">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="event_available">event_available</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-label-sm font-label-sm font-semibold text-secondary px-2 py-0.5 rounded-full bg-secondary-container/60">Disetujui</span>
+<span class="text-label-sm font-label-sm text-outline">2 jam yang lalu</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm font-medium text-on-surface mt-1.5">Permintaan Jadwal Dikonfirmasi</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Terapis pendamping demo telah menyetujui pengajuan sesi konseling tematikmu untuk hari Kamis, 24 Oktober. Terima kasih telah berani melangkah.
+              </p>
+<div class="mt-3 flex items-center gap-2">
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px] font-bold ring-2 ring-surface">TR</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Terapis Relawan RuangRasa</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Pelukan Virtual (Category: Komunitas) - Warm Terracotta Accent -->
+<article class="notification-card bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 hover:shadow-sm" data-category="komunitas">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-tertiary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-label-sm font-label-sm font-medium text-on-tertiary-fixed-variant px-2 py-0.5 rounded-full bg-tertiary-fixed">Dukungan Hangat</span>
+<span class="text-label-sm font-label-sm text-outline">Hari ini, 09:12</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm font-medium text-on-surface mt-1.5">Pelukan Virtual untuk Ceritamu</h3>
+<!-- STRICT PRIVACY: Tidak menampilkan isi pesan curhat -->
+<div class="my-2 p-2.5 rounded-lg bg-surface-container border border-outline-variant/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="visibility_off">visibility_off</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant italic">
+                  Konten curhat dirahasiakan • Catatan Terproteksi Anonim
+                </p>
+</div>
+<p class="text-body-md font-body-md text-on-surface">
+                Curhat anonimmu mendapat <strong class="text-tertiary font-semibold">12 pelukan virtual baru</strong> dan pesan kepedulian dari teman-teman sebaya. Kamu tidak sendirian berjalan melewati fase ini.
+              </p>
+<div class="mt-3 flex items-center gap-2 text-label-sm font-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]" data-icon="volunteer_activism">volunteer_activism</span>
+<span>Ruang Curhat Anonim</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4: Respon Baru di Ruang Pejuang Skripsi (Category: Komunitas) -->
+<article class="notification-card bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 hover:shadow-sm" data-category="komunitas">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-secondary-container/80 flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="forum">forum</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-label-sm font-label-sm font-semibold text-primary px-2 py-0.5 rounded-full bg-secondary-container">Diskusi Rekan</span>
+<span class="text-label-sm font-label-sm text-outline">Kemarin</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm font-medium text-on-surface mt-1.5">Respon Baru di Diskusi Komunitas</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Ada 5 tanggapan baru yang menyemangati pada thread <span class="font-medium text-on-surface">"Ruang Pejuang Skripsi: Mengurai Beban &amp; Overthinking Bab 4"</span>.
+              </p>
+<div class="mt-3 pt-2 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="school">school</span>
+                    Lingkar Akademik
+                  </span>
+</div>
+<button class="text-label-md font-label-md font-medium text-primary hover:underline flex items-center gap-1">
+                  Buka Thread
+                  <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Atmospheric Safe Space Check-in Card (Bottom Bento Style) -->
+<section class="bg-gradient-to-br from-surface-container-low to-secondary-container/30 border border-outline-variant/70 rounded-2xl p-4 text-center mt-6">
+<div class="inline-flex p-2 rounded-full bg-surface-container text-primary mb-2">
+<span class="material-symbols-outlined text-[22px]" data-icon="spa">spa</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Perlu Jeda Sejenak?</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-xs mx-auto mt-1">
+          Bila ada notifikasi yang memicu rasa lelahmu hari ini, tarik napas dalam-dalam. Semua kabar dapat menunggu hingga kamu siap.
+        </p>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Shared Components JSON Compliant) -->
+<!-- Destination count: 5. Labels: Beranda, Curhat, Komunitas, Konsultasi, Profil -->
+<!-- Active mapping logic: Screen represents Notification / Consultation stream. Active: Konsultasi or Profil per brief instruction -->
+<nav aria-label="Navigasi Utama" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface shadow-md border-t-0">
+<div class="w-full max-w-md mx-auto flex justify-around items-center">
+<!-- Tab 1: Beranda -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#beranda">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="text-label-md font-label-md">Beranda</span>
+</a>
+<!-- Tab 2: Curhat -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#curhat">
+<span class="material-symbols-outlined text-[24px]" data-icon="favorite">favorite</span>
+<span class="text-label-md font-label-md">Curhat</span>
+</a>
+<!-- Tab 3: Komunitas -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#komunitas">
+<span class="material-symbols-outlined text-[24px]" data-icon="groups">groups</span>
+<span class="text-label-md font-label-md">Komunitas</span>
+</a>
+<!-- Tab 4: Konsultasi (ACTIVE TAB per brief instruction: style_active_navigation) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" href="#konsultasi">
+<span class="material-symbols-outlined text-[24px]" data-icon="psychology" data-weight="fill" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="text-label-md font-label-md font-semibold">Konsultasi</span>
+</a>
+<!-- Tab 5: Profil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-200 active:scale-95" href="#profil">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="text-label-md font-label-md">Profil</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Inline Vanilla Script for Micro-interactions (Filter Pills & Mark as Read) -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Filter Chips Logic
+      const filterButtons = document.querySelectorAll('.filter-chip');
+      const cards = document.querySelectorAll('.notification-card');
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset styles
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-secondary-container', 'border-primary', 'text-primary', 'shadow-sm');
+            b.classList.add('bg-surface-container-lowest', 'border-outline-variant', 'text-on-surface-variant');
+            const checkIcon = b.querySelector('[data-icon="check"]');
+            if (checkIcon) checkIcon.remove();
+          });
+
+          // Set active state
+          btn.classList.add('bg-secondary-container', 'border-primary', 'text-primary', 'shadow-sm');
+          btn.classList.remove('bg-surface-container-lowest', 'border-outline-variant', 'text-on-surface-variant');
+
+          const categoryId = btn.id.replace('filter-', '');
+
+          cards.forEach(card => {
+            if (categoryId === 'semua' || card.getAttribute('data-category') === categoryId) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Mark All Read Interaction
+      const markBtn = document.getElementById('markReadBtn');
+      if (markBtn) {
+        markBtn.addEventListener('click', () => {
+          const badges = document.querySelectorAll('.notification-card .animate-pulse');
+          badges.forEach(b => b.classList.remove('animate-pulse', 'bg-primary'));
+          markBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[20px] text-primary" data-icon="done_all">done_all</span>
+            <span class="text-label-md font-label-md text-primary">Selesai Dibaca</span>
+          `;
+          markBtn.classList.add('bg-secondary-container/50');
+        });
+      }
+    });
+  </script>
+</body></html>

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafafb;
+  --foreground: #1f2937;
+  --primary: #22c58e;
+  --primary-dark: #16a34a;
+  --secondary: #f59e0b;
+  --muted: #6b7280;
+  --border: rgba(226, 232, 240, 0.5);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}

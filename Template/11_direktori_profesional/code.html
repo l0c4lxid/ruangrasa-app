@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Direktori Konsultasi Profesional - RuangRasa</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Roboto Flex -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#88d6af",
+            "outline-variant": "#bec9c1",
+            "background": "#edfef0",
+            "primary-container": "#2e7d5b",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f7a72",
+            "on-surface": "#111e17",
+            "on-background": "#111e17",
+            "on-primary-fixed": "#002113",
+            "surface-tint": "#176b4b",
+            "primary-fixed": "#a4f3ca",
+            "surface-container-low": "#e7f8eb",
+            "on-secondary-fixed": "#002115",
+            "surface-container-high": "#dcecdf",
+            "on-tertiary-container": "#fff2ed",
+            "secondary-fixed-dim": "#a6d0bb",
+            "primary-fixed-dim": "#88d6af",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#005236",
+            "surface": "#edfef0",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#25342b",
+            "on-secondary-fixed-variant": "#284e3e",
+            "primary": "#096444",
+            "on-tertiary-fixed": "#351000",
+            "error-container": "#ffdad6",
+            "surface-variant": "#d6e7da",
+            "tertiary": "#844728",
+            "secondary-container": "#bfe9d3",
+            "inverse-on-surface": "#e4f5e8",
+            "on-error": "#ffffff",
+            "tertiary-container": "#a25e3e",
+            "on-tertiary-fixed-variant": "#70371a",
+            "surface-dim": "#cdded2",
+            "tertiary-fixed-dim": "#ffb694",
+            "secondary": "#406655",
+            "on-primary-container": "#d0ffe3",
+            "on-surface-variant": "#3f4943",
+            "surface-container-highest": "#d6e7da",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#446a59",
+            "secondary-fixed": "#c2ecd6",
+            "surface-container": "#e1f2e5",
+            "surface-bright": "#edfef0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-sm": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Roboto Flex"],
+            "label-sm": ["Roboto Flex"],
+            "label-md": ["Roboto Flex"],
+            "headline-lg-mobile": ["Roboto Flex"],
+            "headline-md": ["Roboto Flex"],
+            "display-md": ["Roboto Flex"],
+            "body-sm": ["Roboto Flex"],
+            "label-lg": ["Roboto Flex"],
+            "display-lg": ["Roboto Flex"],
+            "headline-sm": ["Roboto Flex"],
+            "body-md": ["Roboto Flex"],
+            "headline-lg": ["Roboto Flex"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile Device Simulation Frame (390px default container) -->
+<div class="w-full max-w-[390px] min-h-screen bg-background relative flex flex-col shadow-2xl pb-24 overflow-x-hidden">
+<!-- Top App Bar (Mobile Canonical Shell Anchor) -->
+<header class="sticky top-0 z-40 bg-surface flex justify-between items-center w-full px-5 py-3.5 shadow-sm">
+<div class="flex items-center gap-3">
+<button aria-label="Kembali" class="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all focus:outline-none">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm text-primary tracking-tight font-semibold">Konsultasi Profesional</h1>
+</div>
+<button aria-label="Informasi verifikasi" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all focus:outline-none">
+<span class="material-symbols-outlined text-[22px]" data-icon="info">info</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin pt-3 flex flex-col gap-4">
+<!-- Ethical Compliance Disclaimer Banner -->
+<section class="bg-surface-container-low rounded-xl p-3.5 border border-outline-variant/40 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" data-icon="verified_user">verified_user</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
+          Seluruh psikolog dan konselor mitra terverifikasi SIPPK/HIMPSI. Data bertanda <span class="font-semibold text-primary">(Contoh Demo)</span> untuk evaluasi prototipe.
+        </p>
+</section>
+<!-- Search Input Section -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</div>
+<input class="w-full h-[50px] pl-10 pr-4 bg-surface-container rounded-xl border border-outline-variant text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:bg-surface-container-lowest focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" placeholder="Cari nama atau spesialisasi..." type="text"/>
+</div>
+<!-- Filter Chips Horizontal Scroll -->
+<section class="w-full -mx-margin px-margin overflow-x-auto no-scrollbar flex items-center gap-2 py-1">
+<!-- Chip Active -->
+<button class="shrink-0 h-[36px] px-3.5 rounded-full bg-secondary-container border border-primary text-primary flex items-center gap-1.5 active:scale-95 transition-all text-label-md font-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+<span>Semua Spesialisasi</span>
+</button>
+<!-- Inactive Chips -->
+<button class="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+<span>Stres Akademik</span>
+</button>
+<button class="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+<span>Kecemasan</span>
+</button>
+<button class="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+<span>Manajemen Emosi</span>
+</button>
+<button class="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+<span>Relasi Interpersonal</span>
+</button>
+</section>
+<!-- Section Title & Counter -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-label-md font-label-md text-on-surface-variant font-medium">Menampilkan mitra aktif</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container text-primary font-semibold">2 Tersedia</span>
+</div>
+<!-- Professional Cards Stack -->
+<div class="flex flex-col gap-4">
+<!-- CARD 1: Nadia Larasati -->
+<article class="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-[0_2px_8px_-2px_rgba(23,37,29,0.04)] flex flex-col gap-3.5 transition-all hover:shadow-[0_4px_16px_-4px_rgba(23,37,29,0.06)]">
+<div class="flex items-start gap-3.5">
+<!-- Avatar -->
+<div class="w-14 h-14 rounded-2xl overflow-hidden shrink-0 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A warm, professional Indonesian female clinical psychologist in her early thirties smiling calmly against a serene sage green office backdrop. Soft natural window illumination creates a gentle, trusting atmosphere with authentic warm undertones. Her attire is tasteful and modern, evoking emotional safety and therapeutic empathy in a crisp minimalist portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-KS4Iqk5cU1bv-5V2rzVqY8Aluv0cURxHTHTrn_oeF-iORigkN6ereuUX52wX9vjwsFar4nasygsMQu-TI-f1v7DOgxwU3rRYCT0lAP_nlQGWZZgBqOhcc8GlTca4RK6H_v-09meot57PmAzJaR7RDCaIeO7mu5Qh3K8rZLXoOBlJUsq5jLez2lnR9S2uTjRXOboo418nphsnUIiy3jksX_1C2R2PuEE3TZEJSZPJ10HbKX6sm6uz"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 bg-secondary-container/70 text-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full font-medium">
+<span class="material-symbols-outlined text-[13px] text-primary" data-icon="check_circle">check_circle</span>
+                  Terverifikasi Demo
+                </span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mt-1 truncate font-semibold">Nadia Larasati, M.Psi., Psikolog</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                Stres Akademik &amp; Burnout Dewasa Muda • Pengalaman 5+ tahun
+              </p>
+</div>
+</div>
+<!-- Approach / Pendekatan -->
+<div class="bg-surface-container-low rounded-xl px-3 py-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5" data-icon="psychology">psychology</span>
+<div class="text-label-sm font-label-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Pendekatan:</span> Cognitive Behavioral Therapy (CBT), Mindfulness
+            </div>
+</div>
+<!-- Sesi Detail Grid -->
+<div class="grid grid-cols-2 gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 bg-surface-container/50 px-2.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="schedule">schedule</span>
+<span>Durasi 50 Menit</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container/50 px-2.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="videocam">videocam</span>
+<span>Video Call / Chat</span>
+</div>
+</div>
+<!-- Slot Terdekat Highlight -->
+<div class="flex items-center justify-between px-1 text-label-md font-label-md">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-icon="event_available">event_available</span>
+              Slot Terdekat:
+            </span>
+<span class="text-primary font-semibold">Besok, 14:00 WIB</span>
+</div>
+<!-- Divider -->
+<div class="h-[1px] w-full bg-outline-variant/40"></div>
+<!-- Price & Action -->
+<div class="flex items-center justify-between gap-3 pt-0.5">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Biaya Sesi</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">Rp 150.000</span>
+<span class="text-[10px] text-tertiary font-medium -mt-0.5">(Tarif Mahasiswa Terjangkau - Demo)</span>
+</div>
+<button class="h-[46px] px-5 bg-primary-container hover:bg-primary text-on-primary rounded-xl text-label-lg font-label-lg font-medium flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-sm focus:outline-none">
+<span>Pilih Jadwal</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Dimas Wicaksono -->
+<article class="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-[0_2px_8px_-2px_rgba(23,37,29,0.04)] flex flex-col gap-3.5 transition-all hover:shadow-[0_4px_16px_-4px_rgba(23,37,29,0.06)]">
+<div class="flex items-start gap-3.5">
+<!-- Avatar -->
+<div class="w-14 h-14 rounded-2xl overflow-hidden shrink-0 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A thoughtful Indonesian male mental health counselor in smart casual attire sitting attentively in a softly illuminated, comfortable therapy space. Clean botanical green indoor plants in soft focus behind him create a calm and grounded ambiance. Warm daylight softly highlights his welcoming expression with authentic approachable demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgx_qap_bryxgYY2vJPDJF3CP2vRLIXxuX5nI_1qjM1Jdj0sxDpEdb0xkWBozTnhjYygdqxQHc4RJPBsWRxZ17NZYksld-Bw8BkpCAdsXu2rD9gWh5gbowyMlsxlJkhnJP_9GIYYLZ91XYj1atZEsvp9fFb_MaaF_5UW9wMV60ZAZr1p0hEp0HaTm5MkgqmiMvo0pDOFpibNZDdK4Iu8_EOqiXwokZihNLhwbu7jiV48--oQNbY4Im"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 bg-secondary-container/70 text-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full font-medium">
+<span class="material-symbols-outlined text-[13px] text-primary" data-icon="check_circle">check_circle</span>
+                  Terverifikasi Demo
+                </span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mt-1 truncate font-semibold">Dimas Wicaksono, S.Psi., M.A.</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                Krisis Karir, Identitas Diri &amp; Quarter-life Crisis
+              </p>
+</div>
+</div>
+<!-- Approach / Pendekatan -->
+<div class="bg-surface-container-low rounded-xl px-3 py-2 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5" data-icon="psychology">psychology</span>
+<div class="text-label-sm font-label-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Pendekatan:</span> Humanistic Person-Centered &amp; Solution-Focused Brief Therapy
+            </div>
+</div>
+<!-- Sesi Detail Grid -->
+<div class="grid grid-cols-2 gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 bg-surface-container/50 px-2.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="schedule">schedule</span>
+<span>Durasi 50 Menit</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container/50 px-2.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="videocam">videocam</span>
+<span>Video Call / Chat</span>
+</div>
+</div>
+<!-- Slot Terdekat Highlight -->
+<div class="flex items-center justify-between px-1 text-label-md font-label-md">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-icon="event_available">event_available</span>
+              Slot Terdekat:
+            </span>
+<span class="text-primary font-semibold">Rabu, 10:00 WIB</span>
+</div>
+<!-- Divider -->
+<div class="h-[1px] w-full bg-outline-variant/40"></div>
+<!-- Price & Action -->
+<div class="flex items-center justify-between gap-3 pt-0.5">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Biaya Sesi</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">Rp 150.000</span>
+<span class="text-[10px] text-tertiary font-medium -mt-0.5">(Tarif Mahasiswa Terjangkau - Demo)</span>
+</div>
+<button class="h-[46px] px-5 bg-primary-container hover:bg-primary text-on-primary rounded-xl text-label-lg font-label-lg font-medium flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-sm focus:outline-none">
+<span>Pilih Jadwal</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Quick Peer Care / Supportive Note -->
+<div class="bg-surface-container/40 rounded-xl p-3.5 text-center mt-1 mb-2">
+<p class="text-label-sm font-label-sm text-on-surface-variant">
+          Perlu pendampingan segera di luar jadwal? <br/>
+          Gunakan fitur <span class="font-semibold text-primary">Curhat Teman Sebaya</span> kapan pun kamu butuhkan.
+        </p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Canonical Shared Component Executed) -->
+<!-- Destination count: 5 | Active: Konsultasi (matching Screen 11 context) -->
+<nav aria-label="Navigasi Utama" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface shadow-md border-0">
+<div class="max-w-[390px] w-full mx-auto flex justify-around items-center">
+<!-- 1: Beranda (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-95 transition-all duration-150" href="#beranda">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="text-label-md font-label-md mt-0.5">Beranda</span>
+</a>
+<!-- 2: Curhat (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-95 transition-all duration-150" href="#curhat">
+<span class="material-symbols-outlined text-[24px]" data-icon="favorite">favorite</span>
+<span class="text-label-md font-label-md mt-0.5">Curhat</span>
+</a>
+<!-- 3: Komunitas (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-95 transition-all duration-150" href="#komunitas">
+<span class="material-symbols-outlined text-[24px]" data-icon="groups">groups</span>
+<span class="text-label-md font-label-md mt-0.5">Komunitas</span>
+</a>
+<!-- 4: Konsultasi (ACTIVE Destination) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-95 transition-all duration-150" href="#konsultasi">
+<span class="material-symbols-outlined text-[24px]" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="text-label-md font-label-md font-semibold mt-0.5">Konsultasi</span>
+</a>
+<!-- 5: Profil (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-95 transition-all duration-150" href="#profil">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="text-label-md font-label-md mt-0.5">Profil</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>
