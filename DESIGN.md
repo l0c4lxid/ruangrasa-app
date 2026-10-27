@@ -1,57 +1,88 @@
-# Design System: RuangRasa
+# RuangRasa Design System
 
-## 1. Visual Theme & Atmosphere
-A restrained, warm-minimalist interface with confident asymmetric layouts and fluid spring-physics micro-motion. The atmosphere is clinical yet nurturing — like a well-lit counseling center with natural wood accents. Calm confidence for mental health accessibility. Density: Balanced (5). Variance: Offset Asymmetric (7). Motion: Fluid CSS (6).
+## Brand
+Platform ruang aman kesehatan mental mahasiswa & dewasa muda Indonesia. Pendekatan berjenjang (Stepped-Care). Emotional anchor: *teduh* — calm, safe, non-judgmental, quietly empowering.
 
-## 2. Color Palette & Roles
-- **Canvas Warm White** (#FAFAFB) — Primary background, gradient from warm white to very light oat
-- **Pure Surface** (#FFFFFF) — Card and container fill, elevated surfaces
-- **Charcoal Ink** (#1F2937) — Primary text, Zinc-800 depth
-- **Muted Sage** (#6B7280) — Secondary text, descriptions, metadata
-- **Whisper Border** (rgba(226, 232, 240, 0.5)) — Card borders, 1px structural lines
-- **Sapling Green** (#22C58E) — Single accent for CTAs, active states, positive affirmation badges. Saturation 52%. Calming therapeutic green.
-- **Care Coral** (#F59E0B) — Warm accent variant for gentle warnings and reminder badges (secondary to Sapling Green)
+## Colors
+| Token | Value | Usage |
+|---|---|---|
+| `canvas` | `#FAFAFB` | Page background |
+| `surface` | `#FFFFFF` | Cards, containers |
+| `ink` | `#1F2937` | Primary text |
+| `sage` | `#6B7280` | Secondary text |
+| `border` | `rgba(226,232,240,0.5)` | Borders, dividers |
+| `primary` (Sapling Green) | `#22C58E` | Primary actions, links, icons |
+| `primary-dark` | `#16A34A` | Pressed / hover |
+| `secondary` (Care Coral) | `#F59E0B` | Accents, warnings, FAB |
+| `on-surface` | `#111e17` | Material You text |
 
-## 3. Typography Rules
-- **Display:** Poppins — Track-tight, rounded geometric, friendly yet professional. Weight-driven hierarchy (700 for headlines, 600 for subheads)
-- **Body:** Poppins — Relaxed leading (1.6), 65ch max-width, neutral secondary color
-- **Mono:** JetBrains Mono — For code, timestamps, metadata in operational dashboards
-- **Banned:** Inter, generic serifs in all UI. No pure black — use Charcoal Ink.
+## Typography
+- **Font**: Poppins (400/500/600/700) via Google Fonts
+- **Scale**: `text-xs` → `text-sm` → `text-base` → `text-xl` → `text-2xl` → `text-3xl`
+- **Body**: `text-base` leading-relaxed
+- **Headlines**: `font-semibold` tracking-tight
+- **Labels**: `text-xs` `label-sm`
 
-## 4. Component Stylings
-- **Buttons:** Flat, no outer glow. Tactile -1px translate on active. Sapling Green fill for primary, ghost/outline for secondary. Rounded-lg (0.5rem) for standard, rounded-full for pill tags. Micro-spring scale (0.97) on hover.
-- **Cards:** Generously rounded corners (1rem). Diffused whisper shadow `0 1px 3px rgba(0,0,0,0.05)`. Used for content groupings. High-density operational panels: replace with border-top dividers.
-- **Avatar:** Soft rounded (0.75rem) for user photos, with fallback gradient from Sapling Green to Care Coral. Pseudonym badges use subtle chip style.
-- **Inputs:** Label above input, helper text optional, error text below. Focus ring: 2px solid Sapling Green with offset. No floating labels — clarity over animation.
-- **Loaders:** Skeletal shimmer matching exact layout dimensions. No circular spinners. Pulse opacity for loading states.
-- **Empty States:** Composed illustrations — not just "No data" text. For mental health context: gentle wave patterns, warm illustrations.
-- **Tag Badges:** Rounded-full pills for pseudonyms, status indicators. Success green, warning amber, info blue muted.
+## Layout
+- **Mobile-first**: single column `<768px`, max-width `1440px` (`max-w-7xl`)
+- **Outer padding**: `px-4 sm:px-6`
+- **Tap targets**: `min-h-11` (44px) minimum
+- **Spacing**: 4px / 8px rhythm. `space-y-2`, `space-y-3`, `space-y-4`
 
-## 5. Layout Principles
-Grid-first responsive architecture. Asymmetric splits for Hero sections using CSS Grid. Strict single-column collapse below 768px. Max-width containment at 1440px. No flexbox percentage math. Generous internal padding: 4rem section gaps, 1.5rem content gutters. Hero uses 40/60 split with inline image typography (photos between words at type-height, rounded).
+## Corners & Shadows
+- **Cards**: `rounded-xl` (border radius 0.75rem → 1rem on larger)
+- **Buttons**: `rounded-lg` (0.5rem)
+- **Pills / Badges**: `rounded-full`
+- **Avatars**: `rounded-2xl`
+- **Shadow resting**: `shadow-sm`
+- **Shadow interactive**: `hover:shadow-md`
 
-## 6. Motion & Interaction
-Spring physics for all interactive elements: stiffness 100, damping 20. Staggered cascade reveals for lists (100ms between items). Perpetual micro-loops: subtle pulse on notification badges, shimmer on loading. Hardware-accelerated transforms only — animate transform and opacity. min-h-[100dvh] for full-height sections, never h-screen.
+## Motion
+- **Spring**: `transition-transform 0.2s ease, opacity 0.2s ease` (`.transition-spring`)
+- **Buttons**: `active:scale-95`
+- **Links**: `hover:scale-95` / `hover:text-primary`
 
-## 7. Anti-Patterns (Banned)
-- No emojis (use therapeutic iconography only)
-- No Inter font
-- No pure black (#000000)
-- No neon/outer glow shadows
-- No oversaturated accents
-- No 3-column equal card layouts — use 2-column Zig-Zag or asymmetric
-- No generic placeholder names — use culturally appropriate pseudonyms
-- No broken image links — use picsum.photos with seed
-- No centering Hero sections (variance > 4)
-- No AI copywriting clichés ("Elevate", "Seamless", "Unleash")
-- No filler UI text ("Scroll to explore", chevrons)
-- No circular spinner loaders
+## Components (components/ui)
+| Component | Props |
+|---|---|
+| `Avatar` | `{ src?: string, name: string, size?: number }` — soft gradient fallback, 56px on profile |
+| `PseudonymBadge` | `{ pseudo: string }` — `Pxx` chip `bg-primary/10` |
+| `Icon` | `{ name: string, className? }` — therapeutic SVG (curhat/komunitas/konsultasi/konselor) |
+| `TimeSlotPicker` | `{ slots, value?, onChange? }` — 3-col grid, selected = `bg-primary` |
+| `QuotaTracker` | `{ used, total, label? }` — anti-burnout progress bar |
 
-## 8. Cultural & Accessibility Notes
-- Bahasa Indonesia as primary language, English as secondary
-- High contrast ratios: minimum 4.5:1 for text, 3:1 for UI components
-- Touch targets: minimum 44px tap target
-- Typography scaling via clamp() — headlines 1.5rem to 2.5rem, body 0.875rem to 1.125rem
-- WCAG 2.1 AA compliance mandatory — semantic HTML, ARIA labels, keyboard navigation
-- UU PDP compliance — data minimization, consent-first flows
+## Patterns
+- No emojis — all icons SVG via `Icon` component
+- No Inter — Poppins only
+- No pure black #000 — charcoal `#1F2937`
+- No neon — botanical green + terracotta
+- Auth forms: 768px max modal card, input height 52px, label above
+- Lists: `space-y-3` cards, `p-4` minimum touch padding
+- Bottom nav (mobile): `fixed bottom-0`, 5 destinations, active = green pill
 
+## Routes (23 screens)
+| # | Route | Status |
+|---|---|---|
+| 0 | `/` | ✅ Home dashboard — pills, 3 action cards, panduan emosional, diskusi terbaru |
+| 1 | `/auth/login` | ✅ Masuk — SSO, Google, UU PDP consent |
+| 2 | `/auth/register` | ✅ Daftar — institusi, password strength |
+| 3 | `/curhat` | ✅ Feed curhat — list + quick create |
+| 4 | `/curhat/buat` | ✅ Form create — topic, judul, cerita, anon toggle |
+| 5 | `/curhat/[id]` | ✅ Detail curhat — Avatar, PseudonymBadge, balasan |
+| 6 | `/komunitas` | ✅ Daftar topik — grid |
+| 7 | `/komunitas/buat` | ✅ Form thread — judul, topik, tag, body |
+| 8 | `/komunitas/search` | ✅ Search bar + results |
+| 9 | `/komunitas/topic/[id]` | ✅ Thread list per topik |
+| 10 | `/komunitas/topic/[id]/thread/[threadId]` | ✅ Detail thread + balasan |
+| 11 | `/konsultasi` | ✅ Daftar psikolog — cards |
+| 12 | `/konsultasi/[id]` | ✅ Profil + booking slot |
+| 13 | `/konsultasi/[id]/payment` | ✅ Ringkasan + metode bayar |
+| 14 | `/konsultasi/[id]/session` | ✅ Live session — video + chat |
+| 15 | `/konsultasi/[id]/ulasan` | ✅ Rating + review |
+| 16 | `/konselor` | ✅ Dashboard — QuotaTracker + aksi |
+| 17 | `/konselor/moderation` | ✅ Antrian moderasi |
+| 18 | `/konselor/kuota` | ✅ Kuota harian + rekomendasi |
+| 19 | `/konselor/pasien` | ✅ Daftar pasien |
+| 20 | `/profile` | ✅ Profil + Logout → `/settings` |
+| 21 | `/settings` | ✅ Daftar pengaturan — notifikasi → `/notifications` |
+| 22 | `/notifications` | ✅ Preferensi notifikasi + empty state |

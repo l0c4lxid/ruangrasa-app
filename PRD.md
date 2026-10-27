@@ -1,38 +1,61 @@
-Product Requirements Document (PRD) — RuangRasa
+# PRD — RuangRasa (Prototype)
 
-Platform: Mobile Web / PWA (390 × 844 px)
-Tema & Bahasa Desain: Material Design 3 — Serene Botanical Material (#2E7D5B)
-Status Dokumen: Versi 1.0 (MVP Release)
-1. Visi Produk & Problem Statement
+## Visi
+Platform ruang aman kesehatan mental mahasiswa & dewasa muda Indonesia, pendekatan berjenjang (Stepped-Care). WCAG 2.1 AA. UU PDP (minimal data, consent-first).
 
-    Masalah: Stigma sosial saat mencari pertolongan, biaya konseling psikolog privat yang mahal bagi mahasiswa, serta ketakutan kebocoran identitas ke pihak kampus/akademik.
-    Solusi: Ruang aman digital bertingkat (Stepped-Care Model): mulai dari ventilasi mandiri & pelukan virtual sesama teman sebaya berdasar pseudonimitas aman, lingkar diskusi tematik, hingga konsultasi profesional psikolog berlisensi SIPP/HIMPSI berbiaya terjangkau/bersubsidi.
+## 4 Pilar
+1. **Ruang Curhat Anonim** — curhat bebas nama, pseudonimitas otomatis, balasan empatik.
+2. **Komunitas Lingkar Sebaya** — thread terfasilitasi aman, topik berkelompok.
+3. **Konsultasi Psikolog Profesional** — bersubsidi hingga 50%, jadwal fleksibel, ruang tenang.
+4. **Area Operasional Konselor** — quota anti-burnout, moderasi, hotline 119.
 
-2. Persona Pengguna
+## Design Tokens (lihat DESIGN.md)
+- Canvas #FAFAFB, Surface #FFFFFF, Text #1F2937, Sage #6B7280
+- Border rgba(226,232,240,0.5), Sapling Green #22C58E, Care Coral #F59E0B
+- Font Poppins (400/500/600/700)
 
-    Rian (22 th) — Mahasiswa Tingkat Akhir: Menghadapi kecemasan akademik, butuh ruang curhat anonim tanpa takut dihakimi kawan satu almamater.
-    Dina (19 th) — Mahasiswa Rantau Baru: Mengalami homesick dan isolasi sosial, mencari komunitas sebaya yang suportif.
-    Nadia Larasati, M.Psi. — Psikolog Mitra: Praktisi profesional berlisensi yang menyediakan sesi bersubsidi dengan proteksi batasan kerja (anti-burnout quota, maks. 3 sesi/hari).
-    Moderator & Siaga Krisis: Memantau keamanan lingkar kawan dengan deteksi kata kunci sensitif yang terintegrasi langsung ke Hotline Krisis 119.
+## Mobile-first
+Single-column <768px. Max-width 1440px. Tap target ≥44px. No emoji. No Inter.
 
-3. Pilar Fitur Utama
+## 23 Layar
+### Home
+1. `/` — dashboard: greeting, emergency banner (119 ext 8), 3 service cards, panduan emosional, diskusi terbaru, bottom nav 5-tab
 
-    Pilar 1 (Curhat Anonim): Feed cerita kawan, pengacak nama samaran (Kawan Teduh #...), interaksi non-judgmental (Pelukan Virtual), dan opsi Just Listen tanpa balasan komentar.
-    Pilar 2 (Komunitas Lingkar Sebaya): Direktori grup tematik (Ruang Pejuang Skripsi, Lingkar Rantau), panduan fasilitator, dan pelaporan komentar toksik instan.
-    Pilar 3 (Konsultasi Profesional): Filter psikolog SIPP terverifikasi, tarif subsidi mahasiswa transparan (Rp 150.000/sesi), alur booking etis (Menunggu Konfirmasi Psikolog), checklist mindfulness sebelum sesi, serta panggilan video terenkripsi P2P.
-    Pilar 4 (Operasional & Moderasi): Dashboard psikolog dengan SLA respon < 2 jam, buffer istirahat antar-sesi 15 menit, log audit anonim, dan eskalasi darurat kasus krisis.
+### Curhat (4)
+2. `/curhat` — feed: quick create + list cards (Avatar + PseudonymBadge)
+3. `/curhat/buat` — form: topic, judul, cerita, anon toggle
+4. `/curhat/[id]` — detail: cerita + komentar balasan
 
-4. Pemetaan 23 Layar Prototipe di Kanvas
+### Komunitas (5)
+5. `/komunitas` — grid topik (Skripsi, Rantau, Karier, Keluarga, Tidur)
+6. `/komunitas/buat` — form thread (judul, topik, body, tag)
+7. `/komunitas/search` — search bar + filterable results
+8. `/komunitas/topic/[id]` — daftar thread per topik
+9. `/komunitas/topic/[id]/thread/[threadId]` — detail thread + balas (fixed input)
 
-    Akses & Onboarding: 01 - Welcome & Onboarding, 02 - Masuk & Registrasi, 03 - Registrasi, 04 - Onboarding Privasi & Identitas
-    Mahasiswa & Hub Utama: 05 - Home Dashboard, 17 - Notifikasi & Pembaruan, 18 - Profil & Pengaturan Privasi
-    Pilar Curhat: 06 - Curhat Feed, 07 - Buat Curhat, 08 - Detail Curhat
-    Pilar Komunitas: 09 - Daftar Komunitas, 10 - Detail Komunitas
-    Pilar Konseling: 11 - Direktori Profesional, 12 - Profil Detail Profesional, 13 - Pilih Jadwal Konsultasi, 14 - Konfirmasi Permintaan Jadwal, 15 - Konsultasi Saya, 16 - Detail Konsultasi & Persiapan Sesi
-    Operasional Mitra & Tim Siaga: 19 - Dashboard Konselor, 20 - Permintaan Konsultasi, 21 - Pengaturan Jadwal Konselor, 22 - Dashboard Admin/Moderator, 23 - Moderasi Laporan & Ruang Aman
+### Konsultasi (6)
+10. `/konsultasi` — list psikolog card
+11. `/konsultasi/[id]` — profil + TimeSlotPicker booking
+12. `/konsultasi/[id]/payment` — ringkasan + metode bayar
+13. `/konsultasi/[id]/session` — live video + chat
+14. `/konsultasi/[id]/ulasan` — rating bintang + review
 
-5. Standar Etika & Kepatuhan
+### Konselor (4)
+15. `/konselor` — dashboard: QuotaTracker + aksi grid
+16. `/konselor/moderation` — antrian (Setujui / Tolak + hotline 119)
+17. `/konselor/kuota` — kuota harian + rekomendasi istirahat
+18. `/konselor/pasien` — daftar pasien pseudom
 
-    Kepatuhan Undang-Undang Perlindungan Data Pribadi (UU PDP) & Kode Etik HIMPSI.
-    Notifikasi aman (cuplikan curhat sensitif tidak pernah ditampilkan di lockscreen atau push notification).
-    Kontras warna ramah aksesibilitas WCAG 2.1 AA dengan roundness MD3 lembut (16–24px) untuk rasa aman psikologis (psychological safety).
+### Akun (5)
+19. `/auth/login` — email + password, UU PDP consent, SSO/Google
+20. `/auth/register` — nama, email, institusi, password
+21. `/profile` — Avatar + pseudom, settings link, logout
+22. `/settings` — daftar: notifikasi, privasi, tema, bahasa, hapus akun
+23. `/notifications` — preferensi notifikasi + empty state
+
+## Shared UI (components/ui/)
+- `avatar.tsx` — AvatarSoftGradient fallback
+- `pseudonym-badge.tsx` — chip Pxx anonim
+- `time-slot-picker.tsx` — grid slot selectable
+- `quota-tracker.tsx` — progress bar anti-burnout
+- `icon.tsx` — therapeutic SVG iconography
