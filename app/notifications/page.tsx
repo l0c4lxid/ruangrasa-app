@@ -73,7 +73,7 @@ export default function NotificationsPage() {
             </Link>
             <div>
               <h1 className="text-headline-lg-mobile font-headline-lg-mobile font-semibold text-primary tracking-tight">
-                RuangRasa
+                RuangTeduh
               </h1>
               <p className="text-label-sm font-label-sm text-on-surface-variant">
                 Kabar &amp; Pembaruan Teduh

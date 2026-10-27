@@ -346,7 +346,7 @@ export default function KonselorKuotaPage() {
             </div>
           </div>
           <p className="font-label-sm text-label-sm text-secondary italic">
-            Maks. 3 sesi/hari sesuai rekomendasi psikolog pembina RuangRasa.
+            Maks. 3 sesi/hari sesuai rekomendasi psikolog pembina RuangTeduh.
           </p>
         </div>
 

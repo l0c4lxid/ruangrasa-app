@@ -36,7 +36,7 @@ function HomeContent() {
                 {isGuest ? "Halo, Kawan Tamu" : "Halo, Kawan Rasa"}
               </span>
               <h1 className="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">
-                RuangRasa
+                RuangTeduh
               </h1>
             </div>
           </Link>

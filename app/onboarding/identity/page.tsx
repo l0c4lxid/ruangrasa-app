@@ -75,7 +75,7 @@ export default function OnboardingIdentityPage() {
             Privasi &amp; Ruang Amanmu
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
-            RuangRasa dirancang agar kamu bisa bersuara tanpa rasa cemas dihakimi, dengan perlindungan pseudonimitas yang teruji.
+            RuangTeduh dirancang agar kamu bisa bersuara tanpa rasa cemas dihakimi, dengan perlindungan pseudonimitas yang teruji.
           </p>
         </div>
       </header>
@@ -118,7 +118,7 @@ export default function OnboardingIdentityPage() {
         {/* 3 Pillars of Protection (Asymmetric Feature Cards) */}
         <section className="space-y-3">
           <h3 className="font-label-lg text-label-lg text-on-surface font-semibold px-1">
-            3 Pilar Perlindungan Ruang Rasa
+            3 Pilar Perlindungan Ruang Teduh
           </h3>
           {/* Pilar 1 */}
           <div className="p-4 bg-surface-container-lowest rounded-[18px] border border-outline-variant/50 flex items-start space-x-3.5 transition-all">
@@ -209,7 +209,7 @@ export default function OnboardingIdentityPage() {
         <div className="p-3 bg-surface-container-low/70 border border-outline-variant/30 rounded-[12px] flex items-center space-x-2.5">
           <span className="material-symbols-outlined text-tertiary-container shrink-0 text-[18px]" data-icon="info">info</span>
           <p className="font-body-sm text-body-sm text-on-surface-variant leading-snug">
-            <strong>Catatan Etika:</strong> RuangRasa adalah platform pendukung teman sebaya dan bukan pengganti layanan gawat darurat medis atau psikiatri krisis 24 jam.
+            <strong>Catatan Etika:</strong> RuangTeduh adalah platform pendukung teman sebaya dan bukan pengganti layanan gawat darurat medis atau psikiatri krisis 24 jam.
           </p>
         </div>
       </footer>

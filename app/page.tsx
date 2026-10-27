@@ -14,7 +14,7 @@ export default function WelcomeLandingPage() {
             </div>
             <div>
               <span className="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-bold">
-                RuangRasa
+                RuangTeduh
               </span>
               <span className="block font-label-sm text-label-sm text-outline tracking-wider">
                 RUANG NYAMAN &amp; TEDUH

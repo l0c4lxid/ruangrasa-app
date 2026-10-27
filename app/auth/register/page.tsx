@@ -41,7 +41,7 @@ export default function RegisterPage() {
               <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
                 <span className="material-symbols-outlined text-2xl fill" data-icon="spa" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
               </div>
-              <span className="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-primary tracking-tight">RuangRasa</span>
+              <span className="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-primary tracking-tight">RuangTeduh</span>
             </div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/60 text-secondary font-label-sm text-label-sm">
               <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>

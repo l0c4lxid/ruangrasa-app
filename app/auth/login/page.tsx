@@ -36,7 +36,7 @@ export default function LoginPage() {
             <span className="material-symbols-outlined text-primary text-3xl" data-icon="spa" data-weight="fill" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
           </div>
           {/* App Title & Empathic Tagline */}
-          <h1 className="text-headline-lg-mobile font-headline-lg-mobile font-bold tracking-tight text-primary">RuangRasa</h1>
+          <h1 className="text-headline-lg-mobile font-headline-lg-mobile font-bold tracking-tight text-primary">RuangTeduh</h1>
           <p className="text-body-md font-body-md text-on-surface-variant mt-1 max-w-[280px]">
             Langkah tenang untuk kembali mendengarkan dan merawat dirimu.
           </p>

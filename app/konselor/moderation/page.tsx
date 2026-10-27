@@ -22,7 +22,7 @@ export default function KonselorModerationPage() {
               </h1>
               <p className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
                 <span className="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
-                Portal Mitra RuangRasa
+                Portal Mitra RuangTeduh
               </p>
             </div>
           </div>

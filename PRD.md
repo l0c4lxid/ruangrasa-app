@@ -1,4 +1,4 @@
-# PRD — RuangRasa (Prototype)
+# PRD — RuangTeduh (Prototype)
 
 ## Visi
 Platform ruang aman kesehatan mental mahasiswa & dewasa muda Indonesia, pendekatan berjenjang (Stepped-Care). WCAG 2.1 AA. UU PDP (minimal data, consent-first).

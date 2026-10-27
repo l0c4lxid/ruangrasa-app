@@ -1,4 +1,4 @@
-# RuangRasa Design System
+# RuangTeduh Design System
 
 ## Brand
 Platform ruang aman kesehatan mental mahasiswa & dewasa muda Indonesia. Pendekatan berjenjang (Stepped-Care). Emotional anchor: *teduh* — calm, safe, non-judgmental, quietly empowering.

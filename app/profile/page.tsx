@@ -234,7 +234,7 @@ export default function ProfilePage() {
                   </span>
                 </div>
                 <p className="text-body-sm font-body-sm text-on-surface-variant">
-                  Area kerja khusus psikolog &amp; konselor RuangRasa
+                  Area kerja khusus psikolog &amp; konselor RuangTeduh
                 </p>
               </div>
               <span className="material-symbols-outlined text-primary text-[20px]">
@@ -311,7 +311,7 @@ export default function ProfilePage() {
         {/* Microcopy */}
         <div className="pt-2 pb-4 text-center">
           <p className="text-body-sm font-body-sm text-on-surface-variant/70 italic">
-            "Ceritakan harimu, kamu tidak sendiri di RuangRasa."
+            "Ceritakan harimu, kamu tidak sendiri di RuangTeduh."
           </p>
           <p className="text-label-sm font-label-sm text-outline mt-1">
             Versi 2.4.0 • Keamanan Kriptografi SHA-256

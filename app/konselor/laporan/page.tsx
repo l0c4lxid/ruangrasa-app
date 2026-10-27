@@ -186,7 +186,7 @@ export default function KonselorLaporanPage() {
               </p>
               <div className="pt-1 flex items-center gap-1.5 text-[11px] text-on-surface-variant">
                 <span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-                <span>Melanggar Nilai RuangRasa: Menghakimi perasaan kawan</span>
+                <span>Melanggar Nilai RuangTeduh: Menghakimi perasaan kawan</span>
               </div>
             </div>
           </div>

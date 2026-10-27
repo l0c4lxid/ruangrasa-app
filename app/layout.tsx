@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { BottomNavigation } from "@/components/ui/bottom-navigation";
 
 export const metadata = {
-  title: "RuangRasa — Ruang Aman Bercerita",
+  title: "RuangTeduh — Ruang Aman Bercerita",
   description:
     "Platform ruang aman kesehatan mental mahasiswa & dewasa muda Indonesia (pendekatan Stepped-Care). Curhat anonim, komunitas suportif, konseling profesional.",
   icons: [{ rel: "icon", url: "/favicon.svg" }],

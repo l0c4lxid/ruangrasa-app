@@ -19,7 +19,7 @@ export default async function PaymentPage({
           <span className="material-symbols-outlined text-[24px]">close</span>
         </Link>
         <span className="font-headline-sm text-headline-sm text-primary font-semibold tracking-tight">
-          RuangRasa
+          RuangTeduh
         </span>
         <button
           aria-label="Bantuan Informasi"

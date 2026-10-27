@@ -290,7 +290,7 @@ export default async function BookingJadwalPage({
           <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
         </Link>
         <p className="font-label-sm text-label-sm text-center text-on-surface-variant mt-2">
-          Privasi &amp; kerahasiaan terenkripsi standar RuangRasa
+          Privasi &amp; kerahasiaan terenkripsi standar RuangTeduh
         </p>
       </div>
     </>

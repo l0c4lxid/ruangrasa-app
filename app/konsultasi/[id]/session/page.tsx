@@ -165,7 +165,7 @@ export default function ConsultationSessionPage({
         {/* Enter Room Button */}
         <div className="pt-2">
           <button
-            onClick={() => alert("Menghubungkan ke ruang video aman RuangRasa...")}
+            onClick={() => alert("Menghubungkan ke ruang video aman RuangTeduh...")}
             className="w-full h-12 bg-primary hover:bg-[#1B5E43] text-on-primary rounded-xl font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all"
             type="button"
           >
