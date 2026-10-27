@@ -1,10 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@200..700,0..1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Fonts: Roboto Flex (template standard) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 @layer base {
   :root {
@@ -12,31 +11,57 @@
   }
   html {
     scroll-padding-top: 4rem;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply bg-[#F7FAF7] text-[color:var(--tw-text-opacity)] antialiased;
-    min-height: max(884px, 100dvh);
     font-family: var(--font-body);
-    background-color: #F7FAF7;
-    color: #17251D;
-  }
-  .selection\:bg-secondary-container {
-    @apply bg-secondary-container;
-  }
-  .selection\:text-primary {
-    @apply text-primary;
+    color: #111e17;
   }
 }
 
-/* Material Symbols */
+/* Material Symbols - proper font rendering */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined[data-weight="fill"],
+.material-symbols-outlined.fill-icon {
+  font-variation-settings: 'FILL' 1;
 }
 
 /* Template utilities */
 .ambient-glow {
   box-shadow: 0 4px 20px -2px rgba(23, 37, 29, 0.05), 0 2px 8px -1px rgba(46, 125, 91, 0.04);
 }
+.custom-shadow-resting {
+  box-shadow: 0 2px 8px -2px rgba(23, 37, 29, 0.04), 0 1px 4px -1px rgba(46, 125, 91, 0.03);
+}
 .gentle-border {
   border: 1px solid #CBD7CE;
+}
+
+/* Hide scrollbars for clean mobile pill strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile-first: ensure safe area handling */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const pseudonyms = [
   { name: "Kawan Teduh #304", icon: "🌿" },
@@ -42,17 +43,22 @@ export default function OnboardingIdentityPage() {
     " bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container-low active:scale-95";
 
   return (
-    <>
+    <div className="px-5 py-6 flex-1 flex flex-col justify-between min-h-screen relative overflow-hidden">
       {/* Ambient Botanical Backdrop Glow */}
       <div className="absolute -top-12 -right-12 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
       <div className="absolute top-1/3 -left-16 w-56 h-56 bg-surface-container-high/60 rounded-full blur-2xl pointer-events-none -z-10"></div>
+      <div>
       {/* Header Section */}
       <header className="space-y-4">
         {/* Step Indicator & Back Navigation */}
         <div className="flex items-center justify-between">
-          <button aria-label="Kembali" className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest/80 text-on-surface hover:bg-surface-container transition-colors duration-200" type="button">
+          <Link
+            href="/auth/register"
+            aria-label="Kembali"
+            className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest/80 text-on-surface hover:bg-surface-container transition-colors duration-200"
+          >
             <span className="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
-          </button>
+          </Link>
           <div className="flex items-center space-x-1.5 px-3 py-1 bg-surface-container rounded-full border border-outline-variant/40">
             <span className="w-2 h-2 rounded-full bg-primary-container"></span>
             <span className="w-2 h-2 rounded-full bg-primary-container"></span>
@@ -188,13 +194,17 @@ export default function OnboardingIdentityPage() {
           </div>
         </section>
       </main>
+      </div>
       {/* Bottom Action & Ethical Note Area */}
       <footer className="pt-4 space-y-4">
         {/* Primary Action CTA */}
-        <button className="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-[14px] flex items-center justify-center space-x-2 transition-all duration-200 active:scale-95 shadow-[0_4px_16px_-4px_rgba(23,125,91,0.25)]" type="button">
+        <Link
+          href="/"
+          className="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-[14px] flex items-center justify-center space-x-2 transition-all duration-200 active:scale-95 shadow-[0_4px_16px_-4px_rgba(23,125,91,0.25)]"
+        >
           <span>Lanjut ke Beranda Tenang</span>
           <span className="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
-        </button>
+        </Link>
         {/* Ethical Notice Disclaimer */}
         <div className="p-3 bg-surface-container-low/70 border border-outline-variant/30 rounded-[12px] flex items-center space-x-2.5">
           <span className="material-symbols-outlined text-tertiary-container shrink-0 text-[18px]" data-icon="info">info</span>
@@ -203,6 +213,6 @@ export default function OnboardingIdentityPage() {
           </p>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

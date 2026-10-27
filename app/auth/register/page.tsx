@@ -1,29 +1,53 @@
 "use client";
 import { useState } from "react";
+import Link from 'next/link';
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/onboarding/identity");
+  };
+
   return (
-    <>
+    <div className="px-5 pt-4 pb-10 flex flex-col justify-between min-h-screen relative">
       {/* Subtle Atmospheric Accent Glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-64 bg-secondary-container/30 blur-3xl pointer-events-none -z-10 rounded-full"></div>
-      {/* Top Brand & Header Section */}
-      <header className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          {/* Logo Badge */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
-              <span className="material-symbols-outlined text-2xl fill" data-icon="spa" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
-            </div>
-            <span className="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-primary tracking-tight">RuangRasa</span>
-          </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/60 text-secondary font-label-sm text-label-sm">
-            <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-            <span>Ruang Aman</span>
-          </div>
+
+      <div>
+        {/* Top Back Navigation */}
+        <div className="w-full flex items-center justify-between mb-4">
+          <Link
+            href="/welcome"
+            className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant"
+            aria-label="Kembali ke halaman awal"
+          >
+            <span className="material-symbols-outlined text-[20px]">arrow_back</span>
+          </Link>
+          <span className="text-label-sm font-label-sm text-secondary bg-surface-container px-3 py-1 rounded-full">
+            Daftar Akun
+          </span>
         </div>
+
+        {/* Top Brand & Header Section */}
+        <header className="mb-6">
+          <div className="flex items-center justify-between mb-4">
+            {/* Logo Badge */}
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+                <span className="material-symbols-outlined text-2xl fill" data-icon="spa" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
+              </div>
+              <span className="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-primary tracking-tight">RuangRasa</span>
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/60 text-secondary font-label-sm text-label-sm">
+              <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span>Ruang Aman</span>
+            </div>
+          </div>
         {/* Welcome Headline */}
         <h1 className="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-on-background tracking-tight mb-2">
           Mulai Perjalanan Teduhmu
@@ -63,7 +87,7 @@ export default function RegisterPage() {
         <div className="flex-grow border-t border-outline-variant/60"></div>
       </div>
       {/* Registration Form */}
-      <form className="space-y-4" id="registration-form" onSubmit={(e) => e.preventDefault()}>
+      <form className="space-y-4" id="registration-form" onSubmit={handleRegister}>
         {/* Field 1: Nama Tampilan Awal */}
         <div className="space-y-1.5">
           <label className="block font-label-lg text-label-lg font-medium text-on-surface" htmlFor="display_name">
@@ -144,7 +168,7 @@ export default function RegisterPage() {
               <input className="w-5 h-5 rounded-[6px] border-2 border-outline-variant text-primary-container focus:ring-0 focus:ring-offset-0 transition duration-200 cursor-pointer" id="terms_agree" defaultChecked type="checkbox" />
             </div>
             <span className="font-body-sm text-body-sm text-on-surface-variant select-none leading-relaxed">
-              Saya menyetujui <a className="text-primary font-medium hover:underline" href="#syarat">Syarat &amp; Ketentuan Komunitas</a> serta <a className="text-primary font-medium hover:underline" href="#privasi">Kebijakan Privasi &amp; Perlindungan Data Terenkripsi</a>.
+              Saya menyetujui <a className="text-primary font-medium hover:underline" href="#" onClick={(e) => e.preventDefault()}>Syarat &amp; Ketentuan Komunitas</a> serta <a className="text-primary font-medium hover:underline" href="#" onClick={(e) => e.preventDefault()}>Kebijakan Privasi &amp; Perlindungan Data Terenkripsi</a>.
             </span>
           </label>
         </div>
@@ -160,10 +184,10 @@ export default function RegisterPage() {
       <div className="text-center py-5">
         <p className="font-body-md text-body-md text-on-surface-variant">
           Sudah punya akun?
-          <a className="text-primary font-semibold hover:underline decoration-primary-container inline-flex items-center gap-0.5" href="#masuk">
+          <Link className="text-primary font-semibold hover:underline decoration-primary-container inline-flex items-center gap-0.5" href="/auth/login">
             Masuk di sini
             <span className="material-symbols-outlined text-[16px]" data-icon="north_east">north_east</span>
-          </a>
+          </Link>
         </p>
       </div>
       {/* Security & Encryption Guarantee Card */}
@@ -189,6 +213,7 @@ export default function RegisterPage() {
           </p>
         </div>
       </footer>
-    </>
+      </div>
+    </div>
   );
 }

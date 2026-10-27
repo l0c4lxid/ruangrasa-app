@@ -1,8 +1,38 @@
+import Link from "next/link";
+
 export default function KonselorLaporanPage() {
   return (
     <>
-      {/* Banner Etika & Panduan */}
-      <section className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/50 relative overflow-hidden">
+      {/* Top App Bar */}
+      <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md px-5 py-4 border-b border-outline-variant/30 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/konselor"
+            className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all text-on-surface-variant"
+          >
+            <span className="material-symbols-outlined text-[24px]">arrow_back</span>
+          </Link>
+          <div>
+            <h1 className="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+              Pusat Moderasi &amp; Laporan
+            </h1>
+            <p className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+              <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
+              Mod Tim Siaga Komunitas
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-md text-label-md font-medium border border-tertiary-fixed-dim/60 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            3 Laporan
+          </span>
+        </div>
+      </header>
+
+      <main className="flex-1 px-5 pt-4 pb-16 space-y-5">
+        {/* Banner Etika & Panduan */}
+        <section className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/50 relative overflow-hidden">
         <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
         <div className="flex gap-3">
           <div className="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
@@ -195,6 +225,7 @@ export default function KonselorLaporanPage() {
           Jaga napasmu tetap teratur. Luangkan jeda jika merasa lelah mendengarkan.
         </p>
       </div>
+      </main>
     </>
   );
 }

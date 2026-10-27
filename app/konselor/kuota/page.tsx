@@ -1,7 +1,41 @@
+import Link from "next/link";
+
 export default function KonselorKuotaPage() {
   return (
     <>
-      <section className="bg-surface-container-low border border-outline-variant/60 rounded-2xl p-4 flex items-start gap-3.5 shadow-sm">
+      {/* Top App Bar */}
+      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+        <div className="px-5 py-3.5 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link
+              href="/konselor"
+              aria-label="Kembali ke Dashboard Konselor"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150"
+            >
+              <span className="material-symbols-outlined text-[24px]">arrow_back</span>
+            </Link>
+            <div>
+              <h1 className="font-headline-sm text-headline-sm text-primary font-semibold tracking-tight">
+                Kelola Jadwal Praktik
+              </h1>
+              <p className="font-label-sm text-label-sm text-on-surface-variant">
+                Ketersediaan &amp; Beban Praktik
+              </p>
+            </div>
+          </div>
+          <button
+            aria-label="Simpan Cepat"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all duration-150"
+            title="Simpan Cepat"
+            type="button"
+          >
+            <span className="material-symbols-outlined text-[22px]">bookmark_border</span>
+          </button>
+        </div>
+      </header>
+
+      <main className="flex-1 px-5 pt-3 pb-24 space-y-5">
+        <section className="bg-surface-container-low border border-outline-variant/60 rounded-2xl p-4 flex items-start gap-3.5 shadow-sm">
         <div className="w-10 h-10 rounded-xl bg-secondary-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
           <span className="material-symbols-outlined text-[22px]" data-icon="calendar_month">
             calendar_month
@@ -357,6 +391,7 @@ export default function KonselorKuotaPage() {
           </div>
         </div>
       </section>
-    </>
-  )
+    </main>
+  </>
+)
 }

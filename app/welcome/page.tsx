@@ -1,11 +1,14 @@
+import Link from "next/link";
+
 export default function WelcomeOnboardingPage() {
   return (
-    <>
+    <div className="px-5 py-6 flex-1 flex flex-col justify-between min-h-screen">
+      <div>
       {/* Top Header & Brand Anchor */}
       <header className="w-full flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-[14px] bg-secondary-container flex items-center justify-center text-primary-container shadow-sm">
-            <span className="material-symbols-outlined text-[26px]" style={{ fontVariationProperties: "'FILL' 1" }}>spa</span>
+            <span className="material-symbols-outlined text-[26px]" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
           </div>
           <div>
             <span className="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-bold">RuangRasa</span>
@@ -25,7 +28,7 @@ export default function WelcomeOnboardingPage() {
             <img className="w-full h-full object-cover" data-alt="A comforting and serene digital art illustration depicting a sheltered botanical sanctuary with soft organic curves, muted sage green foliage, warm terracotta clay accents, and gentle warm sunlight cascading softly. The aesthetic is clean, minimalist, and non-clinical, tailored for emotional healing and emotional peace with a tranquil, light mode ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTk71Nlz4hjzI4GLLeq0_FPB6wlR2wUS-7XOaFVql6IIUg8Z2tTvhviuMDRJuF2mRMMydd44nqvSXeI1pdWHWJzwbFj0tmnB_UKKXbi7IsCipcr07PBg_J-kjpf_bL8nJ1d6WCtKk9IsAXZ1hhEXrDP7cLc46xz6GRwTBdkwLs0sp42jVy1cr8Eta99kPd9FmLCfPayLyHCw3StoxKLUttAaBQuwppXMP8Bk-AhylMa_EFTqHtkFPb" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111e17]/40 via-transparent to-transparent flex items-end p-3">
               <span className="font-label-md text-label-md text-surface-container-lowest bg-[#17251D]/60 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px]" style={{ fontVariationProperties: "'FILL' 1" }}>favorite</span>
+                <span className="material-symbols-outlined text-[15px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
                 Kamu tidak sendiri di sini
               </span>
             </div>
@@ -76,7 +79,7 @@ export default function WelcomeOnboardingPage() {
         {/* Value Proposition 3: Konseling Terverifikasi */}
         <article className="p-3.5 rounded-[16px] bg-surface-container-lowest gentle-border ambient-glow flex items-start gap-3.5 transition-all hover:bg-surface-container-low">
           <div className="w-10 h-10 rounded-[12px] bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5">
-            <span className="material-symbols-outlined text-[22px]" style={{ fontVariationProperties: "'FILL' 1" }}>psychology</span>
+            <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: "'FILL' 1" }}>psychology</span>
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
@@ -89,28 +92,38 @@ export default function WelcomeOnboardingPage() {
           </div>
         </article>
       </section>
+      </div>
       {/* Bottom Action Area */}
-      <footer className="w-full space-y-3 pt-1">
+      <footer className="w-full space-y-3 pt-4">
         {/* Primary Action CTA */}
-        <button className="w-full h-[50px] bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-[14px] shadow-sm hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+        <Link
+          href="/auth/register"
+          className="w-full h-[50px] bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-[14px] shadow-sm hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
           <span>Daftar Sekarang</span>
           <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-        </button>
+        </Link>
         {/* Secondary Outlined CTA */}
-        <button className="w-full h-[48px] bg-surface-container-lowest gentle-border text-primary-container font-label-lg text-label-lg font-semibold rounded-[14px] hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center justify-center" type="button">
+        <Link
+          href="/auth/login"
+          className="w-full h-[48px] bg-surface-container-lowest gentle-border text-primary-container font-label-lg text-label-lg font-semibold rounded-[14px] hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center justify-center"
+        >
           <span>Masuk ke Akun</span>
-        </button>
+        </Link>
         {/* Microcopy & Safety Notice */}
         <div className="pt-2 text-center">
           <p className="font-label-sm text-label-sm text-outline leading-tight">
             Bukan pengganti layanan darurat atau diagnosis medis.
           </p>
-          <div className="mt-1 flex items-center justify-center gap-1 text-tertiary hover:underline cursor-pointer">
+          <a
+            href="tel:119"
+            className="mt-1 inline-flex items-center justify-center gap-1 text-tertiary hover:underline cursor-pointer"
+          >
             <span className="material-symbols-outlined text-[14px]">call</span>
-            <span className="font-label-sm text-label-sm font-semibold">Butuh bantuan darurgent segera? Hotline 119</span>
-          </div>
+            <span className="font-label-sm text-label-sm font-semibold">Butuh bantuan darurat segera? Hotline 119</span>
+          </a>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

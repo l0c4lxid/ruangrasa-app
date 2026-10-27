@@ -1,11 +1,49 @@
+import Link from 'next/link';
+
 export default function KonselorModerationPage() {
   return (
     <>
-      <section aria-label="Filter Permintaan Konsultasi" className="pt-1">
-        <div
-          className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar"
-          role="tablist"
-        >
+      {/* Top App Bar */}
+      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3.5 border-b border-outline-variant/30 shadow-sm transition-all">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <Link
+              href="/konselor"
+              aria-label="Kembali ke Dashboard Konselor"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-150"
+            >
+              <span className="material-symbols-outlined text-[22px]">arrow_back</span>
+            </Link>
+            <div>
+              <h1 className="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">
+                Permintaan Konsultasi Masuk
+              </h1>
+              <p className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+                <span className="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
+                Portal Mitra RuangRasa
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed border border-tertiary-container/30 shrink-0">
+            <span
+              className="material-symbols-outlined text-[16px] text-tertiary"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              hourglass_top
+            </span>
+            <span className="font-label-sm text-label-sm font-semibold text-tertiary">
+              3 Menunggu
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-1 px-5 pt-3 pb-20 flex flex-col gap-5">
+        <section aria-label="Filter Permintaan Konsultasi" className="pt-1">
+          <div
+            className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar"
+            role="tablist"
+          >
           <button
             aria-selected="true"
             className="h-9 px-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all duration-150 shrink-0"
@@ -342,6 +380,7 @@ export default function KonselorModerationPage() {
           </div>
         </div>
       </section>
+      </main>
     </>
-  )
+  );
 }

@@ -1,48 +1,67 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const [activeTab, setActiveTab] = useState<"masuk" | "daftar">("masuk");
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
-  const tabBase =
-    "flex-1 py-2.5 rounded-xl text-label-lg font-label-lg transition-all duration-200";
-  const tabActive =
-    tabBase +
-    " font-semibold bg-surface-container-lowest text-primary shadow-xs";
-  const tabInactive =
-    tabBase +
-    " font-medium text-on-surface-variant hover:text-primary";
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/");
+  };
 
   return (
-    <>
-      {/* Ambient Botanical Visual Accent Top */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-48 bg-gradient-to-b from-secondary-container/40 via-surface/60 to-transparent pointer-events-none -z-10 blur-2xl"></div>
-      {/* Top Brand & Header Section */}
-      <section className="flex flex-col items-center text-center">
-        {/* Botanical Identity Badge */}
-        <div className="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center mb-4 shadow-sm border border-outline-variant/40">
-          <span className="material-symbols-outlined text-primary text-3xl" data-icon="spa" data-weight="fill" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
-        </div>
-        {/* App Title & Empathic Tagline */}
-        <h1 className="text-headline-lg-mobile font-headline-lg-mobile font-bold tracking-tight text-primary">RuangRasa</h1>
-        <p className="text-body-md font-body-md text-on-surface-variant mt-1 max-w-[280px]">
-          Langkah tenang untuk kembali mendengarkan dan merawat dirimu.
-        </p>
-      </section>
-      {/* Interactive Authentication Card (Bento Surface Level 1) */}
-      <div className="mt-6 bg-surface-container-lowest rounded-3xl p-5 border border-outline-variant/60 shadow-sm">
-        {/* Segmented Control Tabs (Masuk vs Daftar) */}
-        <div className="bg-surface-container p-1 rounded-2xl flex items-center mb-6">
-          <button className={activeTab === "masuk" ? tabActive : tabInactive} id="tab-masuk" type="button" onClick={() => setActiveTab("masuk")}>
-            Masuk
-          </button>
-          <button className={activeTab === "daftar" ? tabActive : tabInactive} id="tab-daftar" type="button" onClick={() => setActiveTab("daftar")}>
-            Daftar
-          </button>
-        </div>
-        {/* Auth Form */}
-        <form className="space-y-4" id="auth-form" onSubmit={(e) => e.preventDefault()}>
+    <div className="px-5 pt-4 pb-10 flex flex-col justify-between min-h-screen relative">
+      {/* Top Back Navigation */}
+      <div className="w-full flex items-center justify-between mb-2">
+        <Link
+          href="/welcome"
+          className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant"
+          aria-label="Kembali ke halaman awal"
+        >
+          <span className="material-symbols-outlined text-[20px]">arrow_back</span>
+        </Link>
+        <span className="text-label-sm font-label-sm text-secondary bg-surface-container px-3 py-1 rounded-full">
+          Masuk Akun
+        </span>
+      </div>
+
+      <div>
+        {/* Top Brand & Header Section */}
+        <section className="flex flex-col items-center text-center">
+          {/* Botanical Identity Badge */}
+          <div className="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center mb-4 shadow-sm border border-outline-variant/40">
+            <span className="material-symbols-outlined text-primary text-3xl" data-icon="spa" data-weight="fill" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
+          </div>
+          {/* App Title & Empathic Tagline */}
+          <h1 className="text-headline-lg-mobile font-headline-lg-mobile font-bold tracking-tight text-primary">RuangRasa</h1>
+          <p className="text-body-md font-body-md text-on-surface-variant mt-1 max-w-[280px]">
+            Langkah tenang untuk kembali mendengarkan dan merawat dirimu.
+          </p>
+        </section>
+
+        {/* Interactive Authentication Card (Bento Surface Level 1) */}
+        <div className="mt-6 bg-surface-container-lowest rounded-3xl p-5 border border-outline-variant/60 shadow-sm">
+          {/* Segmented Control Tabs (Masuk vs Daftar) */}
+          <div className="bg-surface-container p-1 rounded-2xl flex items-center mb-6">
+            <button
+              className="flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-semibold bg-surface-container-lowest text-primary shadow-xs transition-all duration-200"
+              type="button"
+            >
+              Masuk
+            </button>
+            <Link
+              href="/auth/register"
+              className="flex-1 py-2.5 rounded-xl text-label-lg font-label-lg font-medium text-center text-on-surface-variant hover:text-primary transition-all duration-200"
+            >
+              Daftar
+            </Link>
+          </div>
+
+          {/* Auth Form */}
+          <form className="space-y-4" id="auth-form" onSubmit={handleLogin}>
           {/* Email Input Field */}
           <div>
             <label className="block text-label-md font-label-md text-on-surface-variant mb-1.5 ml-1" htmlFor="email-input">
@@ -60,7 +79,7 @@ export default function LoginPage() {
           <div>
             <div className="flex items-center justify-between mb-1.5 ml-1 mr-1">
               <label className="text-label-md font-label-md text-on-surface-variant" htmlFor="password-input">Kata Sandi</label>
-              <a className="text-label-sm font-label-sm text-primary font-semibold hover:underline" href="#">Lupa kata sandi?</a>
+              <a className="text-label-sm font-label-sm text-primary font-semibold hover:underline" href="#" onClick={(e) => e.preventDefault()}>Lupa kata sandi?</a>
             </div>
             <div className="relative flex items-center">
               <span className="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-xl pointer-events-none" data-icon="lock">lock</span>
@@ -107,6 +126,7 @@ export default function LoginPage() {
           </button>
         </div>
       </div>
+      </div>
       {/* Privacy, Anonymity & Safeguarding Disclaimer Section */}
       <footer className="mt-6 pt-2 pb-2">
         <div className="bg-surface-container/60 rounded-2xl p-3.5 flex items-start gap-3 border border-outline-variant/30">
@@ -123,6 +143,6 @@ export default function LoginPage() {
           Kamu berharga, dan ceritamu selalu didengar di sini.
         </p>
       </footer>
-    </>
+    </div>
   );
 }
