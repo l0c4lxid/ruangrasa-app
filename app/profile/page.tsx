@@ -12,7 +12,7 @@ export default function ProfilePage() {
       <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3.5 shadow-sm border-b border-outline-variant/20 flex justify-between items-center w-full">
         <div className="flex items-center space-x-3">
           <Link
-            href="/"
+            href="/home"
             aria-label="Kembali ke Beranda"
             className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95"
           >
@@ -300,7 +300,7 @@ export default function ProfilePage() {
         {/* Logout Button */}
         <div className="pt-2">
           <Link
-            href="/welcome"
+            href="/"
             className="w-full h-12 rounded-2xl bg-surface-container border border-outline-variant text-on-surface-variant hover:text-error hover:bg-error-container/20 font-label-lg text-label-lg font-medium flex items-center justify-center gap-2 active:scale-95 transition-all"
           >
             <span className="material-symbols-outlined text-[20px]">logout</span>

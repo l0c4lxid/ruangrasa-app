@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/");
+    router.push("/home");
   };
 
   return (
@@ -17,7 +17,7 @@ export default function LoginPage() {
       {/* Top Back Navigation */}
       <div className="w-full flex items-center justify-between mb-2">
         <Link
-          href="/welcome"
+          href="/"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant"
           aria-label="Kembali ke halaman awal"
         >
@@ -124,6 +124,15 @@ export default function LoginPage() {
             </svg>
             <span className="text-label-md font-label-md font-semibold text-on-surface">Masuk dengan Google</span>
           </button>
+
+          {/* Guest Mode Direct Access */}
+          <Link
+            href="/home?guest=true"
+            className="w-full h-[46px] px-4 bg-secondary-container/40 hover:bg-secondary-container/70 border border-outline-variant/60 rounded-2xl flex items-center justify-center gap-2 text-primary font-label-md text-label-md font-semibold transition-all duration-150 active:scale-[0.99]"
+          >
+            <span className="material-symbols-outlined text-[18px]">visibility_off</span>
+            <span>Masuk sebagai Tamu Anonim (Fitur Terbatas)</span>
+          </Link>
         </div>
       </div>
       </div>

@@ -4,12 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const HIDE_NAV_PREFIXES = [
+  "/",            // landing/welcome page
   "/welcome",
   "/auth",
   "/onboarding",
   "/konsultasi/", // detail subpages like booking, payment, session
   "/konselor",    // counselor portal
 ];
+
+// Routes that EXACTLY match the hide prefix (use === check instead of startsWith)
+const HIDE_NAV_EXACT = ["/"];
 
 export function BottomNavigation() {
   const pathname = usePathname();
@@ -20,19 +24,21 @@ export function BottomNavigation() {
     pathname !== "/konsultasi/saya";
 
   const shouldHide =
-    HIDE_NAV_PREFIXES.some(
-      (prefix) => prefix !== "/konsultasi/" && pathname.startsWith(prefix)
-    ) || isConsultationSubpage;
+    HIDE_NAV_PREFIXES.some((prefix) => {
+      if (prefix === "/") return pathname === "/";
+      if (prefix === "/konsultasi/") return false;
+      return pathname.startsWith(prefix);
+    }) || isConsultationSubpage;
 
   if (shouldHide) return null;
 
-  const isHome = pathname === "/";
+  const isHome = pathname === "/home" || pathname.startsWith("/home?");
   const isCurhat = pathname.startsWith("/curhat");
   const isKomunitas = pathname.startsWith("/komunitas");
   const isKonsultasi =
     pathname === "/konsultasi" || pathname === "/konsultasi/saya";
   const isProfile =
-    pathname.startsWith("/profile") || pathname.startsWith("/settings");
+    pathname.startsWith("/profile") || pathname.startsWith("/settings") || pathname.startsWith("/notifications");
 
   return (
     <nav
@@ -41,7 +47,7 @@ export function BottomNavigation() {
     >
       {/* 1. Beranda */}
       <Link
-        href="/"
+        href="/home"
         className={`flex flex-col items-center justify-center transition-all duration-150 active:scale-95 ${
           isHome
             ? "bg-secondary-container text-on-secondary-container rounded-full px-4 py-1"

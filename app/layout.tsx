@@ -14,14 +14,15 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="id">
-      <body className="min-h-screen bg-[#EAEFEA] flex justify-center text-on-surface antialiased">
+      <body className="min-h-dvh bg-[#EAEFEA] flex justify-center text-on-surface antialiased">
         {/* Mobile Device Viewport Shell Container */}
-        <div className="w-full max-w-[412px] min-h-screen bg-surface flex flex-col relative shadow-[0_0_50px_rgba(0,0,0,0.08)] border-x border-outline-variant/30 overflow-x-hidden">
+        <div className="w-full max-w-[412px] min-h-dvh bg-surface flex flex-col relative shadow-[0_0_50px_rgba(0,0,0,0.08)] border-x border-outline-variant/30 overflow-x-hidden">
           {children}
           <BottomNavigation />
         </div>

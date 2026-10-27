@@ -22,7 +22,7 @@ export default function RegisterPage() {
         {/* Top Back Navigation */}
         <div className="w-full flex items-center justify-between mb-4">
           <Link
-            href="/welcome"
+            href="/"
             className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant"
             aria-label="Kembali ke halaman awal"
           >

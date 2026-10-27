@@ -65,3 +65,23 @@
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* Android safe area for bottom navigation */
+nav[aria-label="Navigasi Utama"] {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+/* Ensure full-height on Android 9:16 portrait */
+@supports (min-height: 100dvh) {
+  html, body {
+    min-height: 100dvh;
+  }
+}
+
+/* Prevent overscroll / bounce on iOS & Android WebView */
+html {
+  overscroll-behavior: none;
+}
+body {
+  overscroll-behavior-y: none;
+}

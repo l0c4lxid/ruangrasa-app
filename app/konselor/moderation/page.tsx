@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 
 export default function KonselorModerationPage() {
@@ -373,6 +375,7 @@ export default function KonselorModerationPage() {
               <a
                 className="font-label-sm text-label-sm text-primary font-semibold hover:underline"
                 href="#"
+                onClick={(e) => e.preventDefault()}
               >
                 Pelajari Panduan
               </a>
