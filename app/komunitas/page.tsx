@@ -3,91 +3,87 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 
-type Community = {
+type CommunityForum = {
   slug: string;
   title: string;
   category: "Akademik" | "Karir" | "Relasi" | "Kesehatan Mental";
   categoryLabel: string;
+  description: string;
   icon: string;
-  accentBg: string;
-  accentColor: string;
-  membersCount: string;
-  activeOnline: string;
-  facilitator: string;
-  facilitatorRole: string;
-  activeTopic: string;
-  scheduleBadge?: string;
-  tag: string;
+  threadCount: number;
+  replyCount: number;
+  latestThread: {
+    author: string;
+    title: string;
+    timeAgo: string;
+  };
 };
 
-const COMMUNITIES: Community[] = [
+const COMMUNITIES: CommunityForum[] = [
   {
     slug: "skripsi",
     title: "Ruang Pejuang Skripsi & Tugas Akhir",
     category: "Akademik",
     categoryLabel: "Akademik & Riset",
+    description: "Ruang berbagi keluh kesah revisi, tips menghadapi dosen pembimbing, dan motivasi tugas akhir.",
     icon: "auto_stories",
-    accentBg: "bg-secondary-container",
-    accentColor: "text-primary",
-    membersCount: "320+ Kawan",
-    activeOnline: "48 kawan aktif",
-    facilitator: "Kak Dinda",
-    facilitatorRole: "Alumni Psikologi",
-    activeTopic: "Mengurai kebuntuan bab 4 tanpa cemas berlebih bersama dosen pembimbing",
-    scheduleBadge: "Temu Daring: Kamis, 19:30 WIB",
-    tag: "Paling Aktif",
+    threadCount: 142,
+    replyCount: 580,
+    latestThread: {
+      author: "Kawan #552",
+      title: "Dosen pembimbing revisi terus tapi ga kasih arahan jelas, kalian gimana ngadepinnya?",
+      timeAgo: "20 mnt lalu",
+    },
   },
   {
     slug: "quarter-life",
     title: "Quarter-Life Crisis & Persiapan Karir",
     category: "Karir",
     categoryLabel: "Karir & Masa Depan",
+    description: "Sharing seputar kecemasan pasca-kampus, persiapan CV/interview, dan mencari arah hidup.",
     icon: "explore",
-    accentBg: "bg-tertiary-fixed",
-    accentColor: "text-tertiary",
-    membersCount: "240+ Kawan",
-    activeOnline: "32 kawan aktif",
-    facilitator: "Mas Reza",
-    facilitatorRole: "Career Coach & HR",
-    activeTopic: "Menghadapi rasa tertinggal saat melihat pencapaian karir teman seangkatan",
-    scheduleBadge: "Bedah CV: Sabtu, 14:00 WIB",
-    tag: "Sesi Terjadwal",
+    threadCount: 98,
+    replyCount: 412,
+    latestThread: {
+      author: "Kawan #819",
+      title: "Capek dibanding-bandingin sama teman seangkatan yang udah dapet kerja di BUMN",
+      timeAgo: "1 jam lalu",
+    },
   },
   {
     slug: "rantau",
     title: "Adaptasi Mahasiswa Rantau & Homesick",
     category: "Relasi",
     categoryLabel: "Relasi & Kehidupan",
+    description: "Cerita anak kos tentang rindu rumah, adaptasi budaya baru, dan mengelola biaya hidup.",
     icon: "cottage",
-    accentBg: "bg-[#FCEEE3]",
-    accentColor: "text-[#844728]",
-    membersCount: "190+ Kawan",
-    activeOnline: "21 kawan aktif",
-    facilitator: "Kak Maya",
-    facilitatorRole: "Konselor Sebaya",
-    activeTopic: "Mengatasi rasa sepi di kamar kos dan menjaga koneksi hangat dengan keluarga",
-    tag: "Ruang Hangat",
+    threadCount: 76,
+    replyCount: 329,
+    latestThread: {
+      author: "Kawan #204",
+      title: "Pertama kali sakit di kamar kos sendirian tanpa orang tua, rasanya sedih banget",
+      timeAgo: "3 jam lalu",
+    },
   },
   {
     slug: "overthinking",
     title: "Manajemen Overthinking & Self-Care",
     category: "Kesehatan Mental",
     categoryLabel: "Kesehatan Mental",
+    description: "Saling dukung saat pikiran terasa berisik, cemas berlebih, dan berbagi rutinitas jeda tenang.",
     icon: "self_improvement",
-    accentBg: "bg-primary/10",
-    accentColor: "text-primary",
-    membersCount: "410+ Kawan",
-    activeOnline: "56 kawan aktif",
-    facilitator: "Mbak Nadia, M.Psi.",
-    facilitatorRole: "Psikolog Pembina",
-    activeTopic: "Latihan teknik grounding 5-4-3-2-1 saat pikiran berkecamuk sebelum tidur",
-    scheduleBadge: "Mindfulness: Rabu, 20:00 WIB",
-    tag: "Didampingi Psikolog",
+    threadCount: 165,
+    replyCount: 740,
+    latestThread: {
+      author: "Kawan #901",
+      title: "Ada yang suka overthinking tiba-tiba jam 1 pagi ga? Biasanya kalian lakuin apa?",
+      timeAgo: "15 mnt lalu",
+    },
   },
 ];
 
 const CATEGORIES = [
-  { id: "all", label: "Semua Lingkar" },
+  { id: "all", label: "Semua Forum" },
   { id: "Akademik", label: "Akademik" },
   { id: "Karir", label: "Karir" },
   { id: "Relasi", label: "Relasi & Rantau" },
@@ -104,8 +100,8 @@ export default function KomunitasPage() {
         selectedCategory === "all" || item.category === selectedCategory;
       const matchSearch =
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.activeTopic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase());
+        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.latestThread.title.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCat && matchSearch;
     });
   }, [selectedCategory, searchQuery]);
@@ -116,10 +112,10 @@ export default function KomunitasPage() {
       <header className="sticky top-0 z-40 glass-header px-5 py-3.5 flex items-center justify-between">
         <div>
           <span className="text-label-sm font-label-sm text-secondary font-medium block leading-tight">
-            Ruang Lingkar Sebaya
+            Forum Berbagi Sebaya
           </span>
           <h1 className="text-headline-lg-mobile font-headline-lg-mobile text-primary tracking-tight font-semibold">
-            Komunitas Teduh
+            Komunitas RuangTeduh
           </h1>
         </div>
         <div className="flex items-center gap-1.5">
@@ -136,21 +132,6 @@ export default function KomunitasPage() {
 
       {/* Main Content */}
       <main className="flex-1 px-5 pt-3 pb-24 flex flex-col gap-4">
-        {/* Intro banner */}
-        <section className="glass-card rounded-2xl p-4 border border-white/80 shadow-xs flex items-center justify-between gap-3">
-          <div className="space-y-0.5">
-            <p className="text-label-md font-label-md font-semibold text-on-surface">
-              Kelompok Diskusi Tematik
-            </p>
-            <p className="text-body-sm font-body-sm text-on-surface-variant leading-snug">
-              Berbagi cerita tanpa kompetisi atau penghakiman dengan kawan sefrekuensi.
-            </p>
-          </div>
-          <span className="shrink-0 text-label-sm font-label-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
-            4 Lingkar
-          </span>
-        </section>
-
         {/* Search Input */}
         <section className="relative">
           <div className="relative flex items-center">
@@ -161,7 +142,7 @@ export default function KomunitasPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full min-h-[48px] pl-10 pr-10 rounded-xl glass-input text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all shadow-xs"
-              placeholder="Cari topik diskusi atau kelompok..."
+              placeholder="Cari ruang diskusi atau topik sharing..."
               type="search"
             />
             {searchQuery && (
@@ -176,7 +157,7 @@ export default function KomunitasPage() {
           </div>
         </section>
 
-        {/* Category Filter Pills */}
+        {/* Category Pills */}
         <section className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 -mx-5 px-5">
           {CATEGORIES.map((cat) => {
             const active = selectedCategory === cat.id;
@@ -204,26 +185,26 @@ export default function KomunitasPage() {
           })}
         </section>
 
-        {/* Community List Header */}
+        {/* Room Header */}
         <div className="flex items-center justify-between px-1 pt-1">
           <h2 className="text-label-lg font-label-lg font-semibold text-on-surface">
-            Daftar Lingkar Komunitas ({filteredCommunities.length})
+            Pilih Ruang Diskusi ({filteredCommunities.length})
           </h2>
           <span className="text-label-sm font-label-sm text-secondary">
-            Bebas Masuk Kapan Saja
+            Bebas Baca &amp; Sharing
           </span>
         </div>
 
-        {/* Community Cards: Crafted, Spacious, Zero-Truncation Layout */}
+        {/* Forum Room Cards */}
         <section className="space-y-4">
           {filteredCommunities.length === 0 ? (
             <div className="glass-card rounded-2xl p-6 text-center space-y-2">
               <span className="material-symbols-outlined text-[32px] text-outline">search_off</span>
               <p className="text-headline-sm font-headline-sm text-on-surface font-semibold">
-                Tidak ada lingkar yang cocok
+                Tidak ada forum yang cocok
               </p>
               <p className="text-body-sm font-body-sm text-on-surface-variant">
-                Coba gunakan kata kunci lain atau pilih kategori &quot;Semua Lingkar&quot;.
+                Coba gunakan kata kunci lain seperti &quot;skripsi&quot;, &quot;karir&quot;, atau &quot;overthinking&quot;.
               </p>
             </div>
           ) : (
@@ -234,104 +215,68 @@ export default function KomunitasPage() {
                 className="block active:scale-[0.99] transition-transform group"
               >
                 <article className="glass-card rounded-[22px] p-5 border border-white/80 hover:border-primary/50 transition-all flex flex-col gap-3.5 shadow-xs">
-                  {/* Card Top: Icon, Category Pill, and Status Tag */}
+                  {/* Top Bar: Icon + Category + Thread Count */}
                   <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`w-11 h-11 rounded-2xl ${item.accentBg} ${item.accentColor} flex items-center justify-center shrink-0 shadow-xs`}
-                      >
-                        <span className="material-symbols-outlined text-[24px]">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-10 h-10 rounded-xl bg-secondary-container text-primary flex items-center justify-center shrink-0 shadow-xs">
+                        <span className="material-symbols-outlined text-[22px]">
                           {item.icon}
                         </span>
                       </div>
-                      <div>
-                        <span className="text-label-sm font-label-sm text-secondary font-medium block">
-                          {item.categoryLabel}
-                        </span>
-                        <span className="text-label-sm font-label-sm text-outline flex items-center gap-1 mt-0.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
-                          {item.activeOnline}
-                        </span>
-                      </div>
+                      <span className="text-label-sm font-label-sm font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full border border-primary/20">
+                        {item.categoryLabel}
+                      </span>
                     </div>
 
-                    <span className="text-label-sm font-label-sm font-semibold px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30 shrink-0">
-                      {item.tag}
-                    </span>
+                    <div className="flex items-center gap-3 text-label-sm font-label-sm text-outline">
+                      <span className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-[16px]">forum</span>
+                        <span>{item.threadCount}</span>
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+                        <span>{item.replyCount}</span>
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Card Title: Full natural wrap, NO TRUNCATION */}
+                  {/* Title and Room Description */}
                   <div>
                     <h3 className="text-headline-sm font-headline-sm font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
+                    <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
 
-                  {/* Active Discussion Callout: Natural quote box */}
-                  <div className="p-3 rounded-xl bg-surface-container-low/80 border border-outline-variant/20 flex items-start gap-2.5">
-                    <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">
-                      chat_bubble_outline
+                  {/* Latest Thread Snippet */}
+                  <div className="p-3 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col gap-1">
+                    <div className="flex items-center justify-between text-label-sm font-label-sm text-outline">
+                      <span className="font-medium text-secondary">
+                        Diskusi Terkini • {item.latestThread.author}
+                      </span>
+                      <span>{item.latestThread.timeAgo}</span>
+                    </div>
+                    <p className="text-body-sm font-body-sm text-on-surface italic leading-snug">
+                      &ldquo;{item.latestThread.title}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Action Link Footer */}
+                  <div className="pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+                    <span className="text-label-sm font-label-sm text-on-surface-variant">
+                      Kawan sebaya sedang berdiskusi
                     </span>
-                    <div className="space-y-0.5">
-                      <span className="text-label-sm font-label-sm text-secondary font-medium block">
-                        Topik Hangat Hari Ini:
-                      </span>
-                      <p className="text-body-sm font-body-sm text-on-surface leading-relaxed">
-                        &ldquo;{item.activeTopic}&rdquo;
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Optional Schedule Badge */}
-                  {item.scheduleBadge && (
-                    <div className="px-3 py-1.5 rounded-lg bg-secondary-container/60 border border-secondary/20 flex items-center gap-2 text-label-sm font-label-sm text-on-secondary-container">
-                      <span className="material-symbols-outlined text-[16px] text-primary">
-                        event_available
-                      </span>
-                      <span className="font-medium">{item.scheduleBadge}</span>
-                    </div>
-                  )}
-
-                  {/* Card Bottom: Facilitator & Clean Action CTA */}
-                  <div className="pt-2.5 border-t border-outline-variant/30 flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <div className="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-primary text-xs font-bold shrink-0">
-                        {item.facilitator.charAt(item.facilitator.indexOf(" ") + 1) || item.facilitator.charAt(0)}
-                      </div>
-                      <div className="min-w-0">
-                        <span className="text-label-sm font-label-sm text-on-surface font-semibold block truncate">
-                          {item.facilitator}
-                        </span>
-                        <span className="text-label-sm font-label-sm text-outline block truncate">
-                          {item.facilitatorRole}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-primary text-white text-label-sm font-label-sm font-semibold group-hover:bg-[#1B5E43] transition-colors shrink-0 shadow-xs">
-                      <span>Masuk Lingkar</span>
-                      <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                    </div>
+                    <span className="inline-flex items-center gap-1 text-primary text-label-sm font-label-sm font-semibold group-hover:translate-x-1 transition-transform">
+                      <span>Buka Forum</span>
+                      <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </span>
                   </div>
                 </article>
               </Link>
             ))
           )}
-        </section>
-
-        {/* Ethical Safe Space Note */}
-        <section className="glass-pill rounded-2xl p-4 flex items-start gap-3 text-on-surface-variant">
-          <span className="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">
-            shield
-          </span>
-          <div className="space-y-0.5">
-            <h3 className="text-label-md font-label-md font-semibold text-on-surface">
-              Etika Ruang Aman Lingkar Sebaya
-            </h3>
-            <p className="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
-              Semua peserta menggunakan nama samaran. Dilarang menghakimi, menyebarkan cerita kawan ke luar aplikasi, atau membanding-bandingkan beban.
-            </p>
-          </div>
         </section>
       </main>
     </>
