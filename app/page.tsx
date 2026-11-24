@@ -6,9 +6,9 @@ export default function WelcomeLandingPage() {
       <div>
         {/* Top Header & Brand Anchor */}
         <header className="w-full flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-[14px] bg-secondary-container flex items-center justify-center text-primary-container shadow-sm">
-              <span className="material-symbols-outlined text-[26px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shadow-xs">
+              <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                 spa
               </span>
             </div>
@@ -21,28 +21,30 @@ export default function WelcomeLandingPage() {
               </span>
             </div>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-secondary">
-            <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/70 backdrop-blur-md rounded-full text-secondary border border-white/60 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-primary"></span>
             <span className="font-label-sm text-label-sm font-medium">Teman Aman</span>
           </div>
         </header>
 
-        {/* Warm Organic Visual Banner with Bento Hero */}
+        {/* Hero Banner with Modern Glass Styling */}
         <section className="w-full mb-5">
-          <div className="relative w-full rounded-[22px] overflow-hidden bg-surface-container-lowest gentle-border ambient-glow p-4">
+          <div className="relative w-full rounded-[24px] overflow-hidden glass-card p-4">
             {/* Visual Atmosphere Graphic */}
-            <div className="relative w-full h-44 rounded-[16px] overflow-hidden mb-4">
+            <div className="relative w-full h-44 rounded-[18px] overflow-hidden mb-4 shadow-xs">
               <img
                 className="w-full h-full object-cover"
-                alt="Ilustrasi tempat berlindung botani teduh dengan dedaunan hijau sage dan aksen tanah liat terracotta hangat untuk kedamaian emosional"
+                alt="Tempat berlindung botani teduh dengan dedaunan hijau sage untuk ketenangan emosional"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTk71Nlz4hjzI4GLLeq0_FPB6wlR2wUS-7XOaFVql6IIUg8Z2tTvhviuMDRJuF2mRMMydd44nqvSXeI1pdWHWJzwbFj0tmnB_UKKXbi7IsCipcr07PBg_J-kjpf_bL8nJ1d6WCtKk9IsAXZ1hhEXrDP7cLc46xz6GRwTBdkwLs0sp42jVy1cr8Eta99kPd9FmLCfPayLyHCw3StoxKLUttAaBQuwppXMP8Bk-AhylMa_EFTqHtkFPb"
+                width={360}
+                height={176}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111e17]/50 via-transparent to-transparent flex items-end p-3">
-                <span className="font-label-md text-label-md text-surface-container-lowest bg-[#17251D]/60 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center gap-1.5">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111e17]/60 via-transparent to-transparent flex items-end p-3">
+                <span className="font-label-md text-label-md text-white bg-black/40 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
                   <span className="material-symbols-outlined text-[15px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                     favorite
                   </span>
-                  Kamu tidak sendiri di sini
+                  Kamu tidak sendirian di sini
                 </span>
               </div>
             </div>
@@ -53,112 +55,99 @@ export default function WelcomeLandingPage() {
                 Ruang aman untuk bercerita dan mencari dukungan.
               </h1>
               <p className="font-body-md text-body-md text-outline leading-relaxed">
-                Tempat mendengar tanpa menghakimi bagi mahasiswa dan dewasa muda Indonesia.
+                Tempat mendengar tanpa penghakiman bagi mahasiswa dan dewasa muda Indonesia.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Bento Value Propositions Grid */}
-        <section className="w-full mb-6 space-y-2.5">
-          {/* Value Proposition 1: Curhat Anonim */}
-          <article className="p-3.5 rounded-[16px] bg-surface-container-lowest gentle-border ambient-glow flex items-start gap-3.5 transition-all hover:bg-surface-container-low">
-            <div className="w-10 h-10 rounded-[12px] bg-secondary-container/60 text-primary-container flex items-center justify-center shrink-0 mt-0.5">
+        {/* Three Pillars with Varied Rhythm (Not Copy-Paste AI Cards) */}
+        <section className="w-full mb-6 space-y-3">
+          {/* Flagship: Curhat Anonim */}
+          <article className="p-4 rounded-[20px] bg-gradient-to-br from-white/95 to-secondary-container/40 backdrop-blur-md border border-white/80 shadow-xs flex items-start gap-3.5 transition-all hover:border-primary/30">
+            <div className="w-11 h-11 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
               <span className="material-symbols-outlined text-[22px]">visibility_off</span>
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <h2 className="font-label-lg text-label-lg font-semibold text-on-surface">Curhat Anonim</h2>
-                <span className="font-label-sm text-label-sm text-primary font-medium px-2 py-0.5 bg-surface-container rounded-full">
-                  100% Rahasia
+                <h2 className="font-label-lg text-label-lg font-semibold text-on-surface">Curhat Bebas Nama</h2>
+                <span className="font-label-sm text-label-sm text-primary font-medium px-2.5 py-0.5 bg-primary/10 rounded-full border border-primary/20">
+                  Pseudonim
                 </span>
               </div>
-              <p className="font-body-sm text-body-sm text-outline mt-0.5 leading-snug">
-                Ceritakan isi hatimu tanpa khawatir identitas terbuka.
+              <p className="font-body-sm text-body-sm text-outline mt-1 leading-snug">
+                Tuangkan perasaanmu secara anonim dengan kode pseudonim unik dan terjaga.
               </p>
             </div>
           </article>
 
-          {/* Value Proposition 2: Komunitas Suportif */}
-          <article className="p-3.5 rounded-[16px] bg-surface-container-lowest gentle-border ambient-glow flex items-start gap-3.5 transition-all hover:bg-surface-container-low">
-            <div className="w-10 h-10 rounded-[12px] bg-surface-container text-secondary flex items-center justify-center shrink-0 mt-0.5">
-              <span className="material-symbols-outlined text-[22px]">groups</span>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <h2 className="font-label-lg text-label-lg font-semibold text-on-surface">Komunitas Suportif</h2>
-                <span className="font-label-sm text-label-sm text-secondary font-medium px-2 py-0.5 bg-surface-container rounded-full">
-                  Teman Sebaya
-                </span>
+          {/* Secondary Pillars: Asymmetric Duo */}
+          <div className="grid grid-cols-2 gap-2.5">
+            <article className="p-3.5 rounded-[18px] glass-card flex flex-col justify-between transition-all hover:border-primary/30">
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-secondary-container/70 text-secondary flex items-center justify-center mb-2.5">
+                  <span className="material-symbols-outlined text-[20px]">groups</span>
+                </div>
+                <h2 className="font-label-md text-label-md font-semibold text-on-surface leading-tight">Lingkar Sebaya</h2>
+                <p className="font-body-sm text-body-sm text-outline mt-1 leading-snug text-xs">
+                  Diskusi tematik seputar skripsi dan karir.
+                </p>
               </div>
-              <p className="font-body-sm text-body-sm text-outline mt-0.5 leading-snug">
-                Saling menguatkan bersama teman sebaya dalam ruang diskusi teduh.
-              </p>
-            </div>
-          </article>
+            </article>
 
-          {/* Value Proposition 3: Konseling Terverifikasi */}
-          <article className="p-3.5 rounded-[16px] bg-surface-container-lowest gentle-border ambient-glow flex items-start gap-3.5 transition-all hover:bg-surface-container-low">
-            <div className="w-10 h-10 rounded-[12px] bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5">
-              <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                psychology
-              </span>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <h2 className="font-label-lg text-label-lg font-semibold text-on-surface">Konseling Terverifikasi</h2>
-                <span className="font-label-sm text-label-sm text-tertiary font-medium px-2 py-0.5 bg-[#FFF2ED] rounded-full">
-                  SIPP Aktif
-                </span>
+            <article className="p-3.5 rounded-[18px] glass-card flex flex-col justify-between transition-all hover:border-primary/30">
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center mb-2.5">
+                  <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    psychology
+                  </span>
+                </div>
+                <h2 className="font-label-md text-label-md font-semibold text-on-surface leading-tight">Psikolog SIPP</h2>
+                <p className="font-body-sm text-body-sm text-outline mt-1 leading-snug text-xs">
+                  Sesi konseling profesional berlisensi resmi.
+                </p>
               </div>
-              <p className="font-body-sm text-body-sm text-outline mt-0.5 leading-snug">
-                Terhubung dengan psikolog dan konselor profesional berlisensi.
-              </p>
-            </div>
-          </article>
+            </article>
+          </div>
         </section>
       </div>
 
-      {/* Bottom Action Area */}
+      {/* Bottom Action Area with Refined Modern Glass */}
       <footer className="w-full space-y-2.5 pt-2 pb-2">
         {/* Primary Action CTA */}
         <Link
           href="/auth/register"
-          className="w-full h-[52px] bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-[14px] shadow-sm hover:bg-[#1B5E43] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          className="w-full min-h-[48px] bg-primary text-white font-label-lg text-label-lg font-semibold rounded-2xl shadow-sm hover:bg-[#1B5E43] active:scale-[0.98] transition-all flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-primary"
         >
-          <span>Daftar Sekarang</span>
-          <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
+          <span>Daftar Akun</span>
         </Link>
 
-        {/* Secondary Outlined CTA */}
+        {/* Secondary Outlined CTA with Glass Touch */}
         <Link
           href="/auth/login"
-          className="w-full h-[50px] bg-surface-container-lowest border border-outline-variant text-primary font-label-lg text-label-lg font-semibold rounded-[14px] hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center justify-center"
+          className="w-full min-h-[48px] bg-white/80 backdrop-blur-md border border-outline-variant/60 text-primary font-label-lg text-label-lg font-semibold rounded-2xl hover:bg-white active:scale-[0.98] transition-all flex items-center justify-center shadow-xs"
         >
           <span>Masuk ke Akun</span>
         </Link>
 
-        {/* Guest Mode / Anonymous Access Button */}
+        {/* Guest Mode Access */}
         <Link
           href="/home?guest=true"
-          className="w-full h-[46px] bg-secondary-container/60 hover:bg-secondary-container text-primary font-label-md text-label-md font-semibold rounded-[14px] border border-secondary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          className="w-full min-h-[44px] bg-secondary-container/50 hover:bg-secondary-container text-primary font-label-md text-label-md font-semibold rounded-2xl border border-secondary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
         >
           <span className="material-symbols-outlined text-[18px]">visibility_off</span>
           <span>Masuk sebagai Tamu Anonim</span>
-          <span className="text-[11px] font-normal text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
-            Fitur Terbatas
-          </span>
         </Link>
 
         {/* Demo AI Chat Assistant CTA */}
         <Link
           href="/chat-ai"
-          className="w-full h-[46px] bg-surface-container-high/60 hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold rounded-[14px] border border-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          className="w-full min-h-[44px] glass-pill text-primary font-label-md text-label-md font-semibold rounded-2xl hover:bg-white active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-xs"
         >
           <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
             smart_toy
           </span>
-          <span>Coba Demo Chat AI (Tanya Info &amp; Admin)</span>
+          <span>Tanya Asisten Teduh (Demo Chat &amp; Kontak)</span>
         </Link>
 
         {/* Microcopy & Safety Notice */}
@@ -168,11 +157,11 @@ export default function WelcomeLandingPage() {
           </p>
           <a
             href="tel:119"
-            className="mt-1 inline-flex items-center justify-center gap-1 text-tertiary hover:underline cursor-pointer"
+            className="mt-1 inline-flex items-center justify-center gap-1 text-tertiary hover:underline cursor-pointer min-h-[44px] py-1"
           >
             <span className="material-symbols-outlined text-[14px]">call</span>
             <span className="font-label-sm text-label-sm font-semibold">
-              Butuh bantuan darurat segera? Hotline 119
+              Butuh bantuan darurat? Hubungi Hotline 119 ext 8
             </span>
           </a>
         </div>

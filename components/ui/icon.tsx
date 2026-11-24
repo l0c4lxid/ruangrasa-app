@@ -1,4 +1,4 @@
-/** Therapeutic SVG iconography — no emojis. Pass `name` for a labeled symbol. */
+/** Therapeutic SVG iconography: no emojis. Pass `name` for a labeled symbol. */
 type IconProps = { name: string; className?: string };
 
 const paths: Record<string, string> = {

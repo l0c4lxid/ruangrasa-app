@@ -20,12 +20,12 @@ export default function RegisterPage() {
       <div className="w-full flex items-center justify-between mb-3">
         <Link
           href="/"
-          className="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant active:scale-95"
+          className="w-10 h-10 rounded-full flex items-center justify-center glass-pill hover:bg-white transition-colors text-on-surface-variant active:scale-95 shadow-xs"
           aria-label="Kembali ke beranda"
         >
           <span className="material-symbols-outlined text-[20px]">arrow_back</span>
         </Link>
-        <span className="text-label-sm font-label-sm text-secondary bg-surface-container px-3 py-1 rounded-full">
+        <span className="text-label-sm font-label-sm text-primary glass-pill px-3 py-1 rounded-full border border-primary/20 shadow-xs font-semibold">
           Daftar Akun
         </span>
       </div>
@@ -33,7 +33,7 @@ export default function RegisterPage() {
       <div>
         {/* Top Brand Header */}
         <section className="flex flex-col items-center text-center mb-5">
-          <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center mb-3 shadow-xs border border-outline-variant/40">
+          <div className="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center mb-3 shadow-xs border border-white/80">
             <span
               className="material-symbols-outlined text-primary text-2xl"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -49,10 +49,10 @@ export default function RegisterPage() {
           </p>
         </section>
 
-        {/* Card Form */}
-        <div className="bg-surface-container-lowest rounded-3xl p-5 border border-outline-variant/60 shadow-sm">
+        {/* Card Form with Modern Glass */}
+        <div className="glass-card rounded-[26px] p-5.5 border border-white/80 shadow-xs">
           {/* Segmented Control Tabs (Masuk vs Daftar) */}
-          <div className="bg-surface-container p-1 rounded-2xl flex items-center mb-5">
+          <div className="bg-surface-container/60 p-1 rounded-2xl flex items-center mb-5 border border-outline-variant/30">
             <Link
               href="/auth/login"
               className="flex-1 py-2 rounded-xl text-label-md font-label-md font-medium text-center text-on-surface-variant hover:text-primary transition-all"
@@ -60,7 +60,7 @@ export default function RegisterPage() {
               Masuk
             </Link>
             <button
-              className="flex-1 py-2 rounded-xl text-label-md font-label-md font-semibold bg-surface-container-lowest text-primary shadow-xs transition-all"
+              className="flex-1 py-2 rounded-xl text-label-md font-label-md font-semibold bg-white text-primary shadow-xs transition-all"
               type="button"
             >
               Daftar
@@ -83,7 +83,7 @@ export default function RegisterPage() {
                   required
                   type="text"
                   placeholder="Nama kamu"
-                  className="w-full h-[48px] pl-10 pr-4 bg-surface-container-low border border-outline-variant rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all"
+                  className="w-full h-[48px] pl-10 pr-4 glass-input rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all"
                 />
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function RegisterPage() {
                   required
                   type="email"
                   placeholder="nama@email.com"
-                  className="w-full h-[48px] pl-10 pr-4 bg-surface-container-low border border-outline-variant rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all"
+                  className="w-full h-[48px] pl-10 pr-4 glass-input rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all"
                 />
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function RegisterPage() {
                   required
                   type={showPassword ? "text" : "password"}
                   placeholder="Minimal 8 karakter"
-                  className="w-full h-[48px] pl-10 pr-11 bg-surface-container-low border border-outline-variant rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all"
+                  className="w-full h-[48px] pl-10 pr-11 glass-input rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all"
                 />
                 <button
                   type="button"
@@ -150,7 +150,7 @@ export default function RegisterPage() {
                   required
                   type={showConfirm ? "text" : "password"}
                   placeholder="Ulangi kata sandi"
-                  className="w-full h-[48px] pl-10 pr-11 bg-surface-container-low border border-outline-variant rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all"
+                  className="w-full h-[48px] pl-10 pr-11 glass-input rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all"
                 />
                 <button
                   type="button"
@@ -191,17 +191,16 @@ export default function RegisterPage() {
             {/* Submit CTA */}
             <button
               type="submit"
-              className="w-full h-[48px] mt-2 bg-primary hover:bg-primary/90 text-on-primary font-label-lg font-semibold rounded-xl shadow-xs flex items-center justify-center gap-2 active:scale-[0.99] transition-all"
+              className="w-full min-h-[48px] mt-2 bg-primary hover:bg-[#1B5E43] text-white font-label-lg font-semibold rounded-xl shadow-xs flex items-center justify-center active:scale-[0.99] transition-all"
             >
-              <span>Daftar Akun</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              Daftar Akun Baru
             </button>
           </form>
 
           {/* Divider */}
           <div className="relative my-4 flex items-center justify-center">
-            <div className="w-full border-t border-outline-variant/40"></div>
-            <span className="absolute bg-surface-container-lowest px-3 text-label-sm text-outline">
+            <div className="w-full border-t border-outline-variant/30"></div>
+            <span className="absolute bg-white/90 px-3 text-label-sm text-outline rounded-full border border-white/60">
               atau
             </span>
           </div>
@@ -210,7 +209,7 @@ export default function RegisterPage() {
           <button
             type="button"
             onClick={() => router.push("/onboarding/identity")}
-            className="w-full h-[46px] rounded-xl border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low flex items-center justify-center gap-2.5 active:scale-[0.99] transition-all text-label-md font-medium text-on-surface"
+            className="w-full min-h-[46px] rounded-xl glass-pill hover:bg-white border border-outline-variant/40 flex items-center justify-center gap-2.5 active:scale-[0.99] transition-all text-label-md font-semibold text-on-surface shadow-xs"
           >
             <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
               <path

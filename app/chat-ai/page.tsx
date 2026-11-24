@@ -74,7 +74,7 @@ export default function ChatAIPage() {
   const getAIResponse = (userQuery: string): { text: string; actions?: MessageAction[]; badge?: string } => {
     const q = userQuery.toLowerCase().trim();
 
-    // 1. Inquiries about what the app is ("apps apa ini", "apa itu ruangteduh", "tentang aplikasi", "penjelasan")
+    // 1. Inquiries about what the app is
     if (
       q.includes("apa") && (q.includes("apps") || q.includes("aplikasi") || q.includes("ruangteduh") || q.includes("ini") || q.includes("fungsi")) ||
       q.includes("tentang") ||
@@ -196,7 +196,7 @@ export default function ChatAIPage() {
     // 6. Default Fallback
     return {
       badge: "Panduan Bantuan",
-      text: `Terima kasih sudah bertanya! 😊\n\nUntuk pertanyaan kamu mengenai "${userQuery}", kamu bisa menjelajahi fitur utama kami atau menghubungi Admin resmi RuangTeduh di nomor WhatsApp **+62 812-3456-7890** untuk penjelasan lebih lanjut.`,
+      text: `Terima kasih sudah bertanya!\n\nUntuk pertanyaan kamu mengenai "${userQuery}", kamu bisa menjelajahi fitur utama kami atau menghubungi Admin resmi RuangTeduh di nomor WhatsApp **+62 812-3456-7890** untuk penjelasan lebih lanjut.`,
       actions: [
         {
           label: "Hubungi WhatsApp Admin",
@@ -250,21 +250,9 @@ export default function ChatAIPage() {
         {
           id: `welcome-${Date.now()}`,
           sender: "ai",
-          text: "Halo kembali! Percakapan baru telah dimulai. Ada hal lain seputar RuangTeduh atau kontak Admin yang ingin kamu ketahui?",
+          text: "Percakapan baru telah dimulai. Apa yang ingin kamu tanyakan hari ini seputar RuangTeduh atau kontak admin?",
           timestamp: "Baru saja",
-          highlightBadge: "Sesi Baru",
-          actions: [
-            {
-              label: "Tentang RuangTeduh",
-              copyText: "Apps apa ini sebenarnya?",
-              icon: "info",
-            },
-            {
-              label: "Minta Nomor Admin",
-              copyText: "Berapa nomor kontak Admin?",
-              icon: "support_agent",
-            },
-          ],
+          highlightBadge: "Asisten RuangTeduh",
         },
       ]);
     }
@@ -274,14 +262,14 @@ export default function ChatAIPage() {
     <div className="flex flex-col h-screen max-w-[412px] mx-auto bg-surface relative select-none">
       {/* Toast Notification for Copy */}
       {copiedText && (
-        <div className="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-[#17251D] text-white text-label-md px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-bounce">
-          <span className="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+        <div className="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-[#17251D] text-white text-label-md px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+          <span className="material-symbols-outlined text-[18px] text-primary">check_circle</span>
           <span>Nomor admin disalin ke clipboard!</span>
         </div>
       )}
 
-      {/* App Bar / Header */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-4 py-3 shadow-sm border-b border-outline-variant/30 flex items-center justify-between">
+      {/* App Bar / Header with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link
             href="/home"
@@ -295,20 +283,20 @@ export default function ChatAIPage() {
               <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                 smart_toy
               </span>
-              <span className="w-2.5 h-2.5 rounded-full bg-primary-container border-2 border-surface absolute -bottom-0.5 -right-0.5"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-primary border-2 border-surface absolute -bottom-0.5 -right-0.5"></span>
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <h1 className="font-headline-sm text-[16px] font-bold text-on-surface leading-tight">
-                  Asisten Teduh AI
+                  Asisten Teduh
                 </h1>
-                <span className="bg-primary/10 text-primary text-[10px] font-semibold px-1.5 py-0.5 rounded-md">
+                <span className="bg-primary/10 text-primary text-[10px] font-semibold px-2 py-0.5 rounded-full border border-primary/20">
                   DEMO
                 </span>
               </div>
-              <span className="text-label-sm text-primary flex items-center gap-1 leading-tight">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                Online • Bantuan Cepat
+              <span className="text-label-sm text-primary flex items-center gap-1.5 leading-tight font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Tersedia untuk menjawab
               </span>
             </div>
           </div>
@@ -318,7 +306,8 @@ export default function ChatAIPage() {
         <button
           onClick={handleResetChat}
           title="Reset Percakapan"
-          className="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all"
+          aria-label="Reset Percakapan"
+          className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all"
         >
           <span className="material-symbols-outlined text-[20px]">refresh</span>
         </button>
@@ -333,7 +322,7 @@ export default function ChatAIPage() {
           >
             {/* Sender / Badge row */}
             {msg.sender === "ai" && msg.highlightBadge && (
-              <span className="text-[11px] font-medium text-primary bg-secondary-container/60 px-2.5 py-0.5 rounded-full mb-1 flex items-center gap-1">
+              <span className="text-[11px] font-medium text-primary bg-primary/10 px-2.5 py-0.5 rounded-full mb-1 flex items-center gap-1 border border-primary/20">
                 <span className="material-symbols-outlined text-[13px]">verified</span>
                 {msg.highlightBadge}
               </span>
@@ -351,8 +340,8 @@ export default function ChatAIPage() {
               <div
                 className={`p-3.5 rounded-2xl text-body-md leading-relaxed ${
                   msg.sender === "user"
-                    ? "bg-primary text-on-primary rounded-tr-xs shadow-xs"
-                    : "bg-surface-container-lowest text-on-surface rounded-tl-xs border border-outline-variant/50 custom-shadow-resting"
+                    ? "bg-primary text-white rounded-tr-xs shadow-xs"
+                    : "glass-card text-on-surface rounded-tl-xs border border-white/80 shadow-xs"
                 }`}
               >
                 {/* Message text with bold & line break parsing */}
@@ -377,7 +366,7 @@ export default function ChatAIPage() {
                               className={`px-1.5 py-0.5 rounded font-mono text-xs ${
                                 msg.sender === "user"
                                   ? "bg-white/20 text-white"
-                                  : "bg-surface-container text-primary font-bold"
+                                  : "bg-surface-container text-primary font-semibold"
                               }`}
                             >
                               {segment.slice(1, -1)}
@@ -405,7 +394,7 @@ export default function ChatAIPage() {
                                 handleSend(action.copyText);
                               }
                             }}
-                            className="bg-surface-container text-primary hover:bg-secondary-container px-3 py-1.5 rounded-xl text-label-sm font-semibold flex items-center gap-1.5 active:scale-95 transition-all shadow-2xs"
+                            className="bg-white/80 text-primary hover:bg-white px-3 py-1.5 rounded-xl text-label-sm font-semibold flex items-center gap-1.5 active:scale-95 transition-all shadow-xs border border-outline-variant/30 min-h-[36px]"
                           >
                             {action.icon && (
                               <span className="material-symbols-outlined text-[16px]">
@@ -424,7 +413,7 @@ export default function ChatAIPage() {
                             href={action.url}
                             target={action.isExternal ? "_blank" : undefined}
                             rel={action.isExternal ? "noopener noreferrer" : undefined}
-                            className="bg-primary text-on-primary hover:bg-primary/90 px-3 py-1.5 rounded-xl text-label-sm font-semibold flex items-center gap-1.5 active:scale-95 transition-all shadow-2xs"
+                            className="bg-primary text-white hover:bg-[#1B5E43] px-3 py-1.5 rounded-xl text-label-sm font-semibold flex items-center gap-1.5 active:scale-95 transition-all shadow-xs min-h-[36px]"
                           >
                             {action.icon && (
                               <span className="material-symbols-outlined text-[16px]">
@@ -444,7 +433,7 @@ export default function ChatAIPage() {
                           <Link
                             key={idx}
                             href={action.href}
-                            className="bg-surface-container-high text-primary hover:bg-secondary-container px-3 py-1.5 rounded-xl text-label-sm font-semibold flex items-center gap-1.5 active:scale-95 transition-all shadow-2xs"
+                            className="bg-white/80 text-primary hover:bg-white px-3 py-1.5 rounded-xl text-label-sm font-semibold flex items-center gap-1.5 active:scale-95 transition-all shadow-xs border border-outline-variant/30 min-h-[36px]"
                           >
                             {action.icon && (
                               <span className="material-symbols-outlined text-[16px]">
@@ -452,7 +441,6 @@ export default function ChatAIPage() {
                               </span>
                             )}
                             <span>{action.label}</span>
-                            <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                           </Link>
                         );
                       }
@@ -481,7 +469,7 @@ export default function ChatAIPage() {
             <div className="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0">
               <span className="material-symbols-outlined text-[16px]">smart_toy</span>
             </div>
-            <div className="bg-surface-container-lowest px-4 py-3 rounded-2xl rounded-tl-xs border border-outline-variant/40 flex items-center gap-1.5 shadow-xs">
+            <div className="glass-card px-4 py-3 rounded-2xl rounded-tl-xs border border-white/80 flex items-center gap-1.5 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-primary animate-bounce"></span>
               <span
                 className="w-2 h-2 rounded-full bg-primary animate-bounce"
@@ -498,8 +486,8 @@ export default function ChatAIPage() {
         <div ref={messagesEndRef} />
       </main>
 
-      {/* Suggested Quick Prompt Chips */}
-      <div className="px-4 py-2 border-t border-outline-variant/20 bg-surface/80 backdrop-blur-sm overflow-x-auto no-scrollbar flex items-center gap-2">
+      {/* Suggested Quick Prompt Chips with Modern Glass Pill Styling */}
+      <div className="px-4 py-2 border-t border-outline-variant/20 glass-nav overflow-x-auto no-scrollbar flex items-center gap-2">
         <span className="text-label-sm text-outline shrink-0 flex items-center gap-1">
           <span className="material-symbols-outlined text-[15px] text-primary">tips_and_updates</span>
           Coba:
@@ -509,15 +497,15 @@ export default function ChatAIPage() {
             key={idx}
             disabled={isTyping}
             onClick={() => handleSend(suggestion)}
-            className="text-label-sm font-medium bg-surface-container-lowest hover:bg-secondary-container text-on-surface px-3 py-1.5 rounded-full border border-outline-variant/40 shrink-0 whitespace-nowrap active:scale-95 transition-all shadow-2xs disabled:opacity-50"
+            className="text-label-sm font-medium glass-pill hover:bg-white text-on-surface px-3 py-1.5 rounded-full border border-white/70 shrink-0 whitespace-nowrap active:scale-95 transition-all shadow-xs disabled:opacity-50"
           >
             {suggestion}
           </button>
         ))}
       </div>
 
-      {/* Bottom Message Input Bar */}
-      <footer className="p-3 bg-surface border-t border-outline-variant/30">
+      {/* Bottom Message Input Bar with Glass Nav */}
+      <footer className="p-3 glass-nav border-t border-white/80">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -530,8 +518,8 @@ export default function ChatAIPage() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ketik pertanyaan seputar RuangTeduh / Admin..."
-              className="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-2xl py-3 pl-4 pr-10 text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-xs transition-all"
+              placeholder="Tanya info atau kontak Admin..."
+              className="w-full glass-input rounded-2xl py-3 pl-4 pr-10 text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white shadow-xs transition-all"
             />
             {input.trim() && (
               <button
@@ -547,7 +535,7 @@ export default function ChatAIPage() {
             type="submit"
             disabled={!input.trim() || isTyping}
             aria-label="Kirim Pesan"
-            className="w-12 h-12 rounded-2xl bg-primary text-on-primary flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary/90 active:scale-95 transition-all shadow-sm shrink-0"
+            className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#1B5E43] active:scale-95 transition-all shadow-xs shrink-0"
           >
             <span className="material-symbols-outlined text-[22px]">send</span>
           </button>

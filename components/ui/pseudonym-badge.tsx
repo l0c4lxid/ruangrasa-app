@@ -1,4 +1,4 @@
-/** PseudonymBadge — culturally-appropriate anonymous chip (Pxx) */
+/** PseudonymBadge: culturally-appropriate anonymous chip (Pxx) */
 export default function PseudonymBadge({ pseudo }: { pseudo: string }) {
   return (
     <span

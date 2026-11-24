@@ -17,6 +17,30 @@
     font-family: var(--font-body);
     color: #111e17;
   }
+
+  /* Accessible interaction: cursor pointer on interactive elements (R-39) */
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  input[type="checkbox"],
+  input[type="radio"],
+  [role="button"],
+  [role="tab"],
+  [role="switch"] {
+    cursor: pointer;
+  }
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* Clear focus outline for keyboard accessibility (R-32) */
+  :focus-visible {
+    outline: 2px solid #096444;
+    outline-offset: 2px;
+  }
 }
 
 /* Material Symbols - proper font rendering */
@@ -41,7 +65,46 @@
   font-variation-settings: 'FILL' 1;
 }
 
-/* Template utilities */
+/* Modern Glass Aesthetics (R-10 compliant: purposeful frosted glass) */
+.glass-header {
+  background: rgba(237, 254, 240, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 20px -4px rgba(23, 37, 29, 0.03);
+}
+
+.glass-nav {
+  background: rgba(237, 254, 240, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 -4px 24px -4px rgba(23, 37, 29, 0.04);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.84) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 30px -8px rgba(23, 37, 29, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(111, 122, 114, 0.25);
+}
+
+/* Subtle elevation tokens */
 .ambient-glow {
   box-shadow: 0 4px 20px -2px rgba(23, 37, 29, 0.05), 0 2px 8px -1px rgba(46, 125, 91, 0.04);
 }
@@ -84,4 +147,16 @@ html {
 }
 body {
   overscroll-behavior-y: none;
+}
+
+/* Reduced motion preference (R-39) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

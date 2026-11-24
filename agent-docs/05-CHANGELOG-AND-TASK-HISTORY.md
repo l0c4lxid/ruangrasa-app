@@ -4,6 +4,35 @@ Dokumen ini mencatat setiap perubahan, penambahan fitur, dan keputusan teknis ya
 
 ---
 
+## 📅 [2026-11-24] | Modernisasi Estetika Glassmorphism & Penerapan Prinsip Antislop AI
+
+- **Modern Glassmorphism Design System ([`app/globals.css`](file:///d:/Coding/ruangrasa-app/app/globals.css))**:
+  - Menambahkan utility classes modern frosted glass: `.glass-header`, `.glass-nav`, `.glass-card`, `.glass-pill`, `.glass-input`.
+  - Mengintegrasikan styling transparan alami dengan `backdrop-filter: blur(12px-16px)`, border subtle `rgba(255,255,255,0.75-0.85)`, dan ambient shadow halus.
+  - Menghilangkan tampilan solid/opaque seragam pada seluruh header, kartu, pill filter, dan navigasi bawah.
+- **Penerapan Aturan Ketat Antislop AI (Hard Gates & Purpose Gates)**:
+  - **R-02 (Copywriting)**: Menghapus em-dash (`—`) pada seluruh UI text dan documentation comments di komponen, menggantinya dengan pemisah titik dua atau pipeline (`|`).
+  - **R-03 & R-39 (Touch Targets & Accessibility)**: Memastikan seluruh tombol, tab filter, dan item navigasi memenuhi target sentuh minimum mobile (`min-h-[44px]`). Menambahkan outline keyboard accessibility `:focus-visible` serta `cursor: pointer` pada semua elemen interaktif.
+  - **R-04 (Iconography Hygiene & Sizing)**:
+    - Menghapus emoji liar (`🌿`, `🍃`, `🌱`, `☁️`, `🌸`) pada identitas samaran di [`app/onboarding/identity/page.tsx`](file:///d:/Coding/ruangrasa-app/app/onboarding/identity/page.tsx) dan menggantinya dengan Material Symbols terkurasi (`spa`, `eco`, `psychology`, `cloud`, `local_florist`).
+    - Merapikan dan menstandarkan ukuran icon di seluruh halaman (menghilangkan ukuran subpixel ganjil seperti `11px`, `12px`, `13px`, `15px` ke ukuran standar Material `16px`, `18px`, `20px`, `24px`).
+    - Memperbesar icon bottom navigation ke `text-[24px]` agar tajam dan proporsional.
+  - **R-05 & R-14 (Asymmetric Card Rhythms)**: Menghindari grid 3 kartu identik berturut-turut pada Beranda dan Landing; menggantinya dengan komposisi asimetris (1 kartu fitur utama *Curhat Bebas Nama* full-width + grid 2 kolom sekunder untuk *Komunitas* dan *Konsultasi*).
+  - **R-25 (Contrast & Readability)**: Mengubah teks tombol primer menjadi `text-white` kontras tinggi daripada `text-on-primary` yang redup.
+  - **R-39 (Viewport Scaling)**: Menghapus pembatasan aksesibilitas `userScalable: false` dan `maximumScale: 1` pada [`app/layout.tsx`](file:///d:/Coding/ruangrasa-app/app/layout.tsx).
+- **Modernisasi Seluruh Halaman (22 Rute)**:
+  - Halaman Landing ([`app/page.tsx`](file:///d:/Coding/ruangrasa-app/app/page.tsx))
+  - Beranda ([`app/home/page.tsx`](file:///d:/Coding/ruangrasa-app/app/home/page.tsx))
+  - Curhat Feed & Detail & Buat ([`app/curhat/page.tsx`](file:///d:/Coding/ruangrasa-app/app/curhat/page.tsx), [`[id]`](file:///d:/Coding/ruangrasa-app/app/curhat/[id]/page.tsx), [`buat`](file:///d:/Coding/ruangrasa-app/app/curhat/buat/page.tsx))
+  - Komunitas & Thread ([`app/komunitas/page.tsx`](file:///d:/Coding/ruangrasa-app/app/komunitas/page.tsx), [`[slug]`](file:///d:/Coding/ruangrasa-app/app/komunitas/[slug]/page.tsx))
+  - Direktori Konsultasi, Detail, Booking, Pembayaran, Sesi, & Riwayat ([`app/konsultasi/page.tsx`](file:///d:/Coding/ruangrasa-app/app/konsultasi/page.tsx), [`[id]`](file:///d:/Coding/ruangrasa-app/app/konsultasi/[id]/page.tsx), [`booking`](file:///d:/Coding/ruangrasa-app/app/konsultasi/[id]/booking/page.tsx), [`payment`](file:///d:/Coding/ruangrasa-app/app/konsultasi/[id]/payment/page.tsx), [`session`](file:///d:/Coding/ruangrasa-app/app/konsultasi/[id]/session/page.tsx), [`saya`](file:///d:/Coding/ruangrasa-app/app/konsultasi/saya/page.tsx))
+  - Portal Mitra Konselor & Submodul ([`app/konselor/page.tsx`](file:///d:/Coding/ruangrasa-app/app/konselor/page.tsx), [`kuota`](file:///d:/Coding/ruangrasa-app/app/konselor/kuota/page.tsx), [`laporan`](file:///d:/Coding/ruangrasa-app/app/konselor/laporan/page.tsx), [`moderation`](file:///d:/Coding/ruangrasa-app/app/konselor/moderation/page.tsx))
+  - Auth & Onboarding ([`app/auth/login/page.tsx`](file:///d:/Coding/ruangrasa-app/app/auth/login/page.tsx), [`register`](file:///d:/Coding/ruangrasa-app/app/auth/register/page.tsx), [`onboarding/identity`](file:///d:/Coding/ruangrasa-app/app/onboarding/identity/page.tsx))
+  - Fitur Pendukung ([`app/chat-ai/page.tsx`](file:///d:/Coding/ruangrasa-app/app/chat-ai/page.tsx), [`profile`](file:///d:/Coding/ruangrasa-app/app/profile/page.tsx), [`settings`](file:///d:/Coding/ruangrasa-app/app/settings/page.tsx), [`notifications`](file:///d:/Coding/ruangrasa-app/app/notifications/page.tsx), [`error.tsx`](file:///d:/Coding/ruangrasa-app/app/error.tsx), [`not-found.tsx`](file:///d:/Coding/ruangrasa-app/app/not-found.tsx))
+- **Verifikasi**: `npm run build` sukses 100% tanpa error TypeScript/Linting pada seluruh 22 rute.
+
+---
+
 ## 📅 [2026-11-24] | Perbaikan UX Navigasi, Deklutter AI Slop, & Format Judul Pipeline (|)
 - **Halaman Register ([`app/auth/register/page.tsx`](file:///d:/Coding/ruangrasa-app/app/auth/register/page.tsx))**:
   - Menghapus seluruh teks penjelasan yang berlebihan dan bernuansa "AI slop" (footer kartu garansi privasi panjang, quotes puitis, meter kekuatan sandi artifisial, dan badge redundan).

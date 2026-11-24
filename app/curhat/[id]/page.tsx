@@ -9,8 +9,8 @@ export default async function CurhatDetailPage({
 
   return (
     <>
-      {/* Top App Bar (Task Header) */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-sm shadow-sm transition-all border-b border-outline-variant/20">
+      {/* Top App Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header shadow-xs transition-all">
         <div className="flex items-center justify-between px-5 py-3.5">
           <div className="flex items-center gap-3">
             <Link
@@ -25,8 +25,8 @@ export default async function CurhatDetailPage({
                 Curhat Kawan #{id || "412"}
               </h1>
               <span className="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
-                Ruang Aman &amp; Terjaga
+                <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                Ruang Aman Terjaga
               </span>
             </div>
           </div>
@@ -45,12 +45,12 @@ export default async function CurhatDetailPage({
 
       {/* Main Content Scrollable Area */}
       <main className="px-5 pt-3 pb-36 space-y-4 flex-1">
-        {/* Kartu Utama Curhat */}
-        <article className="bg-surface-container-lowest rounded-2xl border border-outline-variant p-5 shadow-sm">
+        {/* Kartu Utama Curhat with Modern Glass Card */}
+        <article className="glass-card rounded-[22px] border border-white/80 p-5 shadow-xs">
           {/* Author Info & Badge */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary-container shadow-inner">
+              <div className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary shadow-inner">
                 <span
                   className="material-symbols-outlined"
                   style={{ fontVariationSettings: "'FILL' 1", fontSize: "26px" }}
@@ -63,16 +63,16 @@ export default async function CurhatDetailPage({
                   <span className="font-label-lg text-label-lg font-semibold text-on-surface">
                     Kawan Anonim #{id || "412"}
                   </span>
-                  <span className="bg-secondary-fixed text-on-secondary-fixed text-[11px] px-2 py-0.5 rounded-full font-medium">
+                  <span className="bg-secondary-container text-on-secondary-container text-[11px] px-2 py-0.5 rounded-full font-semibold">
                     Penulis
                   </span>
                 </div>
                 <span className="font-body-sm text-body-sm text-outline block mt-0.5">
-                  15 menit yang lalu • Anonim
+                  15 menit lalu • Anonim
                 </span>
               </div>
             </div>
-            <span className="bg-surface-container text-primary px-3 py-1 rounded-full font-label-sm text-label-sm font-medium border border-secondary-fixed-dim">
+            <span className="bg-white/70 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm font-medium border border-outline-variant/30">
               Akademik &amp; Skripsi
             </span>
           </div>
@@ -91,9 +91,9 @@ export default async function CurhatDetailPage({
           </div>
 
           {/* Empathy Action Bar */}
-          <div className="mt-5 pt-4 border-t border-surface-container flex items-center justify-between">
+          <div className="mt-5 pt-4 border-t border-outline-variant/30 flex items-center justify-between">
             <button
-              className="flex items-center gap-2 bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed px-4 py-2 rounded-full font-label-md text-label-md font-semibold active:scale-95 transition-transform"
+              className="flex items-center gap-2 bg-secondary-container/70 text-on-secondary-container hover:bg-secondary-container px-4 py-2 rounded-full font-label-md text-label-md font-semibold active:scale-95 transition-transform min-h-[44px]"
               type="button"
             >
               <span
@@ -115,7 +115,7 @@ export default async function CurhatDetailPage({
           <div className="flex items-center justify-between px-1">
             <h3 className="font-label-lg text-label-lg font-semibold text-on-surface flex items-center gap-2">
               <span>Dukungan Kawan Sebaya</span>
-              <span className="bg-surface-container text-primary text-label-sm px-2 py-0.5 rounded-full">
+              <span className="bg-primary/10 text-primary text-label-sm px-2 py-0.5 rounded-full font-semibold">
                 12
               </span>
             </h3>
@@ -125,7 +125,7 @@ export default async function CurhatDetailPage({
           </div>
 
           {/* Komentar 1 */}
-          <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant p-4 shadow-xs space-y-2">
+          <div className="glass-card rounded-[20px] border border-white/80 p-4 shadow-xs space-y-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary text-sm font-semibold">
@@ -136,7 +136,7 @@ export default async function CurhatDetailPage({
                     Kawan Anonim #918
                   </span>
                   <span className="font-body-sm text-body-sm text-outline text-[11px]">
-                    8 menit yang lalu
+                    8 menit lalu
                   </span>
                 </div>
               </div>
@@ -146,11 +146,11 @@ export default async function CurhatDetailPage({
             </p>
             <div className="flex items-center gap-4 pt-1 text-on-surface-variant">
               <button
-                className="flex items-center gap-1 text-label-sm font-label-sm text-primary hover:text-surface-tint"
+                className="flex items-center gap-1 text-label-sm font-label-sm text-primary hover:text-surface-tint min-h-[44px]"
                 type="button"
               >
                 <span
-                  className="material-symbols-outlined text-base"
+                  className="material-symbols-outlined text-[18px]"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   favorite
@@ -158,7 +158,7 @@ export default async function CurhatDetailPage({
                 <span>18 Pelukan</span>
               </button>
               <button
-                className="text-label-sm font-label-sm text-outline hover:text-primary"
+                className="text-label-sm font-label-sm text-outline hover:text-primary min-h-[44px]"
                 type="button"
               >
                 Balas
@@ -167,7 +167,7 @@ export default async function CurhatDetailPage({
           </div>
 
           {/* Komentar 2 */}
-          <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant p-4 shadow-xs space-y-2">
+          <div className="glass-card rounded-[20px] border border-white/80 p-4 shadow-xs space-y-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-tertiary text-sm font-semibold">
@@ -178,7 +178,7 @@ export default async function CurhatDetailPage({
                     Kawan Anonim #305
                   </span>
                   <span className="font-body-sm text-body-sm text-outline text-[11px]">
-                    25 menit yang lalu
+                    25 menit lalu
                   </span>
                 </div>
               </div>
@@ -188,11 +188,11 @@ export default async function CurhatDetailPage({
             </p>
             <div className="flex items-center gap-4 pt-1 text-on-surface-variant">
               <button
-                className="flex items-center gap-1 text-label-sm font-label-sm text-primary hover:text-surface-tint"
+                className="flex items-center gap-1 text-label-sm font-label-sm text-primary hover:text-surface-tint min-h-[44px]"
                 type="button"
               >
                 <span
-                  className="material-symbols-outlined text-base"
+                  className="material-symbols-outlined text-[18px]"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   favorite
@@ -200,7 +200,7 @@ export default async function CurhatDetailPage({
                 <span>9 Pelukan</span>
               </button>
               <button
-                className="text-label-sm font-label-sm text-outline hover:text-primary"
+                className="text-label-sm font-label-sm text-outline hover:text-primary min-h-[44px]"
                 type="button"
               >
                 Balas
@@ -210,15 +210,15 @@ export default async function CurhatDetailPage({
         </section>
       </main>
 
-      {/* Sticky Bottom Bar: Input Komentar Penyemangat docked above the bottom nav */}
-      <div className="fixed bottom-14 left-0 right-0 max-w-[412px] mx-auto bg-surface/95 backdrop-blur-md px-4 py-2.5 z-40 border-t border-outline-variant/30 shadow-[0_-4px_16px_rgba(23,37,29,0.06)]">
+      {/* Sticky Bottom Bar: Input Komentar Penyemangat with Glass Nav Styling */}
+      <div className="fixed bottom-14 left-0 right-0 max-w-[412px] mx-auto glass-nav px-4 py-2.5 z-40 border-t border-white/80 shadow-[0_-4px_16px_rgba(23,37,29,0.04)]">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0 border border-outline-variant">
+          <div className="w-9 h-9 rounded-full bg-white/80 flex items-center justify-center text-primary shrink-0 border border-outline-variant/30">
             <span className="material-symbols-outlined text-[18px]">person</span>
           </div>
           <div className="flex-1 relative flex items-center">
             <input
-              className="w-full bg-surface-container-low text-on-surface placeholder:text-outline text-body-md font-body-md rounded-full py-2 pl-4 pr-10 border border-outline-variant focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all"
+              className="w-full glass-input text-on-surface placeholder:text-outline text-body-md font-body-md rounded-full py-2 pl-4 pr-10 border border-outline-variant/40 focus:outline-none focus:border-primary focus:bg-white transition-all"
               placeholder="Tulis kata-kata penyemangat..."
               type="text"
             />
@@ -234,7 +234,7 @@ export default async function CurhatDetailPage({
           </div>
           <button
             aria-label="Kirim respon"
-            className="w-10 h-10 rounded-full bg-primary-container hover:bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-95 transition-transform shrink-0"
+            className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-xs active:scale-95 transition-transform shrink-0"
             type="button"
           >
             <span

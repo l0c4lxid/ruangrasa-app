@@ -60,8 +60,8 @@ export default function NotificationsPage() {
 
   return (
     <>
-      {/* Top App Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3 shadow-sm border-b border-outline-variant/20">
+      {/* Top App Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-5 py-3 shadow-xs">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link
@@ -98,99 +98,60 @@ export default function NotificationsPage() {
       <main className="flex-1 px-5 pt-3 pb-24 space-y-4">
         {/* Filter Chips Navigation */}
         <section className="overflow-x-auto pb-1 -mx-5 px-5 flex gap-2 no-scrollbar">
-          <button
-            onClick={() => setFilter("semua")}
-            className={`flex items-center gap-1.5 h-9 px-4 rounded-full text-label-md font-label-md whitespace-nowrap transition-all ${
-              filter === "semua"
-                ? "bg-secondary-container border border-primary text-primary font-semibold shadow-xs"
-                : "bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-            }`}
-            type="button"
-          >
-            {filter === "semua" && (
-              <span
-                className="material-symbols-outlined text-[16px]"
-                style={{ fontVariationSettings: "'FILL' 1" }}
+          {(["semua", "konsultasi", "komunitas", "sistem"] as const).map((cat) => {
+            const active = filter === cat;
+            const labels = {
+              semua: "Semua",
+              konsultasi: "Konsultasi",
+              komunitas: "Komunitas",
+              sistem: "Sistem",
+            };
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setFilter(cat)}
+                className={`h-9 px-4 rounded-full flex items-center gap-1.5 text-label-md font-label-md font-medium shrink-0 transition-all active:scale-95 ${
+                  active
+                    ? "bg-primary text-white shadow-xs"
+                    : "glass-pill text-on-surface-variant hover:bg-white"
+                }`}
               >
-                check
-              </span>
-            )}
-            Semua
-          </button>
-          <button
-            onClick={() => setFilter("konsultasi")}
-            className={`flex items-center gap-1.5 h-9 px-4 rounded-full text-label-md font-label-md whitespace-nowrap transition-all ${
-              filter === "konsultasi"
-                ? "bg-secondary-container border border-primary text-primary font-semibold shadow-xs"
-                : "bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-            }`}
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[16px]">psychology</span>
-            Konsultasi
-          </button>
-          <button
-            onClick={() => setFilter("komunitas")}
-            className={`flex items-center gap-1.5 h-9 px-4 rounded-full text-label-md font-label-md whitespace-nowrap transition-all ${
-              filter === "komunitas"
-                ? "bg-secondary-container border border-primary text-primary font-semibold shadow-xs"
-                : "bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-            }`}
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[16px]">forum</span>
-            Komunitas &amp; Curhat
-          </button>
-          <button
-            onClick={() => setFilter("sistem")}
-            className={`flex items-center gap-1.5 h-9 px-4 rounded-full text-label-md font-label-md whitespace-nowrap transition-all ${
-              filter === "sistem"
-                ? "bg-secondary-container border border-primary text-primary font-semibold shadow-xs"
-                : "bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-            }`}
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[16px]">spa</span>
-            Sistem
-          </button>
+                {labels[cat]}
+              </button>
+            );
+          })}
         </section>
 
-        {/* Notifications List */}
+        {/* Notification Items */}
         <section className="space-y-3">
           {filtered.map((item) => {
-            const isUnread = !readAll && item.unread;
+            const isUnread = item.unread && !readAll;
             return (
               <article
                 key={item.id}
-                className={`p-4 rounded-2xl border transition-all ${
-                  isUnread
-                    ? "bg-surface-container-lowest border-primary/30 shadow-sm"
-                    : "bg-surface-container-lowest/60 border-outline-variant/40"
+                className={`glass-card rounded-[22px] p-4 border border-white/80 shadow-xs transition-all ${
+                  isUnread ? "border-l-4 border-l-primary" : ""
                 }`}
               >
                 <div className="flex items-start gap-3">
-                  <div
-                    className={`w-10 h-10 rounded-xl ${item.bgColor} ${item.iconColor} flex items-center justify-center shrink-0 mt-0.5`}
-                  >
-                    <span className="material-symbols-outlined text-[20px]">
+                  <div className={`w-10 h-10 rounded-2xl ${item.bgColor} ${item.iconColor} flex items-center justify-center shrink-0 shadow-xs`}>
+                    <span className="material-symbols-outlined text-[22px]">
                       {item.icon}
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
-                      <h3 className="font-label-lg text-label-lg font-semibold text-on-surface truncate">
+                      <h2 className="text-label-lg font-label-lg font-semibold text-on-surface truncate">
                         {item.title}
-                      </h3>
-                      {isUnread && (
-                        <span className="w-2 h-2 rounded-full bg-primary shrink-0 animate-pulse"></span>
-                      )}
+                      </h2>
+                      <span className="text-label-sm font-label-sm text-outline shrink-0">
+                        {item.time}
+                      </span>
                     </div>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                    <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-snug">
                       {item.message}
                     </p>
-                    <span className="font-label-sm text-label-sm text-outline mt-2 block">
-                      {item.time}
-                    </span>
                   </div>
                 </div>
               </article>

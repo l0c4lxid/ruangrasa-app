@@ -8,7 +8,7 @@ type Props = {
   onChange?: (time: string) => void;
 };
 
-/** TimeSlotPicker — selectable grid, mobile 3-col */
+/** TimeSlotPicker: selectable grid, mobile 3-col */
 export default function TimeSlotPicker({ slots, value, onChange }: Props) {
   return (
     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">

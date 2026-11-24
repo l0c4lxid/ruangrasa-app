@@ -10,8 +10,8 @@ function HomeContent() {
 
   return (
     <>
-      {/* TopAppBar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3 shadow-sm border-b border-outline-variant/20">
+      {/* TopAppBar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-5 py-3">
         <div className="flex justify-between items-center w-full">
           {/* Leading: Brand and Avatar */}
           <Link
@@ -28,6 +28,8 @@ function HomeContent() {
                   className="w-full h-full object-cover"
                   alt="Foto Profil Kawan Rasa"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxXYwi0WZ5kkpilPnESJdSW0xRUShzdqWe6ph4xXD6Wr5B4YNnvax1Xf3HSPx2KHj5CynmXh5t6ZP8_fr75vX_Gru-Zm_eFgrTvOBXN0GUptT6pm5tCn8-t_pa-KORutlrecIZgJVOsnHlMEqj_i79Hj9awpf5dhSdTmuyWnHIdCKhDRZChLAH5t1mdoawrvGMPeznJTTjPmYMKNw-LRF1kfo_p2iRk7AIeecfbklu6HSQHpYvJkSP"
+                  width={40}
+                  height={40}
                 />
               )}
             </div>
@@ -41,15 +43,14 @@ function HomeContent() {
             </div>
           </Link>
 
-          {/* Trailing action */}
-          <div className="flex items-center gap-1">
+          {/* Trailing actions */}
+          <div className="flex items-center gap-1.5">
             <Link
               href="/chat-ai"
-              aria-label="Tanya AI Asisten"
-              className="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-secondary-container/50 hover:bg-secondary-container active:scale-95 transition-all relative"
+              aria-label="Tanya Asisten AI"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-secondary-container/50 hover:bg-secondary-container active:scale-95 transition-all relative border border-primary/20 shadow-xs"
             >
               <span className="material-symbols-outlined text-[22px]">smart_toy</span>
-              <span className="w-2 h-2 rounded-full bg-primary absolute top-2 right-2 animate-pulse"></span>
             </Link>
             <Link
               href="/notifications"
@@ -64,7 +65,7 @@ function HomeContent() {
               aria-label="Pengaturan Profil"
               className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all"
             >
-              <span className="material-symbols-outlined" data-icon="settings">
+              <span className="material-symbols-outlined text-[22px]">
                 settings
               </span>
             </Link>
@@ -76,19 +77,19 @@ function HomeContent() {
       <main className="flex-1 flex flex-col gap-5 px-5 pt-3 pb-24">
         {/* Guest Mode Notice */}
         {isGuest && (
-          <div className="bg-secondary-container/80 text-on-secondary-container p-3.5 rounded-2xl border border-primary/20 flex items-center justify-between gap-3 shadow-xs">
+          <div className="glass-card text-on-secondary-container p-3.5 rounded-2xl flex items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <span className="material-symbols-outlined text-primary text-[22px]">visibility_off</span>
               <div>
                 <p className="font-label-md text-label-md font-semibold text-primary">Mode Tamu Anonim</p>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-snug">
-                  Fitur terbatas: Membaca curhat &amp; komunitas. Masuk untuk booking psikolog.
+                  Membaca curhat &amp; komunitas. Masuk untuk booking psikolog.
                 </p>
               </div>
             </div>
             <Link
               href="/auth/login"
-              className="bg-primary text-on-primary text-label-sm font-label-sm px-3 py-1.5 rounded-xl font-semibold shrink-0 active:scale-95 transition-all"
+              className="bg-primary text-white text-label-sm font-label-sm px-3.5 py-2 rounded-xl font-semibold shrink-0 active:scale-95 transition-all min-h-[44px] flex items-center"
             >
               Masuk
             </Link>
@@ -105,8 +106,8 @@ function HomeContent() {
           </p>
         </section>
 
-        {/* Emergency Alert Banner / Disclaimer */}
-        <section className="bg-tertiary-fixed text-on-tertiary-fixed p-3.5 rounded-2xl flex items-start gap-3 border border-tertiary-fixed-dim/40 custom-shadow-resting">
+        {/* Emergency Alert Banner */}
+        <section className="bg-tertiary-fixed text-on-tertiary-fixed p-3.5 rounded-2xl flex items-start gap-3 border border-tertiary-fixed-dim/40 shadow-xs">
           <span
             className="material-symbols-outlined text-tertiary mt-0.5 flex-shrink-0"
             data-icon="health_and_safety"
@@ -125,14 +126,14 @@ function HomeContent() {
             </p>
           </div>
           <a
-            className="bg-surface-container-lowest text-tertiary text-label-sm font-label-sm px-3 py-1.5 rounded-full font-semibold self-center active:scale-95 transition-transform shadow-xs"
+            className="bg-surface-container-lowest text-tertiary text-label-sm font-label-sm px-3.5 py-2 rounded-full font-semibold self-center active:scale-95 transition-transform shadow-xs min-h-[44px] flex items-center"
             href="tel:119"
           >
             Hubungi
           </a>
         </section>
 
-        {/* Three Primary Service Cards */}
+        {/* Three Primary Service Cards (Varied Composition, Not Uniform AI Slop) */}
         <section className="flex flex-col gap-3.5">
           <div className="flex items-center justify-between">
             <h2 className="text-label-lg font-label-lg font-semibold text-on-surface tracking-tight">
@@ -143,109 +144,85 @@ function HomeContent() {
             </span>
           </div>
 
-          {/* 1. Curhat Anonim */}
-          <article className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 custom-shadow-resting hover:border-primary/40 transition-all flex flex-col justify-between gap-3">
+          {/* 1. Flagship Card: Curhat Anonim (Featured Full Treatment) */}
+          <article className="glass-card rounded-[22px] p-4.5 border border-white/80 shadow-xs flex flex-col justify-between gap-3 relative overflow-hidden">
             <div className="flex items-start justify-between gap-3">
-              <div className="w-11 h-11 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
-                <span
-                  className="material-symbols-outlined text-primary"
-                  data-icon="chat_bubble_outline"
-                >
-                  chat_bubble_outline
-                </span>
+              <div className="w-11 h-11 rounded-2xl bg-primary text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                <span className="material-symbols-outlined text-[24px]">chat_bubble_outline</span>
               </div>
-              <span className="bg-surface-container-high text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-medium flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Privat &amp; Aman
+              <span className="bg-primary/10 text-primary font-label-sm text-label-sm px-3 py-1 rounded-full font-medium border border-primary/20">
+                Privat &amp; Anonim
               </span>
             </div>
             <div>
               <h3 className="text-headline-sm font-headline-sm font-semibold text-on-surface">
-                Curhat Anonim
+                Curhat Bebas Nama
               </h3>
               <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
-                Tulis apa yang sedang kamu rasakan tanpa identitas publik.
+                Tulis isi hatimu tanpa khawatir identitas publik. Ruang ini mendengar tanpa menghakimi.
               </p>
             </div>
             <Link
               href="/curhat"
-              className="w-full bg-primary text-on-primary py-2.5 px-4 rounded-xl text-label-md font-label-md font-medium flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all"
+              className="w-full bg-primary text-white min-h-[44px] py-2.5 px-4 rounded-xl text-label-md font-label-md font-semibold flex items-center justify-center hover:bg-primary/90 active:scale-95 transition-all shadow-xs"
             >
-              <span>Mulai Curhat</span>
-              <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">
-                arrow_forward
-              </span>
+              Mulai Curhat Sekarang
             </Link>
           </article>
 
-          {/* 2. Komunitas Teman Sebaya */}
-          <article className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 custom-shadow-resting hover:border-primary/40 transition-all flex flex-col justify-between gap-3">
-            <div className="flex items-start justify-between gap-3">
-              <div className="w-11 h-11 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
-                <span className="material-symbols-outlined text-primary" data-icon="groups">
-                  groups
-                </span>
+          {/* 2 & 3. Secondary Duo: Komunitas & Konsultasi */}
+          <div className="grid grid-cols-2 gap-3">
+            {/* Komunitas Teman Sebaya */}
+            <article className="glass-card rounded-[20px] p-3.5 border border-white/80 flex flex-col justify-between gap-3 hover:border-primary/40 transition-all">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-secondary-container text-secondary flex items-center justify-center mb-2">
+                  <span className="material-symbols-outlined text-[22px]">groups</span>
+                </div>
+                <h3 className="font-label-lg text-label-lg font-semibold text-on-surface leading-snug">
+                  Lingkar Sebaya
+                </h3>
+                <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 text-xs leading-snug">
+                  Diskusi bersama kawan seangkatan.
+                </p>
               </div>
-              <span className="bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm px-2.5 py-1 rounded-full font-medium">
-                4 Topik Aktif
-              </span>
-            </div>
-            <div>
-              <h3 className="text-headline-sm font-headline-sm font-semibold text-on-surface">
-                Komunitas Teman Sebaya
-              </h3>
-              <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
-                Temukan cerita dan saling memberi dukungan bersama kawan seperjuangan.
-              </p>
-            </div>
-            <Link
-              href="/komunitas"
-              className="w-full bg-secondary-container text-on-secondary-container py-2.5 px-4 rounded-xl text-label-md font-label-md font-medium flex items-center justify-center gap-2 hover:bg-secondary-fixed transition-all active:scale-95"
-            >
-              <span>Jelajahi Komunitas</span>
-              <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">
-                arrow_forward
-              </span>
-            </Link>
-          </article>
+              <Link
+                href="/komunitas"
+                className="w-full bg-secondary-container/70 text-on-secondary-container min-h-[44px] py-2 px-3 rounded-xl text-label-sm font-label-sm font-semibold flex items-center justify-center hover:bg-secondary-container transition-all active:scale-95 text-center"
+              >
+                Buka Diskusi
+              </Link>
+            </article>
 
-          {/* 3. Konsultasi Profesional */}
-          <article className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 custom-shadow-resting hover:border-primary/40 transition-all flex flex-col justify-between gap-3">
-            <div className="flex items-start justify-between gap-3">
-              <div className="w-11 h-11 rounded-xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0">
-                <span className="material-symbols-outlined text-primary" data-icon="psychology">
-                  psychology
-                </span>
+            {/* Konsultasi Profesional */}
+            <article className="glass-card rounded-[20px] p-3.5 border border-white/80 flex flex-col justify-between gap-3 hover:border-primary/40 transition-all">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center mb-2">
+                  <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    psychology
+                  </span>
+                </div>
+                <h3 className="font-label-lg text-label-lg font-semibold text-on-surface leading-snug">
+                  Psikolog Klinis
+                </h3>
+                <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 text-xs leading-snug">
+                  Sesi privat berlisensi SIPP resmi.
+                </p>
               </div>
-              <span className="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2.5 py-1 rounded-full font-medium">
-                SIPP Terverifikasi
-              </span>
-            </div>
-            <div>
-              <h3 className="text-headline-sm font-headline-sm font-semibold text-on-surface">
-                Konsultasi Profesional
-              </h3>
-              <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
-                Jadwalkan sesi bersama psikolog klinis tersertifikasi secara privat.
-              </p>
-            </div>
-            <Link
-              href="/konsultasi"
-              className="w-full bg-surface-container-high text-primary py-2.5 px-4 rounded-xl text-label-md font-label-md font-medium flex items-center justify-center gap-2 hover:bg-secondary-container transition-all active:scale-95"
-            >
-              <span>Cari Psikolog</span>
-              <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">
-                arrow_forward
-              </span>
-            </Link>
-          </article>
+              <Link
+                href="/konsultasi"
+                className="w-full bg-white text-primary border border-primary/20 min-h-[44px] py-2 px-3 rounded-xl text-label-sm font-label-sm font-semibold flex items-center justify-center hover:bg-primary/5 transition-all active:scale-95 text-center shadow-xs"
+              >
+                Pilih Jadwal
+              </Link>
+            </article>
+          </div>
         </section>
 
         {/* Emotional Self-Check Guide */}
-        <section className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/40 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0">
+        <section className="glass-card rounded-[20px] p-4 flex items-center gap-3.5">
+          <div className="w-11 h-11 rounded-2xl bg-secondary-container flex items-center justify-center text-primary shrink-0">
             <span
-              className="material-symbols-outlined text-xl"
+              className="material-symbols-outlined text-[24px]"
               data-icon="spa"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
@@ -268,21 +245,21 @@ function HomeContent() {
             <h2 className="text-label-lg font-label-lg font-semibold text-on-surface tracking-tight">
               Diskusi Hangat Terkini
             </h2>
-            <Link href="/curhat" className="text-label-sm font-label-sm text-primary font-medium hover:underline">
+            <Link href="/curhat" className="text-label-sm font-label-sm text-primary font-semibold hover:underline">
               Lihat Semua
             </Link>
           </div>
-          <Link href="/curhat/1" className="block">
-            <article className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 custom-shadow-resting hover:border-primary/40 transition-all">
+          <Link href="/curhat/1" className="block active:scale-[0.99] transition-transform">
+            <article className="glass-card rounded-[20px] p-4.5 border border-white/80 hover:border-primary/40 transition-all">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary">
-                    <span className="material-symbols-outlined text-base" data-icon="visibility_off">
+                  <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[16px]">
                       visibility_off
                     </span>
                   </div>
-                  <span className="text-label-sm font-label-sm text-on-surface font-medium">
-                    Mahasiswa Tingkat Akhir
+                  <span className="text-label-sm font-label-sm text-on-surface font-semibold">
+                    Kawan P412
                   </span>
                 </div>
                 <span className="text-label-sm font-label-sm text-outline">2 jam lalu</span>
@@ -293,20 +270,20 @@ function HomeContent() {
               <p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
                 Terkadang rasanya berat buka laptop, tapi mencoba pelan-pelan menulis 1 paragraf hari ini.
               </p>
-              <div className="flex items-center justify-between mt-3.5 pt-2.5 border-t border-outline-variant/20 text-on-surface-variant">
+              <div className="flex items-center justify-between mt-3.5 pt-2.5 border-t border-outline-variant/30 text-on-surface-variant">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center gap-1.5 text-label-sm font-label-sm text-tertiary-container">
+                  <span className="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary">
                     <span
-                      className="material-symbols-outlined text-base"
+                      className="material-symbols-outlined text-[18px] text-primary"
                       data-icon="favorite"
                       style={{ fontVariationSettings: "'FILL' 1" }}
                     >
                       favorite
                     </span>
-                    <span>24 dukungan</span>
+                    <span>24 peluk</span>
                   </span>
                   <span className="flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
-                    <span className="material-symbols-outlined text-base" data-icon="chat_bubble">
+                    <span className="material-symbols-outlined text-[18px]" data-icon="chat_bubble">
                       chat_bubble
                     </span>
                     <span>6 tanggapan</span>

@@ -12,17 +12,15 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="id">
-      <body className="min-h-dvh bg-[#EAEFEA] flex justify-center text-on-surface antialiased">
-        {/* Mobile Device Viewport Shell Container */}
-        <div className="w-full max-w-[412px] min-h-dvh bg-surface flex flex-col relative shadow-[0_0_50px_rgba(0,0,0,0.08)] border-x border-outline-variant/30 overflow-x-hidden">
+      <body className="min-h-dvh bg-[#E8EFE9] flex justify-center text-on-surface antialiased selection:bg-secondary-container selection:text-primary">
+        {/* Mobile Device Viewport Shell Container with subtle modern glass border */}
+        <div className="w-full max-w-[412px] min-h-dvh bg-surface flex flex-col relative shadow-[0_0_60px_rgba(23,37,29,0.08)] border-x border-white/60 overflow-x-hidden">
           {children}
           <BottomNavigation />
         </div>

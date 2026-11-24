@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 text-center bg-surface">
-      <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary mb-4 shadow-xs">
+    <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 text-center">
+      <div className="w-16 h-16 rounded-full glass-card flex items-center justify-center text-primary mb-4">
         <span className="material-symbols-outlined text-[32px]">sentiment_neutral</span>
       </div>
       <h1 className="text-headline-md font-headline-md font-bold text-on-surface">
@@ -15,14 +15,14 @@ export default function NotFound() {
       <div className="mt-6 flex flex-col gap-2.5 w-full max-w-xs">
         <Link
           href="/home"
-          className="w-full bg-primary text-on-primary py-3 px-4 rounded-xl text-label-md font-label-md font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-xs"
+          className="w-full bg-primary text-white py-3 px-4 rounded-xl text-label-md font-label-md font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-xs min-h-[44px]"
         >
           <span className="material-symbols-outlined text-[18px]">home</span>
           <span>Kembali ke Beranda</span>
         </Link>
         <Link
           href="/chat-ai"
-          className="w-full bg-secondary-container text-primary py-3 px-4 rounded-xl text-label-md font-label-md font-semibold flex items-center justify-center gap-2 hover:bg-secondary-fixed active:scale-95 transition-all"
+          className="w-full glass-card text-primary py-3 px-4 rounded-xl text-label-md font-label-md font-semibold flex items-center justify-center gap-2 hover:bg-white/60 active:scale-95 transition-all min-h-[44px]"
         >
           <span className="material-symbols-outlined text-[18px]">smart_toy</span>
           <span>Tanya Asisten AI</span>

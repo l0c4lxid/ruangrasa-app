@@ -4,7 +4,7 @@ type Props = {
   label?: string;
 };
 
-/** QuotaTracker — anti-burnout progress bar for counselors */
+/** QuotaTracker: anti-burnout progress bar for counselors */
 export default function QuotaTracker({ used, total, label = "kuota harian" }: Props) {
   const pct = Math.max(0, Math.min(100, (used / total) * 100));
   const remaining = total - used;

@@ -6,7 +6,7 @@ type AvatarProps = {
   size?: number;
 };
 
-/** AvatarSoftGradient — photo or gradient pseudonym fallback */
+/** AvatarSoftGradient: photo or gradient pseudonym fallback */
 export default function Avatar({ src, name, size = 40 }: AvatarProps) {
   const initials = name
     .split(" ")

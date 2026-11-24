@@ -9,8 +9,8 @@ export default function SettingsPage() {
 
   return (
     <>
-      {/* Top App Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3.5 shadow-sm border-b border-outline-variant/20 flex items-center justify-between">
+      {/* Top App Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-5 py-3.5 shadow-xs flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link
             href="/profile"
@@ -31,8 +31,8 @@ export default function SettingsPage() {
           <h2 className="text-label-lg font-label-lg text-primary font-semibold tracking-wide px-1">
             Preferensi Akun &amp; Notifikasi
           </h2>
-          <div className="bg-surface-container-lowest rounded-[20px] border border-outline-variant/40 divide-y divide-surface-container shadow-sm overflow-hidden">
-            <div className="p-4 flex items-center justify-between gap-3">
+          <div className="glass-card rounded-[22px] border border-white/80 divide-y divide-outline-variant/20 shadow-xs overflow-hidden">
+            <div className="p-4 flex items-center justify-between gap-3 min-h-[44px]">
               <div>
                 <p className="text-body-md font-body-md font-medium text-on-surface">
                   Notifikasi Pengingat Sesi
@@ -48,11 +48,11 @@ export default function SettingsPage() {
                   onChange={(e) => setNotifications(e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-12 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-on-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+                <div className="w-12 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
               </label>
             </div>
 
-            <div className="p-4 flex items-center justify-between gap-3">
+            <div className="p-4 flex items-center justify-between gap-3 min-h-[44px]">
               <div>
                 <p className="text-body-md font-body-md font-medium text-on-surface">
                   Penyamaran Otomatis
@@ -68,7 +68,7 @@ export default function SettingsPage() {
                   onChange={(e) => setAutoMask(e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-12 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-on-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+                <div className="w-12 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
               </label>
             </div>
           </div>
@@ -78,10 +78,10 @@ export default function SettingsPage() {
           <h2 className="text-label-lg font-label-lg text-primary font-semibold tracking-wide px-1">
             Keamanan &amp; Data
           </h2>
-          <div className="bg-surface-container-lowest rounded-[20px] border border-outline-variant/40 divide-y divide-surface-container shadow-sm overflow-hidden">
+          <div className="glass-card rounded-[22px] border border-white/80 divide-y divide-outline-variant/20 shadow-xs overflow-hidden">
             <Link
               href="/profile"
-              className="p-4 flex items-center justify-between gap-3 hover:bg-surface-container/40 active:scale-[0.99] transition-all block"
+              className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all block min-h-[44px]"
             >
               <div className="flex-1">
                 <p className="text-body-md font-body-md font-medium text-on-surface">

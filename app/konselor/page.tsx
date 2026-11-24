@@ -9,7 +9,7 @@ export default function KonselorDashboardPage() {
   return (
     <>
       {/* Top App Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+      <header className="glass-header sticky top-0 z-40">
         <div className="px-5 py-3.5 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="relative">
@@ -41,7 +41,7 @@ export default function KonselorDashboardPage() {
           <div className="flex items-center gap-1">
             <Link
               href="/"
-              className="p-2 rounded-full text-on-surface-variant hover:bg-surface-container active:scale-95 transition-transform"
+              className="min-h-[44px] min-w-[44px] rounded-full flex items-center justify-center text-on-surface-variant hover:bg-white/40 active:scale-95 transition-transform"
               title="Beralih ke Tampilan Pengguna"
             >
               <span className="material-symbols-outlined text-[24px]">swap_horiz</span>
@@ -53,7 +53,7 @@ export default function KonselorDashboardPage() {
       {/* Main Content */}
       <main className="px-5 pt-4 pb-20 space-y-5 flex-1">
         {/* Availability Toggle */}
-        <section className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/40 shadow-sm flex items-center justify-between">
+        <section className="glass-card rounded-2xl p-4 flex items-center justify-between">
           <div className="space-y-0.5">
             <div className="flex items-center space-x-2">
               <span className="relative flex h-2.5 w-2.5">
@@ -95,7 +95,7 @@ export default function KonselorDashboardPage() {
         <section className="grid grid-cols-3 gap-2.5">
           <Link
             href="/konselor/moderation"
-            className="bg-surface-container-lowest p-3.5 rounded-2xl border border-outline-variant/40 flex flex-col justify-between hover:border-primary/40 transition-all block"
+            className="glass-card p-3.5 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all min-h-[44px]"
           >
             <div className="flex items-center justify-between text-tertiary">
               <span className="material-symbols-outlined text-[20px]">pending_actions</span>
@@ -113,7 +113,7 @@ export default function KonselorDashboardPage() {
 
           <Link
             href="/konselor/kuota"
-            className="bg-surface-container-lowest p-3.5 rounded-2xl border border-outline-variant/40 flex flex-col justify-between hover:border-primary/40 transition-all block"
+            className="glass-card p-3.5 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all min-h-[44px]"
           >
             <div className="flex items-center justify-between text-primary">
               <span className="material-symbols-outlined text-[20px]">event_available</span>
@@ -133,7 +133,7 @@ export default function KonselorDashboardPage() {
 
           <Link
             href="/konselor/laporan"
-            className="bg-surface-container-lowest p-3.5 rounded-2xl border border-outline-variant/40 flex flex-col justify-between hover:border-primary/40 transition-all block"
+            className="glass-card p-3.5 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all min-h-[44px]"
           >
             <div className="flex items-center justify-between text-secondary">
               <span className="material-symbols-outlined text-[20px]">shield</span>
@@ -150,7 +150,7 @@ export default function KonselorDashboardPage() {
           </Link>
         </section>
 
-        {/* Action Center: Navigasi Modul Konselor */}
+        {/* Action Center */}
         <section className="space-y-2.5">
           <div className="flex items-center justify-between px-1">
             <h2 className="text-label-lg font-label-lg font-semibold text-on-surface">
@@ -158,10 +158,10 @@ export default function KonselorDashboardPage() {
             </h2>
           </div>
 
-          <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant/40 divide-y divide-outline-variant/30 overflow-hidden shadow-sm">
+          <div className="glass-card rounded-2xl divide-y divide-white/40 overflow-hidden">
             <Link
               href="/konselor/moderation"
-              className="p-4 flex items-center justify-between hover:bg-surface-container/40 active:scale-[0.99] transition-all block"
+              className="p-4 flex items-center justify-between hover:bg-white/40 active:scale-[0.99] transition-all min-h-[44px]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
@@ -181,7 +181,7 @@ export default function KonselorDashboardPage() {
 
             <Link
               href="/konselor/kuota"
-              className="p-4 flex items-center justify-between hover:bg-surface-container/40 active:scale-[0.99] transition-all block"
+              className="p-4 flex items-center justify-between hover:bg-white/40 active:scale-[0.99] transition-all min-h-[44px]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-secondary-container text-primary flex items-center justify-center">
@@ -201,7 +201,7 @@ export default function KonselorDashboardPage() {
 
             <Link
               href="/konselor/laporan"
-              className="p-4 flex items-center justify-between hover:bg-surface-container/40 active:scale-[0.99] transition-all block"
+              className="p-4 flex items-center justify-between hover:bg-white/40 active:scale-[0.99] transition-all min-h-[44px]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center">
@@ -222,7 +222,7 @@ export default function KonselorDashboardPage() {
         </section>
 
         {/* Ethical Notice */}
-        <section className="p-3 bg-surface-container-low/60 rounded-xl border border-outline-variant/20 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+        <section className="glass-pill p-3 rounded-xl flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
           <span className="material-symbols-outlined text-[18px] text-secondary flex-shrink-0">
             lock
           </span>

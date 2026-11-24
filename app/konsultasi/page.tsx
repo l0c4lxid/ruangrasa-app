@@ -32,13 +32,13 @@ export default function KonsultasiPage() {
 
   return (
     <>
-      {/* Top App Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md flex justify-between items-center w-full px-5 py-3.5 shadow-sm border-b border-outline-variant/20">
+      {/* Top App Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header flex justify-between items-center w-full px-5 py-3.5">
         <div className="flex items-center gap-3">
           <Link
             href="/home"
             aria-label="Kembali ke Beranda"
-            className="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all focus:outline-none"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all focus:outline-none"
           >
             <span className="material-symbols-outlined text-[22px]">arrow_back</span>
           </Link>
@@ -49,7 +49,7 @@ export default function KonsultasiPage() {
         <Link
           href="/konsultasi/saya"
           aria-label="Konsultasi Saya"
-          className="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all focus:outline-none"
+          className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all focus:outline-none"
           title="Sesi Saya"
         >
           <span className="material-symbols-outlined text-[22px]">calendar_month</span>
@@ -58,9 +58,9 @@ export default function KonsultasiPage() {
 
       {/* Main Content Canvas */}
       <main className="flex-1 px-5 pt-3 pb-24 flex flex-col gap-4">
-        {/* Verification Status Pill */}
-        <section className="bg-surface-container-low/80 rounded-xl px-3.5 py-2 border border-outline-variant/30 flex items-center gap-2">
-          <span className="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+        {/* Verification Status Banner with Modern Glass Card */}
+        <section className="glass-card rounded-2xl px-4 py-3 flex items-center gap-2.5 shadow-xs">
+          <span className="material-symbols-outlined text-primary text-[20px]">verified_user</span>
           <p className="text-label-sm font-medium text-on-surface-variant">
             Seluruh psikolog mitra berlisensi resmi SIPPK | HIMPSI
           </p>
@@ -74,41 +74,36 @@ export default function KonsultasiPage() {
             </span>
           </div>
           <input
-            className="w-full h-[50px] pl-10 pr-4 bg-surface-container rounded-xl border border-outline-variant text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:bg-surface-container-lowest focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all shadow-sm"
-            placeholder="Cari nama atau spesialisasi..."
+            className="w-full h-[50px] pl-10 pr-4 glass-input rounded-xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all shadow-xs"
+            placeholder="Cari nama atau topik keahlian..."
             type="text"
           />
         </div>
 
         {/* Filter Chips Horizontal Scroll */}
         <section className="w-full -mx-5 px-5 overflow-x-auto no-scrollbar flex items-center gap-2 py-1">
-          <button className="shrink-0 h-[36px] px-3.5 rounded-full bg-secondary-container border border-primary text-primary flex items-center gap-1.5 active:scale-95 transition-all text-label-md font-label-md font-semibold shadow-xs">
-            <span className="material-symbols-outlined text-[16px]" data-icon="check">
-              check
-            </span>
-            <span>Semua Spesialisasi</span>
+          <button className="shrink-0 h-[36px] px-4 rounded-full bg-primary text-white flex items-center gap-1.5 active:scale-95 transition-all text-label-md font-label-md font-semibold shadow-xs">
+            <span className="material-symbols-outlined text-[16px]">check</span>
+            <span>Semua Keahlian</span>
           </button>
-          <button className="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+          <button className="shrink-0 h-[36px] px-3.5 rounded-full glass-pill text-on-surface-variant hover:bg-white flex items-center active:scale-95 transition-all text-label-md font-label-md shadow-xs">
             <span>Stres Akademik</span>
           </button>
-          <button className="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+          <button className="shrink-0 h-[36px] px-3.5 rounded-full glass-pill text-on-surface-variant hover:bg-white flex items-center active:scale-95 transition-all text-label-md font-label-md shadow-xs">
             <span>Kecemasan</span>
           </button>
-          <button className="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
+          <button className="shrink-0 h-[36px] px-3.5 rounded-full glass-pill text-on-surface-variant hover:bg-white flex items-center active:scale-95 transition-all text-label-md font-label-md shadow-xs">
             <span>Manajemen Emosi</span>
-          </button>
-          <button className="shrink-0 h-[36px] px-3.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant flex items-center active:scale-95 transition-all hover:bg-surface-container text-label-md font-label-md">
-            <span>Relasi Interpersonal</span>
           </button>
         </section>
 
         {/* Section Title & Counter */}
         <div className="flex items-center justify-between pt-1">
           <span className="text-label-md font-label-md text-on-surface-variant font-medium">
-            Menampilkan mitra aktif
+            Mitra Konselor Tersedia
           </span>
-          <span className="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container text-primary font-semibold">
-            {psychologists.length} Tersedia
+          <span className="text-label-sm font-label-sm px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20">
+            {psychologists.length} Psikolog
           </span>
         </div>
 
@@ -117,17 +112,19 @@ export default function KonsultasiPage() {
           {psychologists.map((psych) => (
             <article
               key={psych.id}
-              className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-[0_2px_8px_-2px_rgba(23,37,29,0.04)] flex flex-col gap-3.5 transition-all hover:shadow-[0_4px_16px_-4px_rgba(23,37,29,0.06)]"
+              className="glass-card rounded-[22px] p-4.5 border border-white/80 shadow-xs flex flex-col gap-3.5 transition-all hover:border-primary/40"
             >
               <div className="flex items-start gap-3.5">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 bg-surface-container relative">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 bg-surface-container relative ring-2 ring-white/80">
                   <img
                     className="w-full h-full object-cover"
                     src={psych.avatar}
                     alt={psych.name}
+                    width={64}
+                    height={64}
                   />
                   <div
-                    className="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full p-0.5 shadow-sm flex items-center justify-center"
+                    className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-0.5 shadow-xs flex items-center justify-center"
                     title="Terverifikasi"
                   >
                     <span
@@ -141,11 +138,11 @@ export default function KonsultasiPage() {
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="inline-flex items-center gap-1 bg-secondary-container/70 text-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full font-medium">
+                    <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full font-medium border border-primary/20">
                       <span className="material-symbols-outlined text-[13px] text-primary">
                         check_circle
                       </span>
-                      Terverifikasi Demo
+                      SIPP Terverifikasi
                     </span>
                   </div>
                   <h2 className="text-headline-sm font-headline-sm text-on-surface mt-1 truncate font-semibold">
@@ -165,7 +162,7 @@ export default function KonsultasiPage() {
                 {psych.specialties.map((spec) => (
                   <span
                     key={spec}
-                    className="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm"
+                    className="px-2.5 py-1 rounded-lg bg-surface-container/70 text-on-surface-variant font-label-sm text-label-sm"
                   >
                     {spec}
                   </span>
@@ -173,7 +170,7 @@ export default function KonsultasiPage() {
               </div>
 
               {/* Price and CTA */}
-              <div className="pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+              <div className="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
                 <div>
                   <span className="text-label-sm font-label-sm text-on-surface-variant block">
                     Biaya Sesi (50 mnt)
@@ -184,12 +181,9 @@ export default function KonsultasiPage() {
                 </div>
                 <Link
                   href={`/konsultasi/${psych.id}`}
-                  className="px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-medium active:scale-95 transition-all shadow-sm flex items-center gap-1.5"
+                  className="min-h-[44px] px-4 py-2.5 rounded-xl bg-primary hover:bg-[#1B5E43] text-white font-label-md text-label-md font-semibold active:scale-95 transition-all shadow-xs flex items-center gap-1"
                 >
-                  <span>Lihat Profil</span>
-                  <span className="material-symbols-outlined text-[16px]">
-                    arrow_forward
-                  </span>
+                  Lihat Profil
                 </Link>
               </div>
             </article>

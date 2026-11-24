@@ -8,8 +8,8 @@ export default function ProfilePage() {
 
   return (
     <>
-      {/* Top App Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3.5 shadow-sm border-b border-outline-variant/20 flex justify-between items-center w-full">
+      {/* Top App Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-5 py-3.5 flex justify-between items-center w-full">
         <div className="flex items-center space-x-3">
           <Link
             href="/home"
@@ -35,14 +35,12 @@ export default function ProfilePage() {
 
       {/* Scrollable Content Canvas */}
       <main className="flex-1 px-5 pt-3 pb-28 space-y-6">
-        {/* Card Profil Pengguna (Bento-style Elevated Organic Surface) */}
-        <section className="bg-surface-container-lowest rounded-[20px] p-5 shadow-[0_4px_16px_-4px_rgba(23,37,29,0.06)] border border-outline-variant/40 relative overflow-hidden">
-          {/* Botanical Organic Accent Wave */}
-          <div className="absolute -right-12 -top-12 w-36 h-36 bg-secondary-container/40 rounded-full blur-2xl pointer-events-none"></div>
+        {/* Card Profil Pengguna (Modern Glass Surface) */}
+        <section className="glass-card rounded-[24px] p-5 border border-white/80 shadow-xs relative overflow-hidden">
           <div className="flex items-start gap-4 relative z-10">
             {/* Anonymous Friendly Avatar */}
             <div className="relative flex-shrink-0">
-              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center border-2 border-primary-container/30 shadow-inner overflow-hidden">
+              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center border-2 border-primary/20 shadow-inner overflow-hidden">
                 <span
                   className="material-symbols-outlined text-primary text-[36px]"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -51,11 +49,11 @@ export default function ProfilePage() {
                 </span>
               </div>
               <div
-                className="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center ring-2 ring-surface-container-lowest"
+                className="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center ring-2 ring-white"
                 title="Enkripsi Aktif"
               >
                 <span
-                  className="material-symbols-outlined text-on-primary text-[12px]"
+                  className="material-symbols-outlined text-white text-[12px]"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   lock
@@ -76,7 +74,7 @@ export default function ProfilePage() {
                 <span>r***@kampus.id</span>
               </p>
               {/* Campus Verification Badge */}
-              <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant">
+              <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                 <span
                   className="material-symbols-outlined text-[16px] text-primary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -89,21 +87,21 @@ export default function ProfilePage() {
               </div>
             </div>
           </div>
-          {/* Teduh / Safe Space Micro-Banner */}
-          <div className="mt-4 pt-3 border-t border-surface-container flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+          {/* Teduh Micro-Banner */}
+          <div className="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
             <span className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-[16px] text-primary">
                 shield
               </span>
-              Privasi Terlindungi End-to-End
+              Privasi Terlindungi
             </span>
-            <span className="text-label-sm font-label-sm text-primary font-medium">
+            <span className="text-label-sm font-label-sm text-primary font-semibold">
               Aktif
             </span>
           </div>
         </section>
 
-        {/* Section: Pengaturan Privasi & Keamanan Data (MD3 List Style) */}
+        {/* Section: Pengaturan Privasi & Keamanan Data */}
         <section className="space-y-2">
           <div className="px-1 flex items-center justify-between">
             <h3 className="text-label-lg font-label-lg text-primary font-semibold tracking-wide">
@@ -113,14 +111,14 @@ export default function ProfilePage() {
               vpn_key
             </span>
           </div>
-          <div className="bg-surface-container-lowest rounded-[20px] border border-outline-variant/40 divide-y divide-surface-container shadow-sm overflow-hidden">
+          <div className="glass-card rounded-[22px] border border-white/80 divide-y divide-outline-variant/20 shadow-xs overflow-hidden">
             {/* 1. Nama Samaran Publik */}
             <div
-              className="p-4 flex items-center justify-between gap-3 hover:bg-surface-container/40 active:scale-[0.99] transition-all cursor-pointer"
+              className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all cursor-pointer min-h-[44px]"
               role="button"
               tabIndex={0}
             >
-              <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+              <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-primary">
                 <span className="material-symbols-outlined text-[20px]">masks</span>
               </div>
               <div className="flex-1 min-w-0">
@@ -136,9 +134,9 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            {/* 2. Penyamaran Profil Otomatis (Switch Toggle) */}
-            <div className="p-4 flex items-center justify-between gap-3">
-              <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+            {/* 2. Penyamaran Profil Otomatis */}
+            <div className="p-4 flex items-center justify-between gap-3 min-h-[44px]">
+              <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-primary">
                 <span className="material-symbols-outlined text-[20px]">visibility_off</span>
               </div>
               <div className="flex-1 min-w-0">
@@ -156,16 +154,16 @@ export default function ProfilePage() {
                   onChange={(e) => setAutoMask(e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-12 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-on-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+                <div className="w-12 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
               </label>
             </div>
 
             {/* 3. Riwayat Sesi Konsultasi & Catatan */}
             <Link
               href="/konsultasi/saya"
-              className="p-4 flex items-center justify-between gap-3 hover:bg-surface-container/40 active:scale-[0.99] transition-all cursor-pointer block"
+              className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all cursor-pointer block min-h-[44px]"
             >
-              <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+              <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-primary">
                 <span className="material-symbols-outlined text-[20px]">history_edu</span>
               </div>
               <div className="flex-1 min-w-0">
@@ -173,7 +171,7 @@ export default function ProfilePage() {
                   Riwayat Sesi Konsultasi &amp; Catatan
                 </p>
                 <p className="text-body-sm font-body-sm text-on-surface-variant truncate">
-                  Akses data sesi terenkripsi 256-bit
+                  Akses data sesi terenkripsi
                 </p>
               </div>
               <span className="material-symbols-outlined text-outline text-[20px]">
@@ -183,11 +181,11 @@ export default function ProfilePage() {
 
             {/* 4. Persetujuan Pengolahan Data */}
             <div
-              className="p-4 flex items-center justify-between gap-3 hover:bg-surface-container/40 active:scale-[0.99] transition-all cursor-pointer"
+              className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all cursor-pointer min-h-[44px]"
               role="button"
               tabIndex={0}
             >
-              <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+              <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-primary">
                 <span className="material-symbols-outlined text-[20px]">policy</span>
               </div>
               <div className="flex-1 min-w-0">
@@ -195,7 +193,7 @@ export default function ProfilePage() {
                   Persetujuan Pengolahan Data
                 </p>
                 <p className="text-body-sm font-body-sm text-on-surface-variant truncate">
-                  Tinjau izin, analitik &amp; UU PDP
+                  Tinjau izin &amp; perlindungan data UU PDP
                 </p>
               </div>
               <span className="material-symbols-outlined text-outline text-[20px]">
@@ -215,11 +213,11 @@ export default function ProfilePage() {
               health_and_safety
             </span>
           </div>
-          <div className="bg-surface-container-lowest rounded-[20px] border border-outline-variant/40 divide-y divide-surface-container shadow-sm overflow-hidden">
+          <div className="glass-card rounded-[22px] border border-white/80 divide-y divide-outline-variant/20 shadow-xs overflow-hidden">
             {/* Counselor Portal Switcher */}
             <Link
               href="/konselor"
-              className="p-4 flex items-center justify-between gap-3 hover:bg-secondary-container/30 active:scale-[0.99] transition-all cursor-pointer block bg-secondary-container/10"
+              className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all cursor-pointer block min-h-[44px]"
             >
               <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-primary">
                 <span className="material-symbols-outlined text-[20px]">psychology</span>
@@ -229,12 +227,12 @@ export default function ProfilePage() {
                   <p className="text-body-md font-body-md font-semibold text-primary">
                     Portal Dashboard Konselor
                   </p>
-                  <span className="text-[10px] bg-primary text-on-primary px-2 py-0.5 rounded-full font-semibold">
+                  <span className="text-[10px] bg-primary text-white px-2 py-0.5 rounded-full font-semibold">
                     Mitra
                   </span>
                 </div>
                 <p className="text-body-sm font-body-sm text-on-surface-variant">
-                  Area kerja khusus psikolog &amp; konselor RuangTeduh
+                  Area kerja khusus psikolog &amp; konselor
                 </p>
               </div>
               <span className="material-symbols-outlined text-primary text-[20px]">
@@ -245,7 +243,7 @@ export default function ProfilePage() {
             {/* Bantuan Krisis & Hotline 119 */}
             <a
               href="tel:119"
-              className="p-4 flex items-center justify-between gap-3 hover:bg-tertiary-fixed/30 active:scale-[0.99] transition-all cursor-pointer bg-tertiary-fixed/10 block"
+              className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all cursor-pointer block min-h-[44px]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center flex-shrink-0 text-tertiary">
@@ -261,7 +259,7 @@ export default function ProfilePage() {
                     <p className="text-body-md font-body-md font-semibold text-tertiary">
                       Bantuan Krisis &amp; Hotline 119
                     </p>
-                    <span className="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                    <span className="inline-block w-2 h-2 rounded-full bg-tertiary"></span>
                   </div>
                   <p className="text-body-sm font-body-sm text-on-surface-variant">
                     Siaga 24 jam untuk keadaan darurat
@@ -272,28 +270,6 @@ export default function ProfilePage() {
                 call
               </span>
             </a>
-
-            {/* Unduh / Hapus Data */}
-            <div
-              className="p-4 flex items-center justify-between gap-3 hover:bg-error-container/30 active:scale-[0.99] transition-all cursor-pointer"
-              role="button"
-              tabIndex={0}
-            >
-              <div className="w-10 h-10 rounded-full bg-error-container/50 flex items-center justify-center flex-shrink-0 text-error">
-                <span className="material-symbols-outlined text-[20px]">delete_forever</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-body-md font-body-md font-medium text-error">
-                  Unduh / Hapus Seluruh Data Saya
-                </p>
-                <p className="text-body-sm font-body-sm text-outline truncate">
-                  Hak penghapusan permanen UU PDP
-                </p>
-              </div>
-              <span className="material-symbols-outlined text-error text-[20px]">
-                chevron_right
-              </span>
-            </div>
           </div>
         </section>
 
@@ -301,7 +277,7 @@ export default function ProfilePage() {
         <div className="pt-2">
           <Link
             href="/"
-            className="w-full h-12 rounded-2xl bg-surface-container border border-outline-variant text-on-surface-variant hover:text-error hover:bg-error-container/20 font-label-lg text-label-lg font-medium flex items-center justify-center gap-2 active:scale-95 transition-all"
+            className="w-full min-h-[48px] rounded-2xl glass-card border border-white/80 text-on-surface-variant hover:text-error hover:bg-error-container/20 font-label-lg text-label-lg font-medium flex items-center justify-center gap-2 active:scale-95 transition-all shadow-xs"
           >
             <span className="material-symbols-outlined text-[20px]">logout</span>
             <span>Keluar dari Akun</span>

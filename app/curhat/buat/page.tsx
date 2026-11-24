@@ -31,12 +31,12 @@ export default function BuatCurhatPage() {
 
   return (
     <>
-      {/* Top Action Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-5 py-3 flex items-center justify-between shadow-sm border-b border-outline-variant/20">
+      {/* Top Action Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-5 py-3 flex items-center justify-between shadow-xs">
         <Link
           href="/curhat"
           aria-label="Batal membuat cerita"
-          className="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 text-label-lg font-label-lg py-1 px-2 -ml-2 rounded-lg"
+          className="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 text-label-lg font-label-lg py-1 px-2 -ml-2 rounded-lg min-h-[44px]"
         >
           <span className="material-symbols-outlined text-[20px]">close</span>
           <span>Batal</span>
@@ -47,7 +47,7 @@ export default function BuatCurhatPage() {
         <button
           onClick={handleSubmit}
           disabled={!content.trim() || isSubmitting}
-          className="h-10 px-4 rounded-full bg-primary-container hover:bg-primary disabled:opacity-50 text-on-primary text-label-lg font-label-lg font-medium shadow-sm active:scale-95 transition-all duration-200 flex items-center gap-1.5"
+          className="min-h-[44px] px-4 rounded-full bg-primary hover:bg-[#1B5E43] disabled:opacity-50 text-white text-label-lg font-label-lg font-medium shadow-xs active:scale-95 transition-all duration-200 flex items-center gap-1.5"
           type="button"
         >
           <span>{isSubmitting ? "Mengirim..." : "Kirim"}</span>
@@ -57,12 +57,12 @@ export default function BuatCurhatPage() {
 
       {/* Canvas Scrollable Content */}
       <main className="px-5 pt-3 pb-24 space-y-5 flex-1">
-        {/* Privacy Assurance Banner */}
+        {/* Privacy Assurance Banner with Glass Touch */}
         <section
           aria-label="Informasi Privasi Pengguna"
-          className="bg-surface-container-low border border-outline-variant/50 rounded-2xl p-4 flex gap-3 items-start shadow-sm"
+          className="glass-card rounded-2xl p-4 flex gap-3 items-start shadow-xs"
         >
-          <div className="w-9 h-9 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+          <div className="w-10 h-10 rounded-xl bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-0.5">
             <span
               className="material-symbols-outlined text-[22px]"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -73,16 +73,12 @@ export default function BuatCurhatPage() {
           <div className="space-y-0.5">
             <div className="flex items-center gap-1.5">
               <span className="text-label-md font-label-md font-semibold text-primary">
-                Ruang Teduh &amp; Aman
+                Ruang Teduh &amp; Terjaga
               </span>
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
             </div>
             <p className="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
-              Ceritamu otomatis disamarkan sebagai{" "}
-              <strong className="font-semibold text-on-surface font-label-sm">
-                Kawan Anonim #742
-              </strong>
-              . Tidak ada data pribadi atau kampus yang dibagikan.
+              Ceritamu otomatis disamarkan dengan pseudonim acak. Tidak ada data pribadi yang dibagikan ke publik.
             </p>
           </div>
         </section>
@@ -104,18 +100,15 @@ export default function BuatCurhatPage() {
               return (
                 <button
                   key={cat.name}
-                  onClick={() => setCategory(cat.name)}
-                  className={`shrink-0 h-9 px-3.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-all duration-200 ${
-                    active
-                      ? "bg-secondary-container border border-primary text-primary font-semibold shadow-sm"
-                      : "bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-primary"
-                  }`}
                   type="button"
+                  onClick={() => setCategory(cat.name)}
+                  className={`h-10 px-4 rounded-full flex items-center gap-1.5 text-label-md font-label-md font-medium shrink-0 transition-all active:scale-95 ${
+                    active
+                      ? "bg-primary text-white shadow-xs"
+                      : "glass-pill text-on-surface-variant hover:bg-white"
+                  }`}
                 >
-                  <span
-                    className="material-symbols-outlined text-[16px]"
-                    style={active ? { fontVariationSettings: "'FILL' 1" } : undefined}
-                  >
+                  <span className="material-symbols-outlined text-[18px]">
                     {cat.icon}
                   </span>
                   <span>{cat.name}</span>
@@ -125,105 +118,72 @@ export default function BuatCurhatPage() {
           </div>
         </section>
 
-        {/* Judul Input */}
-        <section className="space-y-1.5">
-          <label
-            className="text-label-md font-label-md text-on-surface-variant font-medium block"
-            htmlFor="post-title"
-          >
-            Judul Singkat (Opsional)
-          </label>
-          <input
-            id="post-title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Gambarkan apa yang sedang kamu rasakan..."
-            className="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant/70 rounded-xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm"
-          />
-        </section>
-
-        {/* Story Text Area */}
-        <section className="space-y-1.5">
-          <div className="flex items-center justify-between">
-            <label
-              className="text-label-md font-label-md text-on-surface-variant font-medium"
-              htmlFor="post-content"
-            >
-              Ceritakan Isi Hatimu
+        {/* Form Inputs */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Judul Curhat */}
+          <div className="space-y-1.5">
+            <label className="block text-label-md font-label-md font-medium text-on-surface">
+              Judul Cerita (Opsional)
             </label>
-            <span
-              className={`text-label-sm font-label-sm ${
-                content.length > 900 ? "text-tertiary font-semibold" : "text-outline"
-              }`}
-            >
-              {content.length} / 1000
-            </span>
-          </div>
-          <div className="relative">
-            <textarea
-              id="post-content"
-              rows={6}
-              maxLength={1000}
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="Ceritakan dengan bebas tanpa takut dihakimi. Ruang ini ada untuk mendengarmu perlahan..."
-              className="w-full p-4 bg-surface-container-lowest border border-outline-variant/70 rounded-2xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm resize-none leading-relaxed"
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Contoh: Merasa buntu dengan revisian..."
+              className="w-full glass-input rounded-xl px-4 py-3 text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all"
             />
           </div>
-        </section>
 
-        {/* Privacy & Support Toggles */}
-        <section className="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-4 divide-y divide-outline-variant/30 space-y-3">
-          <div className="flex items-center justify-between pt-1">
-            <div>
-              <p className="text-body-md font-body-md font-medium text-on-surface">
-                Mode Anonim Penuh
-              </p>
-              <p className="text-body-sm font-body-sm text-on-surface-variant">
-                Nama samaran otomatis, identitas asli terlindungi
-              </p>
-            </div>
-            <label className="relative inline-flex items-center cursor-pointer shrink-0">
+          {/* Isi Curhat */}
+          <div className="space-y-1.5">
+            <label className="block text-label-md font-label-md font-medium text-on-surface">
+              Apa yang sedang berkecamuk di pikiranmu?
+            </label>
+            <textarea
+              rows={6}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Tumpahkan segalanya di sini. Tidak ada yang akan menghakimi perasaanmu..."
+              className="w-full glass-input rounded-2xl p-4 text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-white transition-all resize-none leading-relaxed"
+            />
+          </div>
+
+          {/* Privacy Toggles */}
+          <div className="glass-card rounded-2xl p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-label-md font-label-md font-semibold text-on-surface block">
+                  Kirim dengan Pseudonim Anonim
+                </span>
+                <span className="text-body-sm font-body-sm text-outline">
+                  Identitasmu disamarkan sepenuhnya
+                </span>
+              </div>
               <input
                 type="checkbox"
                 checked={anonymous}
                 onChange={(e) => setAnonymous(e.target.checked)}
-                className="sr-only peer"
+                className="w-5 h-5 accent-primary rounded"
               />
-              <div className="w-12 h-7 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
-            </label>
-          </div>
-
-          <div className="flex items-center justify-between pt-3">
-            <div>
-              <p className="text-body-md font-body-md font-medium text-on-surface">
-                Izinkan Pelukan Virtual
-              </p>
-              <p className="text-body-sm font-body-sm text-on-surface-variant">
-                Terima respon hangat dan pelukan dari kawan rasa
-              </p>
             </div>
-            <label className="relative inline-flex items-center cursor-pointer shrink-0">
+            <div className="flex items-center justify-between pt-2 border-t border-outline-variant/30">
+              <div>
+                <span className="text-label-md font-label-md font-semibold text-on-surface block">
+                  Buka Tanggapan Empati
+                </span>
+                <span className="text-body-sm font-body-sm text-outline">
+                  Izinkan teman sebaya memberi kata penyemangat
+                </span>
+              </div>
               <input
                 type="checkbox"
                 checked={supportEnabled}
                 onChange={(e) => setSupportEnabled(e.target.checked)}
-                className="sr-only peer"
+                className="w-5 h-5 accent-primary rounded"
               />
-              <div className="w-12 h-7 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
-            </label>
+            </div>
           </div>
-        </section>
-
-        {/* Community Guidelines Notice */}
-        <footer className="p-3.5 rounded-xl bg-surface-container border border-outline-variant/40 flex items-start gap-2.5">
-          <span className="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">
-            spa
-          </span>
-          <p className="text-body-sm font-body-sm text-on-secondary-container leading-relaxed">
-            Gunakan bahasa saling menghargai. Hindari data sensitif atau nama pihak ketiga demi menjaga keamanan sesama kawan.
-          </p>
-        </footer>
+        </form>
       </main>
     </>
   );

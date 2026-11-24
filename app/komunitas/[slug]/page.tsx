@@ -38,8 +38,8 @@ export default async function KomunitasDetailPage({
 
   return (
     <>
-      {/* Top App Bar */}
-      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-sm border-b border-outline-variant/20">
+      {/* Top App Bar with Modern Glass Header */}
+      <header className="sticky top-0 z-40 glass-header px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2 overflow-hidden">
           <Link
             href="/komunitas"
@@ -66,23 +66,22 @@ export default async function KomunitasDetailPage({
 
       {/* Main Content Area */}
       <main className="flex-1 px-4 pt-3 pb-24 space-y-4">
-        {/* Community Hero Banner Bento Block */}
-        <section className="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant shadow-sm relative overflow-hidden">
-          <div className="absolute -right-10 -top-10 w-36 h-36 rounded-full bg-secondary-container/40 blur-2xl pointer-events-none"></div>
+        {/* Community Hero Banner with Modern Glass Card */}
+        <section className="glass-card rounded-[24px] p-5 border border-white/80 shadow-xs relative overflow-hidden">
           <div className="relative z-10 space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container text-primary text-label-sm font-label-sm">
-                <span className="material-symbols-outlined text-[14px] mr-1">school</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-primary text-label-sm font-label-sm">
+                <span className="material-symbols-outlined text-[16px] mr-1">school</span>
                 {current.category}
               </span>
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-container/60 text-on-secondary-container text-label-sm font-label-sm">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-label-sm font-label-sm border border-primary/20">
                 <span
-                  className="material-symbols-outlined text-[15px] mr-1 text-primary"
+                  className="material-symbols-outlined text-[16px] mr-1 text-primary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified
                 </span>
-                Fasilitator Ramah
+                Fasilitator Terverifikasi
               </span>
             </div>
 
@@ -96,42 +95,35 @@ export default async function KomunitasDetailPage({
 
             <div className="pt-1 flex items-center gap-2.5">
               <button
-                className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-label-md font-label-md font-semibold hover:bg-secondary-fixed active:scale-95 transition-all shadow-sm"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary text-white text-label-md font-label-md font-semibold hover:bg-primary/90 active:scale-95 transition-all shadow-xs min-h-[44px]"
                 type="button"
               >
                 <span
-                  className="material-symbols-outlined text-[16px] mr-1.5 text-primary"
+                  className="material-symbols-outlined text-[16px] mr-1.5"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   check_circle
                 </span>
-                Sudah Bergabung ✓
+                Sudah Bergabung
               </button>
               <button
-                className="inline-flex items-center justify-center px-3.5 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container active:scale-95 border border-outline-variant text-label-md font-label-md transition-all"
+                className="inline-flex items-center justify-center px-3.5 py-2 rounded-full glass-pill text-on-surface-variant hover:bg-white active:scale-95 border border-outline-variant/40 text-label-md font-label-md transition-all min-h-[44px]"
                 type="button"
               >
                 <span className="material-symbols-outlined text-[16px] mr-1.5">menu_book</span>
-                Aturan Ruang Lingkar
+                Panduan Lingkar
               </button>
             </div>
           </div>
 
-          {/* Stats Bar */}
-          <div className="mt-4 pt-3.5 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-y-2 text-label-sm font-label-sm text-on-surface-variant">
+          {/* Facilitator & Community Info Bar */}
+          <div className="mt-4 pt-3.5 border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-y-2 text-label-sm font-label-sm text-on-surface-variant">
             <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px] text-primary">group</span>
-              <span className="font-medium text-on-surface">1.2k Anggota</span>
+              <span className="material-symbols-outlined text-[16px] text-primary">groups</span>
+              <span className="font-medium text-on-surface">Kawan Seangkatan</span>
             </div>
             <span className="text-outline-variant">•</span>
             <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px] text-tertiary-container">
-                chat_bubble
-              </span>
-              <span>18 Diskusi Aktif Hari Ini</span>
-            </div>
-            <span className="text-outline-variant">•</span>
-            <div className="flex items-center gap-1.5 w-full sm:w-auto">
               <span className="material-symbols-outlined text-[16px] text-primary">psychology</span>
               <span>
                 Fasilitator: <span className="font-medium text-on-surface">{current.facilitator}</span>
@@ -146,11 +138,11 @@ export default async function KomunitasDetailPage({
             <h3 className="font-label-lg text-label-lg font-semibold text-on-surface">
               Thread Diskusi Terkini
             </h3>
-            <span className="font-label-sm text-label-sm text-primary font-medium">Terhangat</span>
+            <span className="font-label-sm text-label-sm text-primary font-semibold">Aktif</span>
           </div>
 
           {/* Thread 1 */}
-          <article className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-xs space-y-2.5">
+          <article className="glass-card rounded-[20px] p-4.5 border border-white/80 shadow-xs space-y-2.5">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-primary text-xs font-semibold">
@@ -160,7 +152,7 @@ export default async function KomunitasDetailPage({
                   Kawan Anonim #552
                 </span>
               </div>
-              <span className="font-body-sm text-body-sm text-outline text-[11px]">30 mnt lalu</span>
+              <span className="font-body-sm text-body-sm text-outline">30 mnt lalu</span>
             </div>
             <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
               Tips mengatasi revisian dosen pembimbing yang kontradiktif?
@@ -184,12 +176,14 @@ export default async function KomunitasDetailPage({
                   <span>14 tanggapan</span>
                 </span>
               </div>
-              <span className="text-primary font-medium">Balas Thread</span>
+              <span className="text-primary font-semibold min-h-[44px] flex items-center cursor-pointer">
+                Balas Thread
+              </span>
             </div>
           </article>
 
           {/* Thread 2 */}
-          <article className="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/60 shadow-xs space-y-2.5">
+          <article className="glass-card rounded-[20px] p-4.5 border border-white/80 shadow-xs space-y-2.5">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-tertiary text-xs font-semibold">
@@ -199,7 +193,7 @@ export default async function KomunitasDetailPage({
                   Kawan Anonim #104
                 </span>
               </div>
-              <span className="font-body-sm text-body-sm text-outline text-[11px]">2 jam lalu</span>
+              <span className="font-body-sm text-body-sm text-outline">2 jam lalu</span>
             </div>
             <h4 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
               Tempat nugas hening &amp; ramah kantong di sekitar kampus?
@@ -223,7 +217,9 @@ export default async function KomunitasDetailPage({
                   <span>22 tanggapan</span>
                 </span>
               </div>
-              <span className="text-primary font-medium">Balas Thread</span>
+              <span className="text-primary font-semibold min-h-[44px] flex items-center cursor-pointer">
+                Balas Thread
+              </span>
             </div>
           </article>
         </section>
