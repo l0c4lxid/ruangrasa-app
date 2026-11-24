@@ -10,6 +10,7 @@ const HIDE_NAV_PREFIXES = [
   "/onboarding",
   "/konsultasi/", // detail subpages like booking, payment, session
   "/konselor",    // counselor portal
+  "/chat-ai",     // AI assistant chat page
 ];
 
 // Routes that EXACTLY match the hide prefix (use === check instead of startsWith)

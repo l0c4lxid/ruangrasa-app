@@ -150,6 +150,17 @@ export default function WelcomeLandingPage() {
           </span>
         </Link>
 
+        {/* Demo AI Chat Assistant CTA */}
+        <Link
+          href="/chat-ai"
+          className="w-full h-[46px] bg-surface-container-high/60 hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold rounded-[14px] border border-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
+          <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+            smart_toy
+          </span>
+          <span>Coba Demo Chat AI (Tanya Info &amp; Admin)</span>
+        </Link>
+
         {/* Microcopy & Safety Notice */}
         <div className="pt-2 text-center">
           <p className="font-label-sm text-label-sm text-outline leading-tight">
