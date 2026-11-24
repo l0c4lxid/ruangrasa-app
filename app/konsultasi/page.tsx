@@ -36,7 +36,7 @@ export default function KonsultasiPage() {
       <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md flex justify-between items-center w-full px-5 py-3.5 shadow-sm border-b border-outline-variant/20">
         <div className="flex items-center gap-3">
           <Link
-            href="/"
+            href="/home"
             aria-label="Kembali ke Beranda"
             className="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all focus:outline-none"
           >
@@ -58,17 +58,11 @@ export default function KonsultasiPage() {
 
       {/* Main Content Canvas */}
       <main className="flex-1 px-5 pt-3 pb-24 flex flex-col gap-4">
-        {/* Ethical Compliance Disclaimer Banner */}
-        <section className="bg-surface-container-low rounded-xl p-3.5 border border-outline-variant/40 flex items-start gap-2.5">
-          <span
-            className="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5"
-            data-icon="verified_user"
-          >
-            verified_user
-          </span>
-          <p className="text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
-            Seluruh psikolog dan konselor mitra terverifikasi SIPPK/HIMPSI. Data bertanda{" "}
-            <span className="font-semibold text-primary">(Contoh Demo)</span> untuk evaluasi prototipe.
+        {/* Verification Status Pill */}
+        <section className="bg-surface-container-low/80 rounded-xl px-3.5 py-2 border border-outline-variant/30 flex items-center gap-2">
+          <span className="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+          <p className="text-label-sm font-medium text-on-surface-variant">
+            Seluruh psikolog mitra berlisensi resmi SIPPK | HIMPSI
           </p>
         </section>
 

@@ -1,4 +1,4 @@
-# 03 — Fitur Chat AI Assistant Demo
+# 03 | Fitur Chat AI Assistant Demo
 
 ## 1. Ringkasan & Tujuan Fitur
 Fitur **Chat AI Assistant ("Asisten Teduh")** dibuat untuk mendemonstrasikan pengalaman interaktif bagi pengguna aplikasi RuangTeduh. Asisten AI ini berfungsi sebagai titik kontak pertama (*first responder & guide*) yang ramah, hangat, dan informatif.

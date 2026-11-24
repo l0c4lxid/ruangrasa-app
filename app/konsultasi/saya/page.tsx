@@ -29,24 +29,7 @@ export default function KonsultasiSayaPage() {
       </header>
 
       {/* Main Content Canvas */}
-      <main className="flex-1 px-5 pt-3 pb-24 flex flex-col gap-5">
-        {/* Gentle Empathetic Banner */}
-        <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/60 flex items-start gap-3">
-          <div className="p-2 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center shrink-0">
-            <span
-              className="material-symbols-outlined text-[20px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              spa
-            </span>
-          </div>
-          <div className="flex-1">
-            <p className="text-body-sm font-body-sm text-on-surface leading-snug">
-              Ruang amanmu selalu terjaga. Kamu dapat melihat status janji temu psikolog dan persiapan sesi konseling di sini.
-            </p>
-          </div>
-        </div>
-
+      <main className="flex-1 px-5 pt-3 pb-24 flex flex-col gap-4">
         {/* Status Filter Tabs */}
         <nav aria-label="Filter Status Sesi" className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
           <button className="bg-primary text-on-primary px-4 py-2 rounded-full font-label-md text-label-md shrink-0 shadow-sm flex items-center gap-1.5 transition-transform active:scale-95 font-semibold">

@@ -35,22 +35,7 @@ export default function ConsultationSessionPage({
       </header>
 
       {/* Main Content Canvas */}
-      <main className="px-5 pt-3 pb-24 space-y-5 flex-1">
-        {/* Emotional Reassurance Banner */}
-        <div className="bg-surface-container-low rounded-2xl p-4 flex items-center gap-3 border border-outline-variant/40">
-          <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary flex-shrink-0">
-            <span
-              className="material-symbols-outlined"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              spa
-            </span>
-          </div>
-          <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Ruang amanmu sudah disiapkan. Luangkan waktu sejenak untuk bernapas tenang sebelum sesi dimulai.
-          </p>
-        </div>
-
+      <main className="px-5 pt-3 pb-24 space-y-4 flex-1">
         {/* Counselor Profile Card */}
         <section className="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant shadow-sm relative overflow-hidden">
           <div className="flex items-start gap-4">

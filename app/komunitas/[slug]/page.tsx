@@ -140,21 +140,6 @@ export default async function KomunitasDetailPage({
           </div>
         </section>
 
-        {/* Gentle Botanical Mood Anchor Callout */}
-        <section className="bg-surface-container-low rounded-xl p-3.5 flex items-center gap-3 border border-outline-variant/70">
-          <div className="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0">
-            <span
-              className="material-symbols-outlined text-[18px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              spa
-            </span>
-          </div>
-          <p className="text-body-sm font-body-sm text-on-surface-variant leading-snug">
-            Setiap cerita yang kamu bagikan di ruang ini terlindungi kode etik komunitas saling jaga.
-          </p>
-        </section>
-
         {/* Discussions List */}
         <section className="space-y-3">
           <div className="flex items-center justify-between px-1">

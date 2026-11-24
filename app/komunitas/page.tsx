@@ -59,25 +59,14 @@ export default function KomunitasPage() {
 
       {/* Main Content Canvas */}
       <main className="flex-1 px-5 pt-3 pb-24 flex flex-col gap-4">
-        {/* Safe Circle Banner */}
-        <section className="relative overflow-hidden rounded-2xl bg-surface-container-low p-4 border border-outline-variant/50">
-          <div className="relative z-10 flex flex-col gap-1.5">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container w-fit">
-              <span
-                className="material-symbols-outlined text-[14px] text-on-secondary-fixed-variant"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                spa
-              </span>
-              <span className="text-label-sm font-label-sm text-on-secondary-fixed-variant font-medium">
-                Ruang Lingkar Aman
-              </span>
-            </div>
-            <p className="text-body-md font-body-md text-on-surface-variant mt-1 leading-snug">
-              Ruang diskusi terfokus dan saling menguatkan bersama teman sebaya yang dipandu fasilitator ramah.
-            </p>
-          </div>
-          <div className="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-secondary-fixed/40 pointer-events-none blur-xl"></div>
+        {/* Community Info Header */}
+        <section className="bg-surface-container-low/80 rounded-xl px-4 py-3 border border-outline-variant/30 flex items-center justify-between gap-3">
+          <p className="text-body-sm text-on-surface-variant leading-snug">
+            Temukan kelompok teman sebaya untuk saling menguatkan dan bertukar cerita.
+          </p>
+          <span className="shrink-0 text-label-sm font-semibold text-primary bg-secondary-container px-2.5 py-1 rounded-full">
+            4 Topik Aktif
+          </span>
         </section>
 
         {/* Search Input */}

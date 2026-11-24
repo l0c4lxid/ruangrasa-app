@@ -1,4 +1,4 @@
-# 02 — Logika Bisnis & Sistem Desain
+# 02 | Logika Bisnis & Sistem Desain
 
 ## 1. Visi Produk (RuangTeduh / RuangRasa)
 Platform ruang aman kesehatan mental yang berfokus pada mahasiswa dan dewasa muda Indonesia, mengatasi stigma negatif terhadap kesehatan mental dengan prinsip:

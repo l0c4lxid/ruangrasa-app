@@ -65,7 +65,7 @@ export default function NotificationsPage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link
-              href="/"
+              href="/home"
               aria-label="Kembali ke Beranda"
               className="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all"
             >
@@ -73,10 +73,10 @@ export default function NotificationsPage() {
             </Link>
             <div>
               <h1 className="text-headline-lg-mobile font-headline-lg-mobile font-semibold text-primary tracking-tight">
-                RuangTeduh
+                Notifikasi
               </h1>
               <p className="text-label-sm font-label-sm text-on-surface-variant">
-                Kabar &amp; Pembaruan Teduh
+                Pembaruan &amp; aktivitas terkini
               </p>
             </div>
           </div>
@@ -96,26 +96,6 @@ export default function NotificationsPage() {
 
       {/* Main Content Area */}
       <main className="flex-1 px-5 pt-3 pb-24 space-y-4">
-        {/* Privacy Shield Banner */}
-        <section className="bg-surface-container-low border border-outline-variant/60 rounded-xl p-3.5 flex items-start gap-3">
-          <div className="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
-            <span className="material-symbols-outlined text-[18px]">lock</span>
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between">
-              <h2 className="text-label-lg font-label-lg font-semibold text-primary">
-                Ruang Aman &amp; Terjaga
-              </h2>
-              <span className="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container font-medium">
-                Privasi Aktif
-              </span>
-            </div>
-            <p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
-              Sesuai komitmen etika kami, cuplikan pesan curhat pribadi tidak ditampilkan di notifikasi layar ini demi menjaga kenyamanan emosionalmu.
-            </p>
-          </div>
-        </section>
-
         {/* Filter Chips Navigation */}
         <section className="overflow-x-auto pb-1 -mx-5 px-5 flex gap-2 no-scrollbar">
           <button

@@ -1,10 +1,19 @@
-# 05 — Changelog & Riwayat Tugas
+# 05 | Changelog & Riwayat Tugas
 
 Dokumen ini mencatat setiap perubahan, penambahan fitur, dan keputusan teknis yang dilakukan pada repositori `ruangrasa-app`.
 
 ---
 
-## 📅 [2026-11-24] — Implementasi Fitur Chat AI Assistant & Sistem Knowledge Sharing AI Agent
+## 📅 [2026-11-24] | Perbaikan UX Navigasi, Deklutter AI Slop, & Format Judul Pipeline (|)
+- **Bottom Navigation Active State**: Mengarahkan rute `/notifications` agar secara intuitif mengaktifkan tab **Beranda** (Home) dan bukan Profil.
+- **Back Button**: Mengubah tombol kembali pada rute `/notifications` dan `/konsultasi` agar kembali ke `/home` bukan root landing `/`.
+- **Deklutter & Kurangi AI Slop**: Menghilangkan banner edukasi/privasi berlebihan di `/notifications`, `/curhat`, `/komunitas`, `/konsultasi/saya`, dan `/konsultasi/[id]/session` agar antarmuka terasa natural layaknya aplikasi native nyata.
+- **Format Judul Pipeline**: Mengganti seluruh format pemisah judul yang sebelumnya menggunakan em-dash (`—`) atau `--` menjadi pipeline (`|`) sesuai arahan desain.
+- **Verifikasi Semua Rute**: Memastikan tidak ada rute blank (seluruh 22 rute terimplementasi lengkap).
+
+---
+
+## 📅 [2026-11-24] | Implementasi Fitur Chat AI Assistant & Sistem Knowledge Sharing AI Agent
 
 ### 1. Sistem Knowledge Sharing untuk AI Agent
 - **Folder Baru**: Dibuat direktori [`agent-docs/`](file:///d:/Coding/ruangrasa-app/agent-docs) di root repositori.

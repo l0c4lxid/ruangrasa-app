@@ -34,9 +34,9 @@ export default function ChatAIPage() {
     {
       id: "welcome-1",
       sender: "ai",
-      text: "Halo, Kawan Rasa! 🌿\n\nSaya **Asisten Teduh AI**, asisten cerdas yang siap membantu dan menemani kamu di RuangTeduh.\n\nKamu bisa bertanya tentang cara kerja aplikasi ini, fitur-fitur yang tersedia, atau meminta kontak Admin resmi kami jika butuh bantuan langsung. Ada yang ingin kamu tanyakan?",
+      text: "Halo! Saya Asisten Teduh. Kamu bisa tanya apa saja seputar aplikasi RuangTeduh, fitur curhat anonim, jadwal psikolog, atau meminta kontak WhatsApp Admin kami. Ada yang ingin kamu ketahui?",
       timestamp: "Baru saja",
-      highlightBadge: "AI Pendamping Ramah",
+      highlightBadge: "Asisten RuangTeduh",
       actions: [
         {
           label: "Tentang RuangTeduh",
@@ -44,7 +44,7 @@ export default function ChatAIPage() {
           icon: "info",
         },
         {
-          label: "Minta Nomor Admin",
+          label: "Kontak Admin",
           copyText: "Berapa nomor kontak Admin?",
           icon: "support_agent",
         },
@@ -83,10 +83,10 @@ export default function ChatAIPage() {
     ) {
       return {
         badge: "Tentang RuangTeduh",
-        text: "**RuangTeduh (RuangRasa)** adalah platform ruang aman kesehatan mental yang dirancang khusus untuk mahasiswa dan dewasa muda Indonesia dengan pendekatan berjenjang (*Stepped-Care*).\n\nBerikut 3 pilar layanan utama kami:\n\n1. **Curhat Anonim** — Tuangkan unek-unek tanpa nama dan dapatkan dukungan hangat sesama kawan.\n2. **Komunitas Lingkar Sebaya** — Ruang diskusi seputar topik skripsi, quarter-life crisis, rantau, hingga keluarga.\n3. **Konsultasi Psikolog Profesional** — Sesi privat online bersama psikolog berlisensi (SIPP) dengan subsidi s/d 50% untuk mahasiswa.\n\nSemua data kamu dilindungi dengan prinsip UU PDP & privasi ketat.",
+        text: "**RuangTeduh** adalah aplikasi ruang aman kesehatan mental untuk mahasiswa dan dewasa muda Indonesia.\n\nLayanan utama kami:\n1. **Curhat Anonim** | Cerita tanpa nama, bebas dari penghakiman\n2. **Komunitas Sebaya** | Diskusi terarah seputar skripsi, karir, dan adaptasi\n3. **Konsultasi Psikolog** | Sesi privat dengan psikolog berlisensi (SIPP) dengan subsidi mahasiswa\n\nSemua data kamu aman dan terenkripsi.",
         actions: [
           {
-            label: "Mulai Curhat Anonim",
+            label: "Curhat Anonim",
             href: "/curhat",
             icon: "favorite",
           },
@@ -96,7 +96,7 @@ export default function ChatAIPage() {
             icon: "groups",
           },
           {
-            label: "Cari Jadwal Psikolog",
+            label: "Jadwal Psikolog",
             href: "/konsultasi",
             icon: "psychology",
           },
@@ -118,17 +118,17 @@ export default function ChatAIPage() {
       q.includes("helpdesk")
     ) {
       return {
-        badge: "Kontak Resmi Admin",
-        text: "Tentu! Kamu bisa langsung menghubungi tim Admin & Layanan Pengguna RuangTeduh melalui saluran berikut:\n\n📱 **WhatsApp Admin Resmi:**\n`+62 812-3456-7890` (0812-RUANG-TEDUH)\n\n⏰ **Jam Layanan:**\nSetiap hari, pukul 08:00 – 22:00 WIB\n\n✉️ **Email Resmi:**\n`halo@ruangteduh.id`\n\n*Catatan: Admin kami siap membantu kendala teknis, reservasi psikolog, informasi subsidi, dan kerja sama kampus.*",
+        badge: "Kontak Admin",
+        text: "Berikut kontak resmi Admin RuangTeduh:\n\n📱 **WhatsApp:** `+62 812-3456-7890` (0812-RUANG-TEDUH)\n⏰ **Jam Layanan:** 08:00 – 22:00 WIB\n✉️ **Email:** `halo@ruangteduh.id`\n\nAdmin kami siap bantu seputar info subsidi, jadwal konsultasi, atau kendala akun.",
         actions: [
           {
             label: "Chat WhatsApp Admin",
-            url: "https://wa.me/6281234567890?text=Halo%20Admin%20RuangTeduh%2C%20saya%20ingin%20bertanya%20mengenai%20layanan...",
+            url: "https://wa.me/6281234567890?text=Halo%20Admin%20RuangTeduh%2C%20saya%20ingin%20bertanya...",
             icon: "chat",
             isExternal: true,
           },
           {
-            label: "Salin Nomor (+62 812-3456-7890)",
+            label: "Salin Nomor",
             copyText: "+6281234567890",
             icon: "content_copy",
           },
@@ -139,16 +139,16 @@ export default function ChatAIPage() {
     // 3. Curhat anonim specific
     if (q.includes("curhat") || q.includes("anonim") || q.includes("rahasia")) {
       return {
-        badge: "Fitur Curhat Anonim",
-        text: "Curhat di RuangTeduh **100% anonim**! Identitas aslimu tidak akan pernah ditampilkan ke publik.\n\nSistem akan otomatis memberikanmu kode pseudonim (misal: *P24* atau *Kawan Rasa*) sehingga kamu bisa bebas mencurahkan isi hati tanpa rasa takut dihakimi.",
+        badge: "Curhat Anonim",
+        text: "Curhat di RuangTeduh **100% anonim**. Nama asli kamu tidak ditampilkan dan diganti kode pseudonim (misal: *Kawan #412*), sehingga kamu bisa bebas bercerita tanpa cemas.",
         actions: [
           {
-            label: "Tulis Curhat Baru",
+            label: "Tulis Curhat",
             href: "/curhat/buat",
             icon: "edit_note",
           },
           {
-            label: "Baca Cerita Kawan",
+            label: "Baca Curhat Lain",
             href: "/curhat",
             icon: "forum",
           },
@@ -159,17 +159,17 @@ export default function ChatAIPage() {
     // 4. Konsultasi & Biaya
     if (q.includes("biaya") || q.includes("bayar") || q.includes("harga") || q.includes("psikolog") || q.includes("konsul")) {
       return {
-        badge: "Layanan Psikolog Berlisensi",
-        text: "RuangTeduh bekerjasama dengan psikolog klinis tersertifikasi **SIPP**. Khusus mahasiswa dan dewasa muda berpenghasilan pemula, kami menyediakan **subsidi biaya s/d 50%**.\n\nJadwal konsultasi sangat fleksibel (pagi, sore, maupun malam) dan sesi berlangsung secara privat via video/chat terenkripsi.",
+        badge: "Konsultasi Psikolog",
+        text: "Sesi konseling ditangani psikolog klinis berlisensi **SIPP**. Tersedia **subsidi biaya s/d 50%** khusus mahasiswa.\n\nSesi privat online via video call atau chat terenkripsi.",
         actions: [
           {
-            label: "Lihat Daftar Psikolog",
+            label: "Pilih Psikolog",
             href: "/konsultasi",
             icon: "psychology",
           },
           {
-            label: "Tanya Syarat Subsidi ke Admin",
-            url: "https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20mau%20tanya%20syarat%20subsidi%20konsultasi%20mahasiswa...",
+            label: "Tanya Subsidi ke Admin",
+            url: "https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20mau%20tanya%20subsidi%20mahasiswa...",
             icon: "chat",
             isExternal: true,
           },
@@ -180,11 +180,11 @@ export default function ChatAIPage() {
     // 5. Emergency / Krisis
     if (q.includes("darurat") || q.includes("krisis") || q.includes("bunuh") || q.includes("mati") || q.includes("tolong") || q.includes("bahaya")) {
       return {
-        badge: "Bantuan Darurat Krisis",
-        text: "Kawan, jika kamu atau orang terdekat sedang berada dalam krisis emosional atau membutuhkan pertolongan mendesak, mohon segera hubungi hotline kesehatan mental nasional:\n\n📞 **Hotline Kemenkes Darurat:** `119 ext 8` (Bebas pulsa, 24 Jam)\n📞 **KemenPPPA Sahabat Perempuan & Anak:** `129`\n\nKamu sangat berharga, dan kamu tidak harus menanggung ini sendirian.",
+        badge: "Bantuan Darurat",
+        text: "Jika kamu sedang dalam krisis atau butuh bantuan segera, hubungi layanan darurat bebas pulsa 24 jam:\n\n📞 **Kemenkes Darurat:** `119 ext 8`\n📞 **KemenPPPA:** `129`\n\nKamu tidak sendirian. Tolong hubungi nomor di atas segera.",
         actions: [
           {
-            label: "Panggil 119 ext 8 Sekarang",
+            label: "Panggil 119 ext 8",
             url: "tel:119",
             icon: "call",
             isExternal: true,
@@ -326,12 +326,6 @@ export default function ChatAIPage() {
 
       {/* Chat Messages Body */}
       <main className="flex-1 overflow-y-auto px-4 py-4 space-y-4 no-scrollbar">
-        {/* Intro notice banner */}
-        <div className="bg-surface-container-low p-3 rounded-2xl border border-outline-variant/30 flex items-center gap-2.5 text-body-sm text-outline">
-          <span className="material-symbols-outlined text-primary text-[20px]">lock</span>
-          <span>Percakapan ini bersifat simulasi interaktif demo RuangTeduh. Privasi terjaga.</span>
-        </div>
-
         {messages.map((msg) => (
           <div
             key={msg.id}

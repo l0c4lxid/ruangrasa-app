@@ -45,26 +45,6 @@ export default async function CurhatDetailPage({
 
       {/* Main Content Scrollable Area */}
       <main className="px-5 pt-3 pb-36 space-y-4 flex-1">
-        {/* Ambient Botanical Breathing Banner */}
-        <div className="bg-surface-container-low rounded-2xl p-3.5 flex items-center justify-between border border-outline-variant/60">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary">
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                spa
-              </span>
-            </div>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Di sini kamu bebas berekspresi tanpa dihakimi.
-            </p>
-          </div>
-          <span className="font-label-sm text-label-sm text-primary font-medium">
-            Teduh
-          </span>
-        </div>
-
         {/* Kartu Utama Curhat */}
         <article className="bg-surface-container-lowest rounded-2xl border border-outline-variant p-5 shadow-sm">
           {/* Author Info & Badge */}

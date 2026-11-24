@@ -1,4 +1,4 @@
-# 01 — Arsitektur & Tech Stack
+# 01 | Arsitektur & Tech Stack
 
 ## 1. Spesifikasi Teknologi
 - **Framework**: Next.js 15.5.28 (App Router)

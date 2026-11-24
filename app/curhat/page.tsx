@@ -35,22 +35,11 @@ export default function CurhatFeedPage() {
 
       {/* Main Content Area with Bottom Padding for FAB and Nav */}
       <main className="flex-1 pb-32">
-        {/* Privacy Guarantee Banner */}
-        <section className="px-5 pt-3 pb-2">
-          <div className="bg-surface-container-low rounded-2xl p-3.5 flex items-start space-x-3 border border-outline-variant/40 shadow-sm">
-            <div className="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0 mt-0.5">
-              <span className="material-symbols-outlined text-[18px]" data-icon="lock">
-                lock
-              </span>
-            </div>
-            <div className="flex-1">
-              <p className="text-label-md font-label-md text-primary font-semibold">
-                Ruang Aman &amp; Terjaga
-              </p>
-              <p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
-                Semua cerita dibagikan tanpa nama asli atau identitas publik. Kamu didengar, tanpa penghakiman.
-              </p>
-            </div>
+        {/* Privacy Notice Pill */}
+        <section className="px-5 pt-3 pb-1">
+          <div className="bg-surface-container-low/80 rounded-xl px-3.5 py-2 flex items-center gap-2 border border-outline-variant/30 text-body-sm text-on-surface-variant">
+            <span className="material-symbols-outlined text-[18px] text-primary">lock</span>
+            <span className="text-label-sm font-medium">Curhat 100% anonim • Ceritamu didengar tanpa penghakiman</span>
           </div>
         </section>
 
@@ -258,23 +247,6 @@ export default function CurhatFeedPage() {
               </div>
             </div>
           </article>
-
-          {/* Calming Ambient Prompt Box */}
-          <div className="rounded-2xl p-4 bg-gradient-to-br from-surface-container-high/60 to-surface-container-low border border-outline-variant/40 flex items-center space-x-3.5">
-            <div className="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
-              <span className="material-symbols-outlined text-[20px]" data-icon="self_improvement">
-                self_improvement
-              </span>
-            </div>
-            <div>
-              <p className="text-label-md font-label-md text-primary font-semibold">
-                Tarik napas sejenak
-              </p>
-              <p className="text-body-sm font-body-sm text-on-surface-variant">
-                Beban pikiranmu valid. Istirahatlah barang 5 menit tanpa memikirkan tuntutan apapun.
-              </p>
-            </div>
-          </div>
         </section>
       </main>
 

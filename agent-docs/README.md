@@ -1,4 +1,4 @@
-# Agent Knowledge Base — RuangTeduh (RuangRasa App)
+# Agent Knowledge Base | RuangTeduh (RuangRasa App)
 
 > **Catatan untuk AI Agent / Developer**: Direktori ini dibuat khusus sebagai pusat transfer pengetahuan (*knowledge sharing*) antar AI Agent. Setiap agent yang bekerja pada repositori ini wajib membaca dan memperbarui dokumentasi di folder ini ketika melakukan modifikasi arsitektur atau penambahan fitur baru.
 

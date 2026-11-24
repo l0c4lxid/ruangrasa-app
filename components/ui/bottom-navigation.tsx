@@ -33,13 +33,17 @@ export function BottomNavigation() {
 
   if (shouldHide) return null;
 
-  const isHome = pathname === "/home" || pathname.startsWith("/home?");
+  const isHome =
+    pathname === "/home" ||
+    pathname.startsWith("/home?") ||
+    pathname === "/notifications" ||
+    pathname.startsWith("/notifications");
   const isCurhat = pathname.startsWith("/curhat");
   const isKomunitas = pathname.startsWith("/komunitas");
   const isKonsultasi =
     pathname === "/konsultasi" || pathname === "/konsultasi/saya";
   const isProfile =
-    pathname.startsWith("/profile") || pathname.startsWith("/settings") || pathname.startsWith("/notifications");
+    pathname.startsWith("/profile") || pathname.startsWith("/settings");
 
   return (
     <nav

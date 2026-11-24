@@ -1,4 +1,4 @@
-# 04 — Panduan Development & Ekstensi
+# 04 | Panduan Development & Ekstensi
 
 ## 1. Perintah Standar (Windows Environment)
 Pada sistem operasi Windows, PowerShell default mungkin membatasi script `.ps1`. Gunakan wrapper `cmd /c` untuk menjalankan npm command:
