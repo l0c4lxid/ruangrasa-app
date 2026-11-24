@@ -105,37 +105,6 @@ function HomeContent() {
           </p>
         </section>
 
-        {/* Featured AI Assistant Banner Card */}
-        <section className="bg-gradient-to-r from-secondary-container/90 via-surface-container to-surface-container-lowest rounded-2xl p-4 border border-primary/20 custom-shadow-resting flex items-center justify-between gap-3">
-          <div className="flex items-start gap-3">
-            <div className="w-11 h-11 rounded-2xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-xs">
-              <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                smart_toy
-              </span>
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <p className="text-label-md font-label-md font-bold text-on-surface">
-                  Asisten Teduh AI
-                </p>
-                <span className="bg-primary/10 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-md">
-                  DEMO CHAT
-                </span>
-              </div>
-              <p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5 leading-snug">
-                Tanya tentang aplikasi ini atau minta nomor kontak WhatsApp Admin.
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/chat-ai"
-            className="bg-primary text-on-primary text-label-sm font-label-sm px-3.5 py-2.5 rounded-xl font-semibold shrink-0 active:scale-95 transition-all shadow-xs flex items-center gap-1"
-          >
-            <span>Tanya AI</span>
-            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-          </Link>
-        </section>
-
         {/* Emergency Alert Banner / Disclaimer */}
         <section className="bg-tertiary-fixed text-on-tertiary-fixed p-3.5 rounded-2xl flex items-start gap-3 border border-tertiary-fixed-dim/40 custom-shadow-resting">
           <span
@@ -351,19 +320,6 @@ function HomeContent() {
           </Link>
         </section>
       </main>
-
-      {/* Floating AI Assistant FAB (above bottom nav) */}
-      <aside aria-label="Aksi Cepat AI" className="fixed bottom-20 max-w-[412px] w-full px-4 pointer-events-none z-30 flex justify-end">
-        <Link
-          href="/chat-ai"
-          className="pointer-events-auto bg-primary text-on-primary px-3.5 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:bg-primary/95 active:scale-95 transition-all border border-white/20"
-        >
-          <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-            smart_toy
-          </span>
-          <span className="text-label-sm font-label-sm font-semibold">Tanya AI</span>
-        </Link>
-      </aside>
     </>
   );
 }

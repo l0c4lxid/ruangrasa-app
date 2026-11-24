@@ -12,9 +12,9 @@ Fitur **Chat AI Assistant ("Asisten Teduh")** dibuat untuk mendemonstrasikan pen
 ## 2. Lokasi & Rute
 - **Halaman Utama Chat**: `app/chat-ai/page.tsx` (URL: `/chat-ai`)
 - **Akses Cepat (Entry Point)**: 
-  - Floating Action Button (FAB) AI Assistant di `app/home/page.tsx`
-  - Banner / Quick Card AI Assistant di Beranda
-  - Tombol bantuan langsung dari menu
+  - Ikon Robot (`smart_toy`) di pojok kanan atas Header Beranda (`app/home/page.tsx`) dengan status pulse dot aktif.
+  - Banner CTA demo di halaman landing (`app/page.tsx`).
+  - Halaman beranda utama tetap bersih tanpa banner berulang di body, sesuai preferensi desain minimalis dan fokus.
 
 ## 3. Perilaku Interaktif (*Interactive Behaviors*)
 - **Typing Indicator**: Tampilan visual animasi bouncing dots ketika AI sedang menyusun balasan untuk memberikan rasa percakapan nyata.

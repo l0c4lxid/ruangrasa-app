@@ -48,9 +48,8 @@ Dokumen ini mencatat setiap perubahan, penambahan fitur, dan keputusan teknis ya
 - **Bottom Navigation** ([`components/ui/bottom-navigation.tsx`](file:///d:/Coding/ruangrasa-app/components/ui/bottom-navigation.tsx)):
   - Menambahkan `"/chat-ai"` ke dalam daftar `HIDE_NAV_PREFIXES` agar keyboard dan input bar chat tidak tertimpa bilah navigasi bawah.
 - **Beranda** ([`app/home/page.tsx`](file:///d:/Coding/ruangrasa-app/app/home/page.tsx)):
-  - Menambahkan tombol ikon AI Assistant di header bar atas (dengan indikator status aktif).
-  - Menambahkan kartu banner interaktif *"Asisten Teduh AI"* di beranda.
-  - Menambahkan *Floating Action Button (FAB)* "Tanya AI" di pojok kanan bawah (di atas bottom nav).
+  - Menempatkan akses chat AI secara elegan di **pojok kanan atas (header)** berupa ikon robot `smart_toy` dengan *pulse indicator*.
+  - Menghapus banner kartu AI dan floating widget di body beranda agar layout utama tetap bersih (*decluttered*) dan fokus pada konten emosional utama.
 - **Halaman Selamat Datang / Landing** ([`app/page.tsx`](file:///d:/Coding/ruangrasa-app/app/page.tsx)):
   - Menambahkan tombol CTA *"Coba Demo Chat AI (Tanya Info & Admin)"* agar penguji/user baru bisa langsung mencoba demo dari awal.
 - **Halaman Not Found** ([`app/not-found.tsx`](file:///d:/Coding/ruangrasa-app/app/not-found.tsx)):
