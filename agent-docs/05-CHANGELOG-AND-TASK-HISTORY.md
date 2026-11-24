@@ -5,6 +5,9 @@ Dokumen ini mencatat setiap perubahan, penambahan fitur, dan keputusan teknis ya
 ---
 
 ## 📅 [2026-11-24] | Perbaikan UX Navigasi, Deklutter AI Slop, & Format Judul Pipeline (|)
+- **Halaman Register ([`app/auth/register/page.tsx`](file:///d:/Coding/ruangrasa-app/app/auth/register/page.tsx))**:
+  - Menghapus seluruh teks penjelasan yang berlebihan dan bernuansa "AI slop" (footer kartu garansi privasi panjang, quotes puitis, meter kekuatan sandi artifisial, dan badge redundan).
+  - Merapikan formulir pendaftaran menjadi bersih, modern, dan natural selaras dengan halaman Login (nama, email, password, konfirmasi, persetujuan syarat, dan opsi Google SSO).
 - **Bottom Navigation Active State**: Mengarahkan rute `/notifications` agar secara intuitif mengaktifkan tab **Beranda** (Home) dan bukan Profil.
 - **Back Button**: Mengubah tombol kembali pada rute `/notifications` dan `/konsultasi` agar kembali ke `/home` bukan root landing `/`.
 - **Deklutter & Kurangi AI Slop**: Menghilangkan banner edukasi/privasi berlebihan di `/notifications`, `/curhat`, `/komunitas`, `/konsultasi/saya`, dan `/konsultasi/[id]/session` agar antarmuka terasa natural layaknya aplikasi native nyata.
