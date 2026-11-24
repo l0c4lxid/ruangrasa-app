@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const HIDE_NAV_PREFIXES = [
   "/",            // landing/welcome page
@@ -13,8 +14,10 @@ const HIDE_NAV_PREFIXES = [
   "/chat-ai",     // AI assistant chat page
 ];
 
-export function BottomNavigation() {
+function BottomNavigationContent() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const isGuest = searchParams.get("guest") === "true";
 
   // Explicitly allow main /konsultasi and /konsultasi/saya to have bottom nav
   const isConsultationSubpage =
@@ -42,6 +45,11 @@ export function BottomNavigation() {
   const isProfile =
     pathname.startsWith("/profile") || pathname.startsWith("/settings");
 
+  // Helper to preserve ?guest=true across all navigation tabs
+  const getHref = (basePath: string) => {
+    return isGuest ? `${basePath}?guest=true` : basePath;
+  };
+
   return (
     <nav
       aria-label="Navigasi Utama"
@@ -49,7 +57,7 @@ export function BottomNavigation() {
     >
       {/* 1. Beranda */}
       <Link
-        href="/home"
+        href={getHref("/home")}
         className={`min-h-[44px] min-w-[58px] flex flex-col items-center justify-center transition-all duration-150 active:scale-95 focus-visible:rounded-full ${
           isHome
             ? "bg-primary/15 text-primary rounded-full px-3.5 py-1 shadow-xs border border-primary/20"
@@ -73,7 +81,7 @@ export function BottomNavigation() {
 
       {/* 2. Curhat */}
       <Link
-        href="/curhat"
+        href={getHref("/curhat")}
         className={`min-h-[44px] min-w-[58px] flex flex-col items-center justify-center transition-all duration-150 active:scale-95 focus-visible:rounded-full ${
           isCurhat
             ? "bg-primary/15 text-primary rounded-full px-3.5 py-1 shadow-xs border border-primary/20"
@@ -97,7 +105,7 @@ export function BottomNavigation() {
 
       {/* 3. Komunitas */}
       <Link
-        href="/komunitas"
+        href={getHref("/komunitas")}
         className={`min-h-[44px] min-w-[58px] flex flex-col items-center justify-center transition-all duration-150 active:scale-95 focus-visible:rounded-full ${
           isKomunitas
             ? "bg-primary/15 text-primary rounded-full px-3.5 py-1 shadow-xs border border-primary/20"
@@ -121,7 +129,7 @@ export function BottomNavigation() {
 
       {/* 4. Konsultasi */}
       <Link
-        href="/konsultasi"
+        href={getHref("/konsultasi")}
         className={`min-h-[44px] min-w-[58px] flex flex-col items-center justify-center transition-all duration-150 active:scale-95 focus-visible:rounded-full ${
           isKonsultasi
             ? "bg-primary/15 text-primary rounded-full px-3.5 py-1 shadow-xs border border-primary/20"
@@ -145,7 +153,7 @@ export function BottomNavigation() {
 
       {/* 5. Profil */}
       <Link
-        href="/profile"
+        href={getHref("/profile")}
         className={`min-h-[44px] min-w-[58px] flex flex-col items-center justify-center transition-all duration-150 active:scale-95 focus-visible:rounded-full ${
           isProfile
             ? "bg-primary/15 text-primary rounded-full px-3.5 py-1 shadow-xs border border-primary/20"
@@ -167,5 +175,13 @@ export function BottomNavigation() {
         </span>
       </Link>
     </nav>
+  );
+}
+
+export function BottomNavigation() {
+  return (
+    <Suspense fallback={null}>
+      <BottomNavigationContent />
+    </Suspense>
   );
 }

@@ -117,10 +117,15 @@ export default function LoginPage() {
             {/* Guest Mode Direct Access */}
             <Link
               href="/home?guest=true"
-              className="w-full min-h-[46px] px-4 bg-secondary-container/50 hover:bg-secondary-container text-primary border border-secondary/20 rounded-xl flex items-center justify-center gap-2 font-label-md text-label-md font-semibold transition-all duration-150 active:scale-[0.99]"
+              className="w-full min-h-[48px] px-4 bg-secondary-container/40 hover:bg-secondary-container text-primary border border-primary/20 rounded-xl flex items-center justify-between font-label-md text-label-md font-semibold transition-all duration-150 active:scale-[0.99] shadow-xs"
             >
-              <span className="material-symbols-outlined text-[18px]">visibility_off</span>
-              <span>Masuk sebagai Tamu Anonim</span>
+              <div className="flex items-center gap-2.5">
+                <span className="material-symbols-outlined text-[20px]">visibility_off</span>
+                <span>Masuk sebagai Tamu Anonim</span>
+              </div>
+              <span className="text-label-sm font-label-sm text-primary/80 bg-white/70 px-2.5 py-0.5 rounded-full font-medium border border-primary/10">
+                Tanpa Akun
+              </span>
             </Link>
           </div>
         </div>

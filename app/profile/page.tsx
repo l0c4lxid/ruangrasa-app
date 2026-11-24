@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
-export default function ProfilePage() {
+function ProfileContent() {
+  const searchParams = useSearchParams();
+  const isGuest = searchParams.get("guest") === "true";
+  const guestQuery = isGuest ? "?guest=true" : "";
   const [autoMask, setAutoMask] = useState(true);
 
   return (
@@ -12,7 +16,7 @@ export default function ProfilePage() {
       <header className="sticky top-0 z-40 glass-header px-5 py-3.5 flex justify-between items-center w-full">
         <div className="flex items-center space-x-3">
           <Link
-            href="/home"
+            href={`/home${guestQuery}`}
             aria-label="Kembali ke Beranda"
             className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95"
           >
@@ -23,7 +27,7 @@ export default function ProfilePage() {
           </h1>
         </div>
         <Link
-          href="/settings"
+          href={`/settings${guestQuery}`}
           aria-label="Pengaturan"
           className="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container transition-colors active:scale-95"
         >
@@ -34,7 +38,7 @@ export default function ProfilePage() {
       </header>
 
       {/* Scrollable Content Canvas */}
-      <main className="flex-1 px-5 pt-3 pb-28 space-y-6">
+      <main className="flex-1 px-5 pt-3 pb-28 space-y-5">
         {/* Card Profil Pengguna (Modern Glass Surface) */}
         <section className="glass-card rounded-[24px] p-5 border border-white/80 shadow-xs relative overflow-hidden">
           <div className="flex items-start gap-4 relative z-10">
@@ -45,7 +49,7 @@ export default function ProfilePage() {
                   className="material-symbols-outlined text-primary text-[36px]"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
-                  sentiment_calm
+                  {isGuest ? "visibility_off" : "sentiment_calm"}
                 </span>
               </div>
               <div
@@ -64,25 +68,25 @@ export default function ProfilePage() {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <h2 className="text-headline-sm font-headline-sm text-on-surface truncate font-semibold">
-                  Kawan Tenang #782
+                  {isGuest ? "Kawan Tamu Anonim" : "Kawan Tenang #782"}
                 </h2>
               </div>
               <p className="text-label-md font-label-md text-on-surface-variant mt-0.5 flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[15px] text-outline">
-                  lock_outline
+                  {isGuest ? "public" : "lock_outline"}
                 </span>
-                <span>r***@kampus.id</span>
+                <span>{isGuest ? "Sesi tamu sementara" : "r***@kampus.id"}</span>
               </p>
-              {/* Campus Verification Badge */}
+              {/* Status Badge */}
               <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                 <span
                   className="material-symbols-outlined text-[16px] text-primary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
-                  verified_user
+                  {isGuest ? "visibility_off" : "verified_user"}
                 </span>
                 <span className="text-label-sm font-label-sm font-medium tracking-tight">
-                  Akun Mahasiswa Terverifikasi
+                  {isGuest ? "Mode Tamu Aktif" : "Akun Mahasiswa Terverifikasi"}
                 </span>
               </div>
             </div>
@@ -100,6 +104,39 @@ export default function ProfilePage() {
             </span>
           </div>
         </section>
+
+        {/* Upgrade Card for Guest Users */}
+        {isGuest && (
+          <section className="glass-card rounded-[22px] p-4.5 border border-primary/20 shadow-xs bg-gradient-to-br from-primary/5 via-white/80 to-secondary-container/30">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
+                <span className="material-symbols-outlined text-[22px]">app_registration</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-label-lg font-label-lg font-semibold text-primary">
+                  Simpan Cerita &amp; Terhubung
+                </h3>
+                <p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5 leading-snug">
+                  Buat akun untuk menyimpan riwayat curhat pribadi dan menjadwalkan konseling psikolog.
+                </p>
+                <div className="flex items-center gap-2.5 mt-3">
+                  <Link
+                    href="/auth/register"
+                    className="bg-primary text-white text-label-sm font-label-sm px-4 py-2 rounded-xl font-semibold active:scale-95 transition-all min-h-[44px] flex items-center shadow-xs"
+                  >
+                    Daftar Akun
+                  </Link>
+                  <Link
+                    href="/auth/login"
+                    className="bg-white text-primary border border-outline-variant/60 text-label-sm font-label-sm px-4 py-2 rounded-xl font-semibold active:scale-95 transition-all min-h-[44px] flex items-center shadow-xs hover:bg-surface-container"
+                  >
+                    Masuk
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Section: Pengaturan Privasi & Keamanan Data */}
         <section className="space-y-2">
@@ -160,7 +197,7 @@ export default function ProfilePage() {
 
             {/* 3. Riwayat Sesi Konsultasi & Catatan */}
             <Link
-              href="/konsultasi/saya"
+              href={isGuest ? `/auth/login` : `/konsultasi/saya`}
               className="p-4 flex items-center justify-between gap-3 hover:bg-white/40 active:scale-[0.99] transition-all cursor-pointer block min-h-[44px]"
             >
               <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-primary">
@@ -171,7 +208,7 @@ export default function ProfilePage() {
                   Riwayat Sesi Konsultasi &amp; Catatan
                 </p>
                 <p className="text-body-sm font-body-sm text-on-surface-variant truncate">
-                  Akses data sesi terenkripsi
+                  {isGuest ? "Masuk akun untuk melihat riwayat" : "Akses data sesi terenkripsi"}
                 </p>
               </div>
               <span className="material-symbols-outlined text-outline text-[20px]">
@@ -273,21 +310,23 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        {/* Logout Button */}
+        {/* Logout / Exit Guest Button */}
         <div className="pt-2">
           <Link
             href="/"
             className="w-full min-h-[48px] rounded-2xl glass-card border border-white/80 text-on-surface-variant hover:text-error hover:bg-error-container/20 font-label-lg text-label-lg font-medium flex items-center justify-center gap-2 active:scale-95 transition-all shadow-xs"
           >
-            <span className="material-symbols-outlined text-[20px]">logout</span>
-            <span>Keluar dari Akun</span>
+            <span className="material-symbols-outlined text-[20px]">
+              {isGuest ? "close" : "logout"}
+            </span>
+            <span>{isGuest ? "Keluar dari Mode Tamu" : "Keluar dari Akun"}</span>
           </Link>
         </div>
 
         {/* Microcopy */}
         <div className="pt-2 pb-4 text-center">
           <p className="text-body-sm font-body-sm text-on-surface-variant/70 italic">
-            "Ceritakan harimu, kamu tidak sendiri di RuangTeduh."
+            &ldquo;Ceritakan harimu, kamu tidak sendiri di RuangTeduh.&rdquo;
           </p>
           <p className="text-label-sm font-label-sm text-outline mt-1">
             Versi 2.4.0 • Keamanan Kriptografi SHA-256
@@ -295,5 +334,13 @@ export default function ProfilePage() {
         </div>
       </main>
     </>
+  );
+}
+
+export default function ProfilePage() {
+  return (
+    <Suspense fallback={<div className="p-5 text-center text-on-surface-variant">Memuat Profil...</div>}>
+      <ProfileContent />
+    </Suspense>
   );
 }

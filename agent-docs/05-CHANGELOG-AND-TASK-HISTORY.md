@@ -4,6 +4,27 @@ Dokumen ini mencatat setiap perubahan, penambahan fitur, dan keputusan teknis ya
 
 ---
 
+## 📅 [2026-11-24] | Preservasi Rute Mode Tamu (?guest=true), Perapihan Home, & Tombol Guest
+
+- **Bottom Navigation Preservasi Mode Tamu ([`components/ui/bottom-navigation.tsx`](file:///d:/Coding/ruangrasa-app/components/ui/bottom-navigation.tsx))**:
+  - Mengintegrasikan `useSearchParams()` untuk mendeteksi `guest=true`.
+  - Memastikan seluruh tab navigasi bawah (Beranda, Curhat, Komunitas, Konsultasi, Profil) mempertahankan parameter `?guest=true` saat pengguna berada di mode tamu.
+  - Membungkus komponen navigasi dalam `<Suspense fallback={null}>` guna mendukung de-opt Next.js client rendering secara aman.
+- **Deklutter & Perapihan Beranda ([`app/home/page.tsx`](file:///d:/Coding/ruangrasa-app/app/home/page.tsx))**:
+  - Menghapus filler box AI-slop "Panduan Emosional Hari Ini" yang tidak memiliki tujuan interaksi nyata.
+  - Memindahkan dan merekayasa ulang banner darurat krisis yang awalnya terlalu mencolok di bagian atas menjadi micro-safety footer tenang dan elegan agar tidak mendominasi konten utama.
+  - Menyambungkan seluruh kartu aksi (Curhat, Komunitas, Konsultasi, Chat AI, Notifikasi, Diskusi Terkini) agar meneruskan query `?guest=true` ke rute tujuan.
+  - Menyediakan banner status mode tamu yang bersih dan modern dengan tombol CTA langsung ke halaman masuk akun.
+- **Tombol Masuk Mode Tamu ([`app/auth/login/page.tsx`](file:///d:/Coding/ruangrasa-app/app/auth/login/page.tsx), [`app/page.tsx`](file:///d:/Coding/ruangrasa-app/app/page.tsx))**:
+  - Mendesain ulang tombol "Masuk sebagai Tamu Anonim" menjadi kartu tindakan yang menonjol, taktil (`min-h-[48px]`), memiliki badge jelas "Tanpa Akun", dan membedakannya dari opsi autentikasi SSO reguler.
+- **Penanganan Mode Tamu pada Profil ([`app/profile/page.tsx`](file:///d:/Coding/ruangrasa-app/app/profile/page.tsx))**:
+  - Menampilkan kartu profil khusus tamu anonim dengan status "Mode Tamu Aktif" alih-alih data placeholder mahasiswa fiktif.
+  - Menambahkan kartu penawaran peningkatan akun ("Simpan Cerita & Terhubung") dengan tombol cepat daftar akun atau masuk.
+  - Mengubah tombol keluar menjadi "Keluar dari Mode Tamu".
+- **Verifikasi Build**: `npm run build` sukses 22/22 rute tanpa error linting atau TypeScript.
+
+---
+
 ## 📅 [2026-11-24] | Modernisasi Estetika Glassmorphism & Penerapan Prinsip Antislop AI
 
 - **Modern Glassmorphism Design System ([`app/globals.css`](file:///d:/Coding/ruangrasa-app/app/globals.css))**:

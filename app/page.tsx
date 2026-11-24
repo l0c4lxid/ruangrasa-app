@@ -133,10 +133,15 @@ export default function WelcomeLandingPage() {
         {/* Guest Mode Access */}
         <Link
           href="/home?guest=true"
-          className="w-full min-h-[44px] bg-secondary-container/50 hover:bg-secondary-container text-primary font-label-md text-label-md font-semibold rounded-2xl border border-secondary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          className="w-full min-h-[48px] px-4 bg-secondary-container/50 hover:bg-secondary-container text-primary font-label-md text-label-md font-semibold rounded-2xl border border-primary/20 active:scale-[0.98] transition-all flex items-center justify-between shadow-xs"
         >
-          <span className="material-symbols-outlined text-[18px]">visibility_off</span>
-          <span>Masuk sebagai Tamu Anonim</span>
+          <div className="flex items-center gap-2.5">
+            <span className="material-symbols-outlined text-[20px]">visibility_off</span>
+            <span>Masuk sebagai Tamu Anonim</span>
+          </div>
+          <span className="text-label-sm font-label-sm text-primary/80 bg-white/70 px-2.5 py-0.5 rounded-full font-medium border border-primary/10">
+            Tanpa Akun
+          </span>
         </Link>
 
         {/* Demo AI Chat Assistant CTA */}
